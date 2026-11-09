@@ -1,0 +1,73 @@
+{
+  "input": "cases/invalid-from.eml",
+  "result": {
+    "address_header_defects": [
+      {
+        "candidates": [],
+        "header": "from",
+        "occurrence": 0,
+        "raw": "not an address at all",
+        "reason": "invalid-or-ambiguous-address",
+        "recovered": false
+      },
+      {
+        "candidates": [],
+        "header": "to",
+        "occurrence": 0,
+        "raw": " broken <, c@example.com",
+        "reason": "unclosed-delimiter",
+        "recovered": false
+      }
+    ],
+    "attachments": [],
+    "bcc": [],
+    "body": "body\n",
+    "cc": [
+      {
+        "address": "g1@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "g1"
+      },
+      {
+        "address": "g2@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "g2"
+      }
+    ],
+    "date": null,
+    "defects": [
+      {
+        "address-headers": [
+          "AddressHeaderDefect: from[0]: invalid-or-ambiguous-address",
+          "AddressHeaderDefect: to[0]: unclosed-delimiter"
+        ]
+      }
+    ],
+    "defects_categories": ["AddressHeaderDefect"],
+    "filename_safe_subject": "invalid from",
+    "from": null,
+    "has_defects": true,
+    "headers": {
+      "Cc": [
+        ["", "g1@example.com"],
+        ["", "g2@example.com"]
+      ],
+      "From": [],
+      "Subject": "invalid from",
+      "To": [["", "b@example.com"]]
+    },
+    "reply_to": [],
+    "subject": "invalid from",
+    "to": [
+      {
+        "address": "b@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "b"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

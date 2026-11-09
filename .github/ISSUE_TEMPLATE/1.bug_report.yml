@@ -1,0 +1,68 @@
+name: Bug report
+description: Something in tsdmarc doesn't work, or its output differs from parsedmarc's.
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Security vulnerabilities must **not** be reported here: use the repository's Security tab → "Report a vulnerability" (see SECURITY.md).
+
+        Remove real email addresses, IP addresses, passwords and tokens from anything you paste.
+  - type: input
+    id: packages
+    attributes:
+      label: Packages and versions
+      description: Which packages are affected, with their versions.
+      placeholder: tsdmarc 1.0.0, @tsdmarc/imap 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Runtime
+      options:
+        - Node.js
+        - Bun
+        - Deno
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: runtime-version
+    attributes:
+      label: Runtime version and operating system
+      placeholder: Node.js 24.11.0 on Ubuntu 24.04
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Code, CLI command or config (secrets removed), and, if possible, a sanitized report file that triggers the problem.
+      render: ts
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: Run the CLI with `--debug` for more detail.
+      render: shell
+  - type: dropdown
+    id: parsedmarc
+    attributes:
+      label: Does parsedmarc behave differently?
+      description: tsdmarc aims to match parsedmarc 1:1. If parsedmarc gives a different result for the same input, that is a bug in tsdmarc (unless it's a documented difference).
+      options:
+        - I don't know / didn't check
+        - Yes, parsedmarc gives a different result
+        - No, parsedmarc behaves the same
+    validations:
+      required: true

@@ -1,0 +1,12 @@
+From: a@example.com
+Subject: close boundary missing
+Content-Type: multipart/mixed; boundary="ZZ"
+
+--ZZ
+Content-Type: text/plain
+
+part one
+--ZZ
+Content-Type: text/plain
+
+part two, no close

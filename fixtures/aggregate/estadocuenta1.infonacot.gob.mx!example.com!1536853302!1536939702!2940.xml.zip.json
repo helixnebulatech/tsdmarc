@@ -1,0 +1,75 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,XYZ Corporation,admin@estadocuenta1.infonacot.gob.mx,http://estadocuenta1.infonacot.gob.mx,2940,2018-09-13 15:41:42,2018-09-14 15:41:42,False,,example.com,r,r,none,none,,,,,,148.243.137.254,MX,,,Axtel,ISP,6503,\"Axtel, S.A.B. de C.V.\",axtel.mx,1,False,False,False,none,,,,example.com,estadocuenta1.infonacot.gob.mx,,,,,,\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": null,
+        "np": null,
+        "p": "none",
+        "pct": null,
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [],
+            "spf": []
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": null,
+            "envelope_to": "estadocuenta1.infonacot.gob.mx",
+            "header_from": "example.com"
+          },
+          "interval_begin": "2018-09-13 15:41:42",
+          "interval_end": "2018-09-14 15:41:42",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "axtel.mx",
+            "as_name": "Axtel, S.A.B. de C.V.",
+            "asn": 6503,
+            "base_domain": null,
+            "country": "MX",
+            "ip_address": "148.243.137.254",
+            "name": "Axtel",
+            "reverse_dns": null,
+            "type": "ISP"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2018-09-13 15:41:42",
+        "end_date": "2018-09-14 15:41:42",
+        "errors": [],
+        "generator": null,
+        "org_email": "admin@estadocuenta1.infonacot.gob.mx",
+        "org_extra_contact_info": "http://estadocuenta1.infonacot.gob.mx",
+        "org_name": "XYZ Corporation",
+        "original_timespan_seconds": 86400,
+        "report_id": "2940",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/estadocuenta1.infonacot.gob.mx!example.com!1536853302!1536939702!2940.xml.zip"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@tsdmarc/example-bun",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "tsdmarc example for Bun",
+  "scripts": {
+    "parse-file": "bun src/parse-file.ts",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@tsdmarc/ipinfo-lite": "workspace:*",
+    "tsdmarc": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@types/node": "26.6.5"
+  }
+}

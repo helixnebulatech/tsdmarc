@@ -1,0 +1,36 @@
+From: outer@example.com
+To: rcpt@example.com
+Subject: forwarded
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="OUT"
+
+--OUT
+Content-Type: text/plain
+
+see attached
+--OUT
+Content-Type: message/rfc822
+Content-Disposition: attachment; filename="fwd.eml"
+
+From: Jürgen <inner@example.com>
+To: rcpt@example.com
+Subject: Inner subject with ünïcode
+Content-Type: multipart/alternative; boundary="IN"
+
+--IN
+Content-Type: text/plain
+
+inner text
+--IN
+Content-Type: text/html
+
+<p>inner</p>
+--IN--
+--OUT
+Content-Type: message/rfc822
+
+From: unnamed@example.com
+Subject: unnamed inner
+
+inline inner body
+--OUT--

@@ -1,0 +1,8 @@
+From: a@example.com
+Subject: message root
+Content-Type: message/rfc822
+
+From: inner@example.com
+Content-Type: multipart/mixed; boundary="IN"
+
+no boundary

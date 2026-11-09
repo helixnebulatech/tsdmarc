@@ -1,0 +1,159 @@
+{
+  "csv": "feedback_type,user_agent,version,original_envelope_id,original_mail_from,original_rcpt_to,arrival_date,arrival_date_utc,subject,message_id,authentication_results,dkim_domain,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,delivery_result,auth_failure,reported_domain,authentication_mechanisms,sample_headers_only\r\nauth-failure,NtesDmarcReporter/1.0,1,N8CowEApcUPo6q1bnXlMAA--.44392S3,<bounces+1137616-c1ad-xsj399=163.com@email.entrata.com>,,\"Fri, 28 Sep 2018 16:48:42 +0800\",2018-09-28 08:48:42,Rent Reminder,,163.com; dkim=pass (verify result: all signatures verified) header.d=entrata.com; spf=pass smtp.mailfrom=bounces+1137616-c1ad-xsj399=163.com@email.entrata.com,entrata.com,167.89.69.24,US,,,Twilio SendGrid,Marketing,11377,\"SendGrid, Inc.\",sendgrid.com,delivered,dmarc,cardinal.com,\"spf,dkim\",True\r\n",
+  "feedback_report": "Feedback-Type: auth-failure\r\nUser-Agent: NtesDmarcReporter/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounces+1137616-c1ad-xsj399=163.com@email.entrata.com>\r\nArrival-Date: Fri, 28 Sep 2018 16:48:42 +0800\r\nSource-IP: 167.89.69.24\r\nReported-Domain: cardinal.com\r\nOriginal-Envelope-Id: N8CowEApcUPo6q1bnXlMAA--.44392S3\r\nAuthentication-Results: 163.com; dkim=pass (verify result: all signatures verified) header.d=entrata.com; spf=pass smtp.mailfrom=bounces+1137616-c1ad-xsj399=163.com@email.entrata.com\r\nDKIM-Domain: entrata.com\r\nDelivery-Result: delivered\r\nIdentity-Alignment: spf,dkim",
+  "input": "samples/failure/[Netease DMARC Failure Report] Rent Reminder.eml",
+  "logs": [
+    "WARNING:Failure report missing required 'Auth-Failure' field (RFC 9991 §4); defaulting to 'dmarc'"
+  ],
+  "msg_date": "2018-09-28T16:48:43+08:00",
+  "options": {},
+  "result": {
+    "arrival_date": "Fri, 28 Sep 2018 16:48:42 +0800",
+    "arrival_date_utc": "2018-09-28 08:48:42",
+    "auth_failure": ["dmarc"],
+    "authentication_mechanisms": ["spf", "dkim"],
+    "authentication_results": "163.com; dkim=pass (verify result: all signatures verified) header.d=entrata.com; spf=pass smtp.mailfrom=bounces+1137616-c1ad-xsj399=163.com@email.entrata.com",
+    "delivery_result": "delivered",
+    "dkim_domain": "entrata.com",
+    "feedback_type": "auth-failure",
+    "original_envelope_id": "N8CowEApcUPo6q1bnXlMAA--.44392S3",
+    "original_mail_from": "<bounces+1137616-c1ad-xsj399=163.com@email.entrata.com>",
+    "original_rcpt_to": null,
+    "parsed_sample": {
+      "attachments": [],
+      "bcc": [],
+      "body": null,
+      "cc": [],
+      "content-type": "text/plain; charset=\"us-ascii\"",
+      "date": "2018-09-28 08:48:39+00:00",
+      "date_header_defects": [
+        {
+          "header": "received",
+          "occurrence": 1,
+          "raw": "from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)",
+          "reason": "invalid-date-syntax",
+          "recovered": false,
+          "value": null
+        },
+        {
+          "header": "received",
+          "occurrence": 0,
+          "raw": "by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242",
+          "reason": "invalid-date-syntax",
+          "recovered": false,
+          "value": null
+        }
+      ],
+      "filename_safe_subject": "Rent Reminder",
+      "from": {
+        "address": "info@cardinal.com",
+        "display_name": "700 on Washington",
+        "domain": "cardinal.com",
+        "local": "info"
+      },
+      "headers": {
+        "Content-Type": "text/plain; charset=\"us-ascii\"",
+        "Date": "Fri, 28 Sep 2018 04:48:39 -0400",
+        "From": [["700 on Washington", "info@cardinal.com"]],
+        "MIME-Version": "1.0",
+        "Message-ID": "<oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>",
+        "Received": [
+          "by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242",
+          "from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)"
+        ],
+        "Subject": "Rent Reminder",
+        "Thread-Index": "AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==",
+        "Thread-Topic": "Rent Reminder",
+        "To": [["", "redacted@163.com"]],
+        "X-MS-Exchange-MessageSentRepresentingType": "1",
+        "X-MS-Exchange-Organization-RecordReviewCfmType": "0",
+        "X-MS-Has-Attach": "",
+        "X-MS-TNEF-Correlator": ""
+      },
+      "message-id": "<oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>",
+      "mime-version": "1.0",
+      "received": [
+        {
+          "by": "ismtpd0007p1las1.sendgrid.net (SG)",
+          "date": "Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)",
+          "delay": 0,
+          "for": "<system@entrata.com>",
+          "from": "MTEzNzYxNg (unknown [198.190.14.10])",
+          "hop": 1,
+          "id": "oguVx1AxQayV5Sv2nYK-rA",
+          "with": "HTTP"
+        },
+        {
+          "by": "filter1356p1mdw1.sendgrid.net",
+          "date": "2018-09-28 08:48:36.858842501 +0000 UTC",
+          "delay": 0,
+          "hop": 2,
+          "id": "filter1356p1mdw1-30359-5BADEAE4-E",
+          "with": "SMTP"
+        }
+      ],
+      "reply_to": [],
+      "subject": "Rent Reminder",
+      "thread-index": "AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==",
+      "thread-topic": "Rent Reminder",
+      "timezone": "-4.0",
+      "to": [
+        {
+          "address": "redacted@163.com",
+          "display_name": null,
+          "domain": "163.com",
+          "local": "redacted"
+        }
+      ],
+      "to_domains": ["163.com"],
+      "x-ms-exchange-messagesentrepresentingtype": "1",
+      "x-ms-exchange-organization-recordreviewcfmtype": "0"
+    },
+    "reported_domain": "cardinal.com",
+    "sample": "Received: by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242\nReceived: from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)\nFrom: 700 on Washington <info@cardinal.com>\nTo: \"redacted@163.com\" <redacted@163.com>\nSubject: Rent Reminder\nThread-Topic: Rent Reminder\nThread-Index: AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==\nX-MS-Exchange-MessageSentRepresentingType: 1\nDate: Fri, 28 Sep 2018 04:48:39 -0400\nMessage-ID: <oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>\nX-MS-Has-Attach: \nX-MS-TNEF-Correlator: \nX-MS-Exchange-Organization-RecordReviewCfmType: 0\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\n\n",
+    "sample_headers_only": true,
+    "source": {
+      "as_domain": "sendgrid.com",
+      "as_name": "SendGrid, Inc.",
+      "asn": 11377,
+      "base_domain": null,
+      "country": "US",
+      "ip_address": "167.89.69.24",
+      "name": "Twilio SendGrid",
+      "reverse_dns": null,
+      "type": "Marketing"
+    },
+    "user_agent": "NtesDmarcReporter/1.0",
+    "version": "1"
+  },
+  "rows": [
+    {
+      "arrival_date": "Fri, 28 Sep 2018 16:48:42 +0800",
+      "arrival_date_utc": "2018-09-28 08:48:42",
+      "auth_failure": "dmarc",
+      "authentication_mechanisms": "spf,dkim",
+      "authentication_results": "163.com; dkim=pass (verify result: all signatures verified) header.d=entrata.com; spf=pass smtp.mailfrom=bounces+1137616-c1ad-xsj399=163.com@email.entrata.com",
+      "delivery_result": "delivered",
+      "dkim_domain": "entrata.com",
+      "feedback_type": "auth-failure",
+      "original_envelope_id": "N8CowEApcUPo6q1bnXlMAA--.44392S3",
+      "original_mail_from": "<bounces+1137616-c1ad-xsj399=163.com@email.entrata.com>",
+      "original_rcpt_to": null,
+      "reported_domain": "cardinal.com",
+      "sample_headers_only": true,
+      "source_as_domain": "sendgrid.com",
+      "source_as_name": "SendGrid, Inc.",
+      "source_asn": 11377,
+      "source_base_domain": null,
+      "source_country": "US",
+      "source_ip_address": "167.89.69.24",
+      "source_name": "Twilio SendGrid",
+      "source_reverse_dns": null,
+      "source_type": "Marketing",
+      "subject": "Rent Reminder",
+      "user_agent": "NtesDmarcReporter/1.0",
+      "version": "1"
+    }
+  ],
+  "sample": "Received: by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242\nReceived: from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)\nFrom: 700 on Washington <info@cardinal.com>\nTo: \"redacted@163.com\" <redacted@163.com>\nSubject: Rent Reminder\nThread-Topic: Rent Reminder\nThread-Index: AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==\nX-MS-Exchange-MessageSentRepresentingType: 1\nDate: Fri, 28 Sep 2018 04:48:39 -0400\nMessage-ID: <oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>\nX-MS-Has-Attach: \nX-MS-TNEF-Correlator: \nX-MS-Exchange-Organization-RecordReviewCfmType: 0\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\n\n"
+}

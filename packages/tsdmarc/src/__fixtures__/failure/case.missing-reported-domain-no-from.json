@@ -1,0 +1,15 @@
+{
+  "error": {
+    "message": "The failure report has no Reported-Domain field, and no domain could be parsed from the From header of the included sample message",
+    "type": "InvalidFailureReport"
+  },
+  "feedback_report": "Feedback-Type: auth-failure\nUser-Agent: test/1.0\nVersion: 1\nOriginal-Mail-From: sender@example.com\nArrival-Date: Thu, 1 Jan 2024 00:00:00 +0000\nSource-IP: 203.0.113.1\nAuth-Failure: dmarc",
+  "input": "case missing-reported-domain-no-from",
+  "logs": [
+    "WARNING:Failure report missing required 'Identity-Alignment' field (RFC 9991 §4); defaulting to no aligned mechanisms",
+    "WARNING:Failure report missing required 'Authentication-Results' field (RFC 6591 §3.1); defaulting to None"
+  ],
+  "msg_date": "2024-01-01T00:00:00+00:00",
+  "options": {},
+  "sample": "To: someone@example.org\r\nSubject: hello\r\n"
+}

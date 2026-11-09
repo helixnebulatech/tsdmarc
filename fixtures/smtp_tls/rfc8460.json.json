@@ -1,0 +1,53 @@
+{
+  "csv": "organization_name,begin_date,end_date,report_id,result_type,successful_session_count,failed_session_count,policy_domain,policy_type,policy_strings,mx_host_patterns,sending_mta_ip,receiving_ip,receiving_mx_hostname,receiving_mx_helo,additional_info_uri,failure_reason_code\r\nCompany-X,2016-04-01T00:00:00Z,2016-04-01T23:59:59Z,5065427c-23d3-47ca-b6e0-946ea0e8c4be,,5326,303,company-y.example,sts,version: STSv1|mode: testing|mx: *.mail.company-y.example|max_age: 86400,,,,,,,\r\nCompany-X,2016-04-01T00:00:00Z,2016-04-01T23:59:59Z,5065427c-23d3-47ca-b6e0-946ea0e8c4be,certificate-expired,,100,,,version: STSv1|mode: testing|mx: *.mail.company-y.example|max_age: 86400,,2001:db8:abcd:0012::1,,mx1.mail.company-y.example,,,\r\nCompany-X,2016-04-01T00:00:00Z,2016-04-01T23:59:59Z,5065427c-23d3-47ca-b6e0-946ea0e8c4be,starttls-not-supported,,200,,,version: STSv1|mode: testing|mx: *.mail.company-y.example|max_age: 86400,,2001:db8:abcd:0013::1,203.0.113.56,mx2.mail.company-y.example,,https://reports.company-x.example/report_info?id=5065427c-23d3#StarttlsNotSupported,\r\nCompany-X,2016-04-01T00:00:00Z,2016-04-01T23:59:59Z,5065427c-23d3-47ca-b6e0-946ea0e8c4be,validation-failure,,3,,,version: STSv1|mode: testing|mx: *.mail.company-y.example|max_age: 86400,,198.51.100.62,203.0.113.58,mx-backup.mail.company-y.example,,,X509_V_ERR_PROXY_PATH_LENGTH_EXCEEDED\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "begin_date": "2016-04-01T00:00:00Z",
+      "contact_info": "sts-reporting@company-x.example",
+      "end_date": "2016-04-01T23:59:59Z",
+      "organization_name": "Company-X",
+      "policies": [
+        {
+          "failed_session_count": 303,
+          "failure_details": [
+            {
+              "failed_session_count": 100,
+              "receiving_mx_hostname": "mx1.mail.company-y.example",
+              "result_type": "certificate-expired",
+              "sending_mta_ip": "2001:db8:abcd:0012::1"
+            },
+            {
+              "additional_info_uri": "https://reports.company-x.example/report_info?id=5065427c-23d3#StarttlsNotSupported",
+              "failed_session_count": 200,
+              "receiving_ip": "203.0.113.56",
+              "receiving_mx_hostname": "mx2.mail.company-y.example",
+              "result_type": "starttls-not-supported",
+              "sending_mta_ip": "2001:db8:abcd:0013::1"
+            },
+            {
+              "failed_session_count": 3,
+              "failure_reason_code": "X509_V_ERR_PROXY_PATH_LENGTH_EXCEEDED",
+              "receiving_ip": "203.0.113.58",
+              "receiving_mx_hostname": "mx-backup.mail.company-y.example",
+              "result_type": "validation-failure",
+              "sending_mta_ip": "198.51.100.62"
+            }
+          ],
+          "policy_domain": "company-y.example",
+          "policy_strings": [
+            "version: STSv1",
+            "mode: testing",
+            "mx: *.mail.company-y.example",
+            "max_age: 86400"
+          ],
+          "policy_type": "sts",
+          "successful_session_count": 5326
+        }
+      ],
+      "report_id": "5065427c-23d3-47ca-b6e0-946ea0e8c4be"
+    },
+    "report_type": "smtp_tls"
+  },
+  "sample": "smtp_tls/rfc8460.json"
+}

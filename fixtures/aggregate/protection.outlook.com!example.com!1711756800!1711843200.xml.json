@@ -1,0 +1,82 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\n1.0,outlook.com,dmarcreport@microsoft.com,,cfeafefe4129445e8c81018bd9177197,2024-03-30 00:00:00,2024-03-31 00:00:00,False,,example.com,r,r,none,none,,100,0,,,100.24.188.149,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,1,False,False,False,none,,,example.com,example.com,hotmail.com,,,,example.com,mfrom,fail\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": "0",
+        "np": null,
+        "p": "none",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "fail",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": "hotmail.com",
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-03-30 00:00:00",
+          "interval_end": "2024-03-31 00:00:00",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "100.24.188.149",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2024-03-30 00:00:00",
+        "end_date": "2024-03-31 00:00:00",
+        "errors": [],
+        "generator": null,
+        "org_email": "dmarcreport@microsoft.com",
+        "org_extra_contact_info": null,
+        "org_name": "outlook.com",
+        "original_timespan_seconds": 86400,
+        "report_id": "cfeafefe4129445e8c81018bd9177197",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": "http://www.w3.org/2001/XMLSchema",
+      "xml_schema": "1.0"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/protection.outlook.com!example.com!1711756800!1711843200.xml"
+}

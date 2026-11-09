@@ -1,0 +1,35 @@
+{
+  "input": "cases/close-boundary-missing.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "part one\n--- mail_boundary ---\npart two, no close",
+    "cc": [],
+    "content-type": "multipart/mixed; boundary=\"ZZ\"",
+    "date": null,
+    "defects": [
+      {
+        "multipart/mixed": [
+          "CloseBoundaryNotFoundDefect: A start boundary was found, but not the corresponding close boundary."
+        ]
+      }
+    ],
+    "defects_categories": ["CloseBoundaryNotFoundDefect"],
+    "filename_safe_subject": "close boundary missing",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Content-Type": "multipart/mixed; boundary=\"ZZ\"",
+      "From": [["", "a@example.com"]],
+      "Subject": "close boundary missing"
+    },
+    "reply_to": [],
+    "subject": "close boundary missing",
+    "to": []
+  }
+}

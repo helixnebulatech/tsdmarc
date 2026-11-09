@@ -1,0 +1,20 @@
+From: CRLF Sender <crlf@example.com>
+To: rcpt@example.com
+Subject: CRLF
+ subject continued
+Date: 30 Apr 2019 04:09:09 GMT
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="alt"
+
+preamble
+--alt
+Content-Type: text/plain
+
+line one
+line two
+--alt
+Content-Type: text/html
+
+<p>html</p>
+--alt--
+epilogue

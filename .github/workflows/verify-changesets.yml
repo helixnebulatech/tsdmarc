@@ -1,0 +1,53 @@
+# Like vercel/ai: a PR that changes a published package must add a changeset.
+name: Verify Changesets
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+    branches:
+      - main
+    paths:
+      - '.changeset/*.md'
+      - 'packages/**'
+  # Dispatched by the release workflow for the "Version Packages" PR. The job
+  # is skipped there (that PR consumes the changesets), which still
+  # satisfies the required check.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-changesets:
+    name: Verify Changesets
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # The branch of the "Version Packages" PR. The repository is compared too
+    # because a fork can give any name to its branch.
+    if: >
+      github.event_name == 'pull_request' && !(github.head_ref == 'changeset-release/main' && github.event.pull_request.head.repo.full_name == github.repository)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check for a changeset
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          SKIP: ${{ contains(github.event.pull_request.labels.*.name, 'no-changeset') }}
+        run: |
+          if [ "$SKIP" = "true" ]; then
+            echo "Skipped by the no-changeset label."
+            exit 0
+          fi
+          source_files="$(git diff --name-only "$BASE_SHA" HEAD -- 'packages/*/src/**' 'packages/*/resources/**' 'packages/*/data/**' ':!**/*.test.ts' ':!**/__fixtures__/**')"
+          manifests="$(node .github/scripts/changed-manifests.mjs "$BASE_SHA")"
+          package_files="$(printf '%s\n%s\n' "$source_files" "$manifests" | sed '/^$/d')"
+          changesets="$(git diff --diff-filter=d --name-only "$BASE_SHA" HEAD -- '.changeset/*.md' ':!.changeset/README.md')"
+          if [ -n "$package_files" ] && [ -z "$changesets" ]; then
+            echo "These package files changed without a changeset (run 'pnpm changeset'):"
+            echo "$package_files"
+            exit 1
+          fi
+          echo "OK"

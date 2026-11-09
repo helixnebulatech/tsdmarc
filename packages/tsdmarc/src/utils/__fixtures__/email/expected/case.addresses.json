@@ -1,0 +1,126 @@
+{
+  "input": "cases/addresses.eml",
+  "result": {
+    "address_header_defects": [
+      {
+        "candidates": [
+          {
+            "address": "a@[192.0.2.1]",
+            "display_name": ""
+          }
+        ],
+        "header": "bcc",
+        "occurrence": 0,
+        "raw": "a@[192.0.2.1]",
+        "reason": "structural-recovery",
+        "recovered": true
+      },
+      {
+        "candidates": [],
+        "header": "bcc",
+        "occurrence": 0,
+        "raw": " x@y@z.com",
+        "reason": "invalid-or-ambiguous-address",
+        "recovered": false
+      },
+      {
+        "candidates": [
+          {
+            "address": "one@example.com",
+            "display_name": "Name"
+          },
+          {
+            "address": "two@example.com",
+            "display_name": ""
+          }
+        ],
+        "header": "reply-to",
+        "occurrence": 0,
+        "raw": "Name <one@example.com> <two@example.com>",
+        "reason": "ambiguous-angle-address",
+        "recovered": false
+      }
+    ],
+    "attachments": [],
+    "bcc": [
+      {
+        "address": "a@[192.0.2.1]",
+        "display_name": null,
+        "domain": "[192.0.2.1]",
+        "local": "a"
+      },
+      {
+        "address": "\"weird\"@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "\"weird\""
+      }
+    ],
+    "body": "body\n",
+    "cc": [
+      {
+        "address": "e@example.com",
+        "display_name": "Élèn",
+        "domain": "example.com",
+        "local": "e"
+      }
+    ],
+    "date": null,
+    "defects": [
+      {
+        "address-headers": [
+          "AddressHeaderDefect: bcc[0]: structural-recovery",
+          "AddressHeaderDefect: bcc[0]: invalid-or-ambiguous-address",
+          "AddressHeaderDefect: reply-to[0]: ambiguous-angle-address"
+        ]
+      }
+    ],
+    "defects_categories": ["AddressHeaderDefect"],
+    "filename_safe_subject": "addresses",
+    "from": {
+      "address": "first.last@example.com",
+      "display_name": "Last, First (comment)",
+      "domain": "example.com",
+      "local": "first.last"
+    },
+    "has_defects": true,
+    "headers": {
+      "Bcc": [
+        ["", "a@[192.0.2.1]"],
+        ["", "\"weird\"@example.com"]
+      ],
+      "Cc": [["Élèn", "e@example.com"]],
+      "From": [["Last, First (comment)", "first.last@example.com"]],
+      "Reply-To": [],
+      "Subject": "addresses",
+      "To": [
+        ["", "angle-only@example.com"],
+        ["Plain Name", "plain@example.com"],
+        ["Quoted \"Name\"", "q@example.com"]
+      ]
+    },
+    "reply_to": [],
+    "subject": "addresses",
+    "to": [
+      {
+        "address": "angle-only@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "angle-only"
+      },
+      {
+        "address": "plain@example.com",
+        "display_name": "Plain Name",
+        "domain": "example.com",
+        "local": "plain"
+      },
+      {
+        "address": "q@example.com",
+        "display_name": "Quoted \"Name\"",
+        "domain": "example.com",
+        "local": "q"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

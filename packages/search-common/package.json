@@ -1,0 +1,30 @@
+{
+  "name": "@tsdmarc/search-common",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal: code shared by @tsdmarc/elasticsearch and @tsdmarc/opensearch (bundled into both, never published)",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./documents": "./src/documents.ts",
+    "./dsl": "./src/dsl.ts",
+    "./ip": "./src/ip.ts",
+    "./python": "./src/python.ts",
+    "./resume": "./src/resume.ts"
+  },
+  "scripts": {
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@types/node": "26.6.5",
+    "tsdmarc": "workspace:*",
+    "vitest": "5.0.5"
+  },
+  "peerDependencies": {
+    "tsdmarc": "workspace:^"
+  }
+}

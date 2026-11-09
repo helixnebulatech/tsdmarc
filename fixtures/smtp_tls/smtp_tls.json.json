@@ -1,0 +1,45 @@
+{
+  "csv": "organization_name,begin_date,end_date,report_id,result_type,successful_session_count,failed_session_count,policy_domain,policy_type,policy_strings,mx_host_patterns,sending_mta_ip,receiving_ip,receiving_mx_hostname,receiving_mx_helo,additional_info_uri,failure_reason_code\r\nExample Inc.,2024-01-09T00:00:00Z,2024-01-09T23:59:59Z,2024-01-09T00:00:00Z_example.com,,0,3,example.com,sts,version: STSv1|mode: testing|mx: example.com|max_age: 86400,,,,,,,\r\nExample Inc.,2024-01-09T00:00:00Z,2024-01-09T23:59:59Z,2024-01-09T00:00:00Z_example.com,validation-failure,,2,,,version: STSv1|mode: testing|mx: example.com|max_age: 86400,,209.85.222.201,173.212.201.41,example.com,,,\r\nExample Inc.,2024-01-09T00:00:00Z,2024-01-09T23:59:59Z,2024-01-09T00:00:00Z_example.com,validation-failure,,1,,,version: STSv1|mode: testing|mx: example.com|max_age: 86400,,209.85.208.176,173.212.201.41,example.com,,,\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "begin_date": "2024-01-09T00:00:00Z",
+      "contact_info": "smtp-tls-reporting@example.com",
+      "end_date": "2024-01-09T23:59:59Z",
+      "organization_name": "Example Inc.",
+      "policies": [
+        {
+          "failed_session_count": 3,
+          "failure_details": [
+            {
+              "failed_session_count": 2,
+              "receiving_ip": "173.212.201.41",
+              "receiving_mx_hostname": "example.com",
+              "result_type": "validation-failure",
+              "sending_mta_ip": "209.85.222.201"
+            },
+            {
+              "failed_session_count": 1,
+              "receiving_ip": "173.212.201.41",
+              "receiving_mx_hostname": "example.com",
+              "result_type": "validation-failure",
+              "sending_mta_ip": "209.85.208.176"
+            }
+          ],
+          "policy_domain": "example.com",
+          "policy_strings": [
+            "version: STSv1",
+            "mode: testing",
+            "mx: example.com",
+            "max_age: 86400"
+          ],
+          "policy_type": "sts",
+          "successful_session_count": 0
+        }
+      ],
+      "report_id": "2024-01-09T00:00:00Z_example.com"
+    },
+    "report_type": "smtp_tls"
+  },
+  "sample": "smtp_tls/smtp_tls.json"
+}

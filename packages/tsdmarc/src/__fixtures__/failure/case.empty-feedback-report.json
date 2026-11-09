@@ -1,0 +1,12 @@
+{
+  "error": {
+    "message": "Missing value: 'source_ip'",
+    "type": "InvalidFailureReport"
+  },
+  "feedback_report": "",
+  "input": "case empty-feedback-report",
+  "logs": [],
+  "msg_date": "2024-01-01T00:00:00+00:00",
+  "options": {},
+  "sample": "From: sender@example.com\nTo: recipient@example.com\nSubject: Test\nDate: Thu, 1 Jan 2024 00:00:00 +0000\n\nTest body"
+}

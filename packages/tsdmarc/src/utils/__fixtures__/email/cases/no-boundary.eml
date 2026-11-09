@@ -1,0 +1,5 @@
+From: a@example.com
+Subject: multipart without boundary
+Content-Type: multipart/mixed
+
+just text

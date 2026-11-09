@@ -1,0 +1,128 @@
+---
+title: Quick start
+description: Parse your first DMARC report with the library and with the tsdmarc command.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## With the library
+
+<Steps>
+
+1. Install the core package:
+
+   ```sh
+   npm install tsdmarc
+   ```
+
+2. Parse a report file. `parseReportFile()` accepts a path, bytes or a stream, detects zip/gzip compression and tells you what kind of report it found:
+
+   ```ts title="parse.ts"
+   import { parseReportFile } from 'tsdmarc';
+
+   const parsed = await parseReportFile(
+     'example.com!1529366400!1529452799.xml.gz',
+   );
+
+   if (parsed.reportType === 'aggregate') {
+     const { reportMetadata, policyPublished, records } = parsed.report;
+     console.log(reportMetadata.orgName, policyPublished.domain);
+     for (const record of records) {
+       console.log(
+         record.source.ipAddress,
+         record.source.baseDomain,
+         record.count,
+         record.alignment.dmarc ? 'pass' : 'fail',
+       );
+     }
+   }
+   ```
+
+3. Run it with Node.js 24+ (type stripping), Bun or Deno:
+
+   ```sh
+   node parse.ts
+   bun parse.ts
+   deno run --allow-all parse.ts
+   ```
+
+4. Save the results as parsedmarc-compatible JSON and CSV files:
+
+   ```ts
+   import { parseReportFile, saveOutput } from 'tsdmarc';
+   import type { ParsingResults } from 'tsdmarc';
+
+   const results: ParsingResults = {
+     aggregateReports: [],
+     failureReports: [],
+     smtpTlsReports: [],
+   };
+
+   for (const file of ['report1.xml.zip', 'report2.eml', 'tls.json']) {
+     const parsed = await parseReportFile(file);
+     if (parsed.reportType === 'aggregate') {
+       results.aggregateReports.push(parsed.report);
+     } else if (parsed.reportType === 'failure') {
+       results.failureReports.push(parsed.report);
+     } else {
+       results.smtpTlsReports.push(parsed.report);
+     }
+   }
+
+   // aggregate.json, aggregate.csv, failure.json, failure.csv,
+   // smtp_tls.json, smtp_tls.csv and samples/ in ./output
+   await saveOutput(results, { outputDirectory: 'output' });
+   ```
+
+</Steps>
+
+Next: [Using the library](../../guides/library/).
+
+## With the command-line tool
+
+<Steps>
+
+1. Install the CLI:
+
+   ```sh
+   npm install --global @tsdmarc/cli
+   ```
+
+2. Parse files and print the results as JSON:
+
+   ```sh
+   tsdmarc reports/*.xml.gz reports/*.eml
+   ```
+
+3. Write JSON and CSV files instead:
+
+   ```sh
+   tsdmarc --output ./output reports/
+   ```
+
+4. Process a mailbox with a configuration file. Create `/etc/tsdmarc.ini`:
+
+   ```ini title="/etc/tsdmarc.ini"
+   [general]
+   save_aggregate = True
+   save_failure = True
+   output = /var/lib/tsdmarc/output
+
+   [imap]
+   host = imap.example.com
+   user = dmarcreports@example.com
+   password = $uperSecure
+
+   [mailbox]
+   watch = True
+   ```
+
+   and run:
+
+   ```sh
+   tsdmarc -c /etc/tsdmarc.ini
+   ```
+
+</Steps>
+
+An existing parsedmarc configuration file works as is. Next: [CLI usage](../../guides/cli/) and the [configuration reference](../../guides/configuration/).

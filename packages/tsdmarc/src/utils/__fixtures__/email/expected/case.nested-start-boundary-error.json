@@ -1,0 +1,7 @@
+{
+  "error": {
+    "message": "'NoneType' object has no attribute 'index'",
+    "type": "AttributeError"
+  },
+  "input": "cases/nested-start-boundary-error.eml"
+}

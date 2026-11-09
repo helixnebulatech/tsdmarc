@@ -1,0 +1,1520 @@
+{
+  "emails": {
+    "attachment-gzip-aggregate": {
+      "message": "Content-Type: multipart/mixed; boundary=\"===============6184858321598312303==\"\nMIME-Version: 1.0\nFrom: dmarc@example.com\nSubject: Report\nDate: Thu, 1 Jan 2024 00:00:00 +0000\n\n--===============6184858321598312303==\nContent-Type: application/gzip\nMIME-Version: 1.0\nContent-Transfer-Encoding: base64\nContent-Disposition: attachment; filename=\"report.gz\"\n\nH4sIAAAAAAAC/32STW7DIBCF9z1FlX2MnVRRFlPSmyAM4wSFPwFO09sXip3YilRvmHnDvPkAw+lu\n9PsNQ1TOfm66pt2c6BsMiLLn4kohoHchMYOJS544BRfOzHKDFO/ceI2NcAbIQwU0XGkqDQ/ia7Wl\nFmZDJanp3X2bMKZtt9sDeRYgT0IWuD1nvx7PytLucGzrB6QqgFZW+Xj4KHLJgSxbyQu8d1qJH+bH\nXqt4wTLKZSy7PsykgafWWQTis9VrZ0DhQlndN4XoxiCQKU937b5pm67bNx2QpwzCjTbRrNVgRsEb\n12NmLigqehdVyi8xDV4qIK/KUM9jzHoJIfphykv0QFw4kj82JdEmNaj8yBQuyCUGNgRn1odeFoCs\neviYLixgHHWKdey/11Z3TmhTMjOurch8h+Txw/0C5lGi9JECAAA=\n\n--===============6184858321598312303==--\n",
+      "result": {
+        "report": {
+          "policy_published": {
+            "adkim": "r",
+            "aspf": "r",
+            "discovery_method": null,
+            "domain": "example.com",
+            "fo": null,
+            "np": null,
+            "p": "none",
+            "pct": null,
+            "sp": "none",
+            "testing": null
+          },
+          "records": [
+            {
+              "alignment": {
+                "dkim": true,
+                "dmarc": true,
+                "spf": true
+              },
+              "auth_results": {
+                "dkim": [],
+                "spf": [
+                  {
+                    "domain": "example.com",
+                    "human_result": null,
+                    "result": "pass",
+                    "scope": "mfrom"
+                  }
+                ]
+              },
+              "count": 1,
+              "identifiers": {
+                "envelope_from": "example.com",
+                "envelope_to": null,
+                "header_from": "example.com"
+              },
+              "interval_begin": "2023-03-28 10:40:00",
+              "interval_end": "2023-03-29 10:40:00",
+              "normalized_timespan": false,
+              "policy_evaluated": {
+                "disposition": "none",
+                "dkim": "pass",
+                "policy_override_reasons": [],
+                "spf": "pass"
+              },
+              "source": {
+                "as_domain": null,
+                "as_name": null,
+                "asn": null,
+                "base_domain": null,
+                "country": null,
+                "ip_address": "203.0.113.1",
+                "name": null,
+                "reverse_dns": null,
+                "type": null
+              }
+            }
+          ],
+          "report_metadata": {
+            "begin_date": "2023-03-28 10:40:00",
+            "end_date": "2023-03-29 10:40:00",
+            "errors": [],
+            "generator": null,
+            "org_email": "dmarc@example.com",
+            "org_extra_contact_info": null,
+            "org_name": "example.com",
+            "original_timespan_seconds": 86400,
+            "report_id": "mbox-test-123",
+            "timespan_requires_normalization": false
+          },
+          "xml_namespace": null,
+          "xml_schema": "draft"
+        },
+        "report_type": "aggregate"
+      }
+    },
+    "attachment-gzip-smtp-tls": {
+      "message": "Content-Type: multipart/mixed; boundary=\"===============2625517033453468480==\"\nMIME-Version: 1.0\nFrom: dmarc@example.com\nSubject: Report\nDate: Thu, 1 Jan 2024 00:00:00 +0000\n\n--===============2625517033453468480==\nContent-Type: application/tlsrpt-gz\nMIME-Version: 1.0\nContent-Transfer-Encoding: base64\nContent-Disposition: attachment; filename=\"report.gz\"\n\nH4sIAAAAAAAC/3WQwUoEMQyGX2Xp2Upn1INz8uIbeNrFQ2g7S6FNhjYFZ4d5d9PpIoIIgSZ/vj8J\n3RTlK2C4AQdCjZC8mk7q/QvSEr16OCkH7HUGvLbGpgpDZt1EDp0dzfiszSDxYcx0xLkZPbr/uPFp\nenmVOKtdQEvIYFkHnKmBHMub7wc8WkptVvYLydrg7n09NHWhGGzwRcTL1qv1OLKnmtfl2Iyk78pM\nFd2PddWOEgRszO+F7ahSU4LcxzExRF2qtb6UuUoqb/suK+NYkEEMHZohxJr9H8Ls++f+DeGjemtt\nAQAA\n\n--===============2625517033453468480==--\n",
+      "result": {
+        "report": {
+          "begin_date": "2024-01-01T00:00:00Z",
+          "contact_info": "tls@example.com",
+          "end_date": "2024-01-01T23:59:59Z",
+          "organization_name": "Example",
+          "policies": [
+            {
+              "failed_session_count": 0,
+              "policy_domain": "example.com",
+              "policy_type": "no-policy-found",
+              "successful_session_count": 1
+            }
+          ],
+          "report_id": "tls-1"
+        },
+        "report_type": "smtp_tls"
+      }
+    },
+    "attachment-invalid-json": {
+      "error": {
+        "message": "Unable to parse message with subject \"Tls\": Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+        "type": "ParserError"
+      },
+      "message": "From: a@b.c\nSubject: Tls\nMIME-Version: 1.0\nContent-Type: application/octet-stream\nContent-Transfer-Encoding: base64\n\ne25vdCB2YWxpZCBqc29u\n"
+    },
+    "attachment-malformed-xml": {
+      "error": {
+        "message": "Message with subject \"Agg\" is not a valid DMARC report: Unexpected error: 'NoneType' object is not subscriptable",
+        "type": "ParserError"
+      },
+      "message": "From: a@b.c\nSubject: Agg\nMIME-Version: 1.0\nContent-Type: application/octet-stream\nContent-Transfer-Encoding: base64\n\nPGZlZWRiYWNrPjwvZmVlZGJhY2s+\n"
+    },
+    "failure-base64-feedback-body-with-quotes": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============4784724520085207333==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============4784724520085207333==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============4784724520085207333==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\n\nRmVlZGJhY2stVHlwZTogYXV0aC1mYWlsdXJlDQpVc2VyLUFnZW50OiBpdCdzICJxdW90ZWQiXHBhdGgNClZlcnNpb246IDENCk9yaWdpbmFsLU1haWwtRnJvbTogPGJvdW5jZUBleGFtcGxlLmNvbT4NCkFycml2YWwtRGF0ZTogVGh1LCAyNyBBdWcgMjAyNiAxMDowMDowMCArMDAwMA0KU291cmNlLUlQOiAyMDMuMC4xMTMuMTANCkF1dGhlbnRpY2F0aW9uLVJlc3VsdHM6IG14LmV4YW1wbGUuY29tOyBkbWFyYz1mYWlsDQo=\n--===============4784724520085207333==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============4784724520085207333==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "it\\'s \"quoted\"\\\\path",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-base64-feedback-body-without-cte": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============3514099108843621057==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============3514099108843621057==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============3514099108843621057==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\n\nRmVlZGJhY2stVHlwZTogYXV0aC1mYWlsdXJlDQpVc2VyLUFnZW50OiBwYXJzZWRtYXJjLXRlc3RzLzEuMA0KVmVyc2lvbjogMQ0KT3JpZ2luYWwtTWFpbC1Gcm9tOiA8Ym91bmNlQGV4YW1wbGUuY29tPg0KQXJyaXZhbC1EYXRlOiBUaHUsIDI3IEF1ZyAyMDI2IDEwOjAwOjAwICswMDAwDQpTb3VyY2UtSVA6IDIwMy4wLjExMy4xMA0KQXV0aGVudGljYXRpb24tUmVzdWx0czogbXguZXhhbXBsZS5jb207IGRtYXJjPWZhaWwNCg==\n--===============3514099108843621057==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============3514099108843621057==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-base64-feedback-report": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============8673970071638154547==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============8673970071638154547==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============8673970071638154547==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\nContent-Transfer-Encoding: base64\n\nRmVlZGJhY2stVHlwZTogYXV0aC1mYWlsdXJlDQpVc2VyLUFnZW50OiBwYXJzZWRtYXJjLXRlc3RzLzEuMA0KVmVyc2lvbjogMQ0KT3JpZ2luYWwtTWFpbC1Gcm9tOiA8Ym91bmNlQGV4YW1wbGUuY29tPg0KQXJyaXZhbC1EYXRlOiBUaHUsIDI3IEF1ZyAyMDI2IDEwOjAwOjAwICswMDAwDQpTb3VyY2UtSVA6IDIwMy4wLjExMy4xMA0KQXV0aGVudGljYXRpb24tUmVzdWx0czogbXguZXhhbXBsZS5jb207IGRtYXJjPWZhaWwNCg==\n--===============8673970071638154547==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============8673970071638154547==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-base64-sample": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============2278972615762341235==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============2278972615762341235==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============2278972615762341235==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=fail\r\n\n--===============2278972615762341235==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: base64\n\nUmVjZWl2ZWQ6IGZyb20gbWFpbC5leGFtcGxlLmNvbSAobWFpbC5leGFtcGxlLmNvbSBbMjAzLjAuMTEzLjEwXSkNCglieSBteC5leGFtcGxlLmNvbSB3aXRoIEVTTVRQUyBpZCBhYmMxMjM7DQoJVGh1LCAyNyBBdWcgMjAyNiAxMDowMDowMCArMDAwMA0KREtJTS1TaWduYXR1cmU6IHY9MTsgYT1yc2Etc2hhMjU2OyBjPXJlbGF4ZWQvcmVsYXhlZDsgZD1leGFtcGxlLmNvbTsNCglzPXNlbGVjdG9yMTsgaD1mcm9tOnRvOnN1YmplY3Q7DQoJYmg9YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYT07DQoJYj1iYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmJiYmINCkZyb206IHZpY3RpbUBleGFtcGxlLmNvbQ0KVG86IHNvbWVvbmVAZXhhbXBsZS5vcmcNClN1YmplY3Q6IGhlbGxvDQo=\n--===============2278972615762341235==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\r\n\ts=selector1; h=from:to:subject;\r\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\r\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\r\n\ts=selector1; h=from:to:subject;\r\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\r\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\r\n\tby mx.example.com with ESMTPS id abc123;\r\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\r\n\tby mx.example.com with ESMTPS id abc123;\r\n\tThu, 27 Aug 2026 10:00:00 +0000\r\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\r\n\ts=selector1; h=from:to:subject;\r\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\r\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\r\nFrom: victim@example.com\r\nTo: someone@example.org\r\nSubject: hello\r\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-no-reported-domain-no-sample-from": {
+      "error": {
+        "message": "Message with subject \"DMARC Authentication Failure Report\" is not a valid failure DMARC report: The failure report has no Reported-Domain field, and no domain could be parsed from the From header of the included sample message",
+        "type": "InvalidFailureReport"
+      },
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============3212432361724386835==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============3212432361724386835==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============3212432361724386835==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=fail\r\n\n--===============3212432361724386835==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nTo: someone@example.org\nSubject: hello\n\n--===============3212432361724386835==--\n"
+    },
+    "failure-plain": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============5874476656033469766==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============5874476656033469766==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============5874476656033469766==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=fail\r\n\n--===============5874476656033469766==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============5874476656033469766==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-qp-feedback-missing-feedback-type": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============4990238729442660315==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============4990238729442660315==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============4990238729442660315==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\nContent-Transfer-Encoding: quoted-printable\n\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=3Dfail\r\n\n--===============4990238729442660315==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============4990238729442660315==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": null,
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-qp-feedback-report": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============0617507804209576799==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============0617507804209576799==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============0617507804209576799==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\nContent-Transfer-Encoding: quoted-printable\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=3Dfail\r\n\n--===============0617507804209576799==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============0617507804209576799==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-qp-feedback-soft-line-break": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============4350122140730747988==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============4350122140730747988==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============4350122140730747988==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\nContent-Transfer-Encoding: quoted-printable\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dkim=3Dfail header.d=3Dexample.com =\r\nheader.s=3Dselector1 reason=3D\"signature verification failed\"; spf=3Dfail s=\r\nmtp.mailfrom=3Dbounce@example.com; dmarc=3Dfail\r\n\n--===============4350122140730747988==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============4350122140730747988==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dkim=fail header.d=example.com header.s=selector1 reason=\"signature verification failed\"; spf=fail smtp.mailfrom=bounce@example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-qp-sample": {
+      "message": "Content-Type: multipart/report; report-type=\"feedback-report\"; boundary=\"===============2869810400175271419==\"\nMIME-Version: 1.0\nFrom: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\n\n--===============2869810400175271419==\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\n\nThis is a DMARC authentication failure report.\n--===============2869810400175271419==\nContent-Type: message/feedback-report\nMIME-Version: 1.0\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=fail\r\n\n--===============2869810400175271419==\nContent-Type: text/rfc822-headers; charset=\"us-ascii\"\nMIME-Version: 1.0\nContent-Transfer-Encoding: quoted-printable\n\nReceived: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Drelaxed/relaxed; d=3Dexample.com=\n;\n\ts=3Dselector1; h=3Dfrom:to:subject;\n\tbh=3Daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=\naaaaaaa=3D;\n\tb=3Dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb=\nbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n\n--===============2869810400175271419==--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "filename_safe_subject": "hello",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "DKIM-Signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "From": [["", "victim@example.com"]],
+              "Received": "from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000",
+              "Subject": "hello",
+              "To": [["", "someone@example.org"]]
+            },
+            "received": [
+              {
+                "by": "mx.example.com",
+                "date": "Thu, 27 Aug 2026 10:00:00 +0000",
+                "date_utc": "2026-08-27 10:00:00+00:00",
+                "delay": 0,
+                "from": "mail.example.com (mail.example.com [203.0.113.10])",
+                "hop": 1,
+                "id": "abc123",
+                "with": "ESMTPS"
+              }
+            ],
+            "reply_to": [],
+            "subject": "hello",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "Received: from mail.example.com (mail.example.com [203.0.113.10])\n\tby mx.example.com with ESMTPS id abc123;\n\tThu, 27 Aug 2026 10:00:00 +0000\nDKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com;\n\ts=selector1; h=from:to:subject;\n\tbh=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=;\n\tb=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\nFrom: victim@example.com\nTo: someone@example.org\nSubject: hello\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-raw-8bit-sample": {
+      "message": "From: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\nMIME-Version: 1.0\nContent-Type: multipart/report; report-type=feedback-report;\n\tboundary=\"BOUNDARY\"\n\n--BOUNDARY\nContent-Type: text/plain; charset=us-ascii\n\nThis is a DMARC authentication failure report.\n\n--BOUNDARY\nContent-Type: message/feedback-report\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=fail\r\n\n--BOUNDARY\nContent-Type: text/rfc822-headers; charset=\"utf-8\"\n\nFrom: J\u00e9r\u00f4me <victim@example.com>\r\nTo: someone@example.org\r\nSubject: caf\u00e9 r\u00e9sum\u00e9\r\n\n--BOUNDARY--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "filename_safe_subject": "caf\u00e9 r\u00e9sum\u00e9",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": "J\u00e9r\u00f4me",
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "From": [["J\u00e9r\u00f4me", "victim@example.com"]],
+              "Subject": "caf\u00e9 r\u00e9sum\u00e9",
+              "To": [["", "someone@example.org"]]
+            },
+            "reply_to": [],
+            "subject": "caf\u00e9 r\u00e9sum\u00e9",
+            "to": [
+              {
+                "address": "someone@example.org",
+                "display_name": null,
+                "domain": "example.org",
+                "local": "someone"
+              }
+            ],
+            "to_domains": ["example.org"]
+          },
+          "reported_domain": "example.com",
+          "sample": "From: J\u00e9r\u00f4me <victim@example.com>\r\nTo: someone@example.org\r\nSubject: caf\u00e9 r\u00e9sum\u00e9\r\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "failure-raw-latin1-declared-sample": {
+      "message": "From: dmarc-noreply@example.org\nTo: dmarc-reports@example.com\nSubject: DMARC Authentication Failure Report\nMIME-Version: 1.0\nContent-Type: multipart/report; report-type=feedback-report;\n\tboundary=\"BOUNDARY\"\n\n--BOUNDARY\nContent-Type: text/plain; charset=us-ascii\n\nThis is a DMARC authentication failure report.\n\n--BOUNDARY\nContent-Type: message/feedback-report\n\nFeedback-Type: auth-failure\r\nUser-Agent: parsedmarc-tests/1.0\r\nVersion: 1\r\nOriginal-Mail-From: <bounce@example.com>\r\nArrival-Date: Thu, 27 Aug 2026 10:00:00 +0000\r\nSource-IP: 203.0.113.10\r\nAuthentication-Results: mx.example.com; dmarc=fail\r\n\n--BOUNDARY\nContent-Type: text/rfc822-headers; charset=\"iso-8859-1\"\n\nFrom: J\u00e9r\u00f4me <victim@example.com>\r\nSubject: caf\u00e9\r\n\n--BOUNDARY--\n",
+      "result": {
+        "report": {
+          "arrival_date": "Thu, 27 Aug 2026 10:00:00 +0000",
+          "arrival_date_utc": "2026-08-27 10:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "mx.example.com; dmarc=fail",
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": "<bounce@example.com>",
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "filename_safe_subject": "caf\u00e9",
+            "from": {
+              "address": "victim@example.com",
+              "display_name": "J\u00e9r\u00f4me",
+              "domain": "example.com",
+              "local": "victim"
+            },
+            "has_defects": false,
+            "headers": {
+              "From": [["J\u00e9r\u00f4me", "victim@example.com"]],
+              "Subject": "caf\u00e9"
+            },
+            "reply_to": [],
+            "subject": "caf\u00e9",
+            "to": []
+          },
+          "reported_domain": "example.com",
+          "sample": "From: J\u00e9r\u00f4me <victim@example.com>\r\nSubject: caf\u00e9\r\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "parsedmarc-tests/1.0",
+          "version": "1"
+        },
+        "report_type": "failure"
+      }
+    },
+    "no-headers": {
+      "error": {
+        "message": "Message with subject \"None\" is not a valid report",
+        "type": "InvalidDMARCReport"
+      },
+      "message": "not a valid email"
+    },
+    "not-a-report": {
+      "error": {
+        "message": "Message with subject \"Hello World\" is not a valid report",
+        "type": "InvalidDMARCReport"
+      },
+      "message": "From: test@example.com\nSubject: Hello World\nContent-Type: text/plain\n\nThis is not a DMARC report."
+    },
+    "not-a-report-two-subjects": {
+      "error": {
+        "message": "Message with subject \"['one', 'two']\" is not a valid report",
+        "type": "InvalidDMARCReport"
+      },
+      "message": "From: test@example.com\nSubject: one\nSubject: two\n\nhello"
+    },
+    "text-failure-notice": {
+      "message": "From: report@example.com\nSubject: Failure Report\nContent-Type: text/plain\n\nA message claiming to be from you has failed authentication.\nReceived Date: Mon, 01 Jan 2024 00:00:00 +0000\nSender IP Address: 192.0.2.1\ndetected.\nFrom: spoof@example.com\nTo: victim@example.com\nSubject: spam\n",
+      "result": {
+        "report": {
+          "arrival_date": "Mon, 01 Jan 2024 00:00:00 +0000",
+          "arrival_date_utc": "2024-01-01 00:00:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": null,
+          "delivery_result": "other",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "original_envelope_id": null,
+          "original_mail_from": null,
+          "original_rcpt_to": null,
+          "parsed_sample": {
+            "attachments": [],
+            "bcc": [],
+            "body": null,
+            "cc": [],
+            "date": null,
+            "filename_safe_subject": "spam",
+            "from": {
+              "address": "spoof@example.com",
+              "display_name": null,
+              "domain": "example.com",
+              "local": "spoof"
+            },
+            "has_defects": false,
+            "headers": {
+              "From": [["", "spoof@example.com"]],
+              "Subject": "spam",
+              "To": [["", "victim@example.com"]]
+            },
+            "reply_to": [],
+            "subject": "spam",
+            "to": [
+              {
+                "address": "victim@example.com",
+                "display_name": null,
+                "domain": "example.com",
+                "local": "victim"
+              }
+            ],
+            "to_domains": ["example.com"]
+          },
+          "reported_domain": "example.com",
+          "sample": "From: spoof@example.com\nTo: victim@example.com\nSubject: spam\n",
+          "sample_headers_only": true,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "192.0.2.1",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": null,
+          "version": null
+        },
+        "report_type": "failure"
+      }
+    },
+    "text-failure-notice-missing-fields": {
+      "error": {
+        "message": "Unable to parse message with subject \"Failure\": 'received-date'",
+        "type": "InvalidDMARCReport"
+      },
+      "message": "From: a@b.c\nSubject: Failure\nContent-Type: text/plain\n\nA message claiming to be from you has failed. No fields here detected. nothing\n"
+    },
+    "text-failure-notice-without-detected": {
+      "error": {
+        "message": "Unable to parse message with subject \"Failure\": list index out of range",
+        "type": "ParserError"
+      },
+      "message": "From: a@b.c\nSubject: Failure\nContent-Type: text/plain\n\nA message claiming to be from you has failed.\nReceived Date: Mon, 01 Jan 2024 00:00:00 +0000\nSender IP Address: 192.0.2.1\n"
+    },
+    "tlsrpt-gzip": {
+      "message": "From: tls@example.com\nSubject: TLS report\nDate: Mon, 01 Jan 2024 00:00:00 +0000\nMIME-Version: 1.0\nContent-Type: multipart/report; report-type=tlsrpt; boundary=\"B\"\n\n--B\nContent-Type: text/plain\n\nTLS report\n--B\nContent-Type: application/tlsrpt+gzip\nContent-Transfer-Encoding: base64\n\nH4sIAAAAAAAC/3WQwUoEMQyGX2Xp2Upn1INz8uIbeNrFQ2g7S6FNhjYFZ4d5d9PpIoIIgSZ/vj8J3RTlK2C4AQdCjZC8mk7q/QvSEr16OCkH7HUGvLbGpgpDZt1EDp0dzfiszSDxYcx0xLkZPbr/uPFpenmVOKtdQEvIYFkHnKmBHMub7wc8WkptVvYLydrg7n09NHWhGGzwRcTL1qv1OLKnmtfl2Iyk78pMFd2PddWOEgRszO+F7ahSU4LcxzExRF2qtb6UuUoqb/suK+NYkEEMHZohxJr9H8Ls++f+DeGjemttAQAA\n--B--\n",
+      "result": {
+        "report": {
+          "begin_date": "2024-01-01T00:00:00Z",
+          "contact_info": "tls@example.com",
+          "end_date": "2024-01-01T23:59:59Z",
+          "organization_name": "Example",
+          "policies": [
+            {
+              "failed_session_count": 0,
+              "policy_domain": "example.com",
+              "policy_type": "no-policy-found",
+              "successful_session_count": 1
+            }
+          ],
+          "report_id": "tls-1"
+        },
+        "report_type": "smtp_tls"
+      }
+    },
+    "tlsrpt-json": {
+      "message": "From: tls@example.com\nSubject: TLS report\nDate: Mon, 01 Jan 2024 00:00:00 +0000\nMIME-Version: 1.0\nContent-Type: multipart/report; report-type=tlsrpt; boundary=\"B\"\n\n--B\nContent-Type: text/plain\n\nTLS report\n--B\nContent-Type: application/tlsrpt+json\n\n{\"organization-name\": \"Example\", \"date-range\": {\"start-datetime\": \"2024-01-01T00:00:00Z\", \"end-datetime\": \"2024-01-01T23:59:59Z\"}, \"contact-info\": \"tls@example.com\", \"report-id\": \"tls-1\", \"policies\": [{\"policy\": {\"policy-type\": \"no-policy-found\", \"policy-domain\": \"example.com\"}, \"summary\": {\"total-successful-session-count\": 1, \"total-failure-session-count\": 0}}]}\n--B--\n",
+      "result": {
+        "report": {
+          "begin_date": "2024-01-01T00:00:00Z",
+          "contact_info": "tls@example.com",
+          "end_date": "2024-01-01T23:59:59Z",
+          "organization_name": "Example",
+          "policies": [
+            {
+              "failed_session_count": 0,
+              "policy_domain": "example.com",
+              "policy_type": "no-policy-found",
+              "successful_session_count": 1
+            }
+          ],
+          "report_id": "tls-1"
+        },
+        "report_type": "smtp_tls"
+      }
+    },
+    "tlsrpt-json-base64": {
+      "message": "From: tls@example.com\nSubject: TLS report\nDate: Mon, 01 Jan 2024 00:00:00 +0000\nMIME-Version: 1.0\nContent-Type: multipart/report; report-type=tlsrpt; boundary=\"B\"\n\n--B\nContent-Type: text/plain\n\nTLS report\n--B\nContent-Type: application/tlsrpt+json\nContent-Transfer-Encoding: base64\n\neyJvcmdhbml6YXRpb24tbmFtZSI6ICJFeGFtcGxlIiwgImRhdGUtcmFuZ2UiOiB7InN0YXJ0LWRhdGV0aW1lIjogIjIwMjQtMDEtMDFUMDA6MDA6MDBaIiwgImVuZC1kYXRldGltZSI6ICIyMDI0LTAxLTAxVDIzOjU5OjU5WiJ9LCAiY29udGFjdC1pbmZvIjogInRsc0BleGFtcGxlLmNvbSIsICJyZXBvcnQtaWQiOiAidGxzLTEiLCAicG9saWNpZXMiOiBbeyJwb2xpY3kiOiB7InBvbGljeS10eXBlIjogIm5vLXBvbGljeS1mb3VuZCIsICJwb2xpY3ktZG9tYWluIjogImV4YW1wbGUuY29tIn0sICJzdW1tYXJ5IjogeyJ0b3RhbC1zdWNjZXNzZnVsLXNlc3Npb24tY291bnQiOiAxLCAidG90YWwtZmFpbHVyZS1zZXNzaW9uLWNvdW50IjogMH19XX0=\n--B--\n",
+      "result": {
+        "report": {
+          "begin_date": "2024-01-01T00:00:00Z",
+          "contact_info": "tls@example.com",
+          "end_date": "2024-01-01T23:59:59Z",
+          "organization_name": "Example",
+          "policies": [
+            {
+              "failed_session_count": 0,
+              "policy_domain": "example.com",
+              "policy_type": "no-policy-found",
+              "successful_session_count": 1
+            }
+          ],
+          "report_id": "tls-1"
+        },
+        "report_type": "smtp_tls"
+      }
+    },
+    "two-date-headers": {
+      "error": {
+        "message": "'list' object has no attribute 'replace'",
+        "type": "ParserError"
+      },
+      "message": "From: a@b.c\nDate: Mon, 01 Jan 2024 00:00:00 +0000\nDate: Tue, 02 Jan 2024 00:00:00 +0000\nSubject: x\n\nbody"
+    },
+    "unparseable-date": {
+      "error": {
+        "message": "Unknown string format: not-a-real-date",
+        "type": "ParserError"
+      },
+      "message": "From: a@b.c\nDate: not-a-real-date\nSubject: x\n\nbody"
+    }
+  },
+  "mbox": {
+    "8bit-body-latin1-charset": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiB4CkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD1sYXRpbi0xCgpuYe92ZSBjYWbpCg==",
+      "messages": [
+        {
+          "string": "Subject: x\nContent-Type: text/plain; charset=\"iso-8859-1\"\nContent-Transfer-Encoding: quoted-printable\n\nna=EFve caf=E9\n"
+        }
+      ]
+    },
+    "8bit-body-us-ascii-charset": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiB4CkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD11cy1hc2NpaQpDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nOiA4Yml0CgpuYcOvdmUK",
+      "messages": [
+        {
+          "string": "Subject: x\nContent-Type: text/plain; charset=\"us-ascii\"\nContent-Transfer-Encoding: 8bit\n\nna\ufffd\ufffdve\n"
+        }
+      ]
+    },
+    "8bit-body-without-charset": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiB4CgpuYcOvdmUK",
+      "messages": [
+        {
+          "string": "Subject: x\n\nna\ufffd\ufffdve\n"
+        }
+      ]
+    },
+    "8bit-folded-header": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiBwcmVtacOocmUgbGlnbmUKIGRldXhpw6htZSBsaWduZQpYLU90aGVyOiBwbGFpbgoKYm9keQo=",
+      "messages": [
+        {
+          "string": "Subject: =?unknown-8bit?q?premi=C3=A8re_ligne?=\n =?unknown-8bit?q?_deuxi=C3=A8me_ligne?=\nX-Other: plain\n\nbody\n"
+        }
+      ]
+    },
+    "8bit-multipart": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiBtdWx0aQpNSU1FLVZlcnNpb246IDEuMApDb250ZW50LVR5cGU6IG11bHRpcGFydC9taXhlZDsgYm91bmRhcnk9IkIiCgpwcsOpYW1idWxlCi0tQgpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9dXRmLTgKCmjDqQotLUIKQ29udGVudC1UeXBlOiB0ZXh0L2h0bWw7IGNoYXJzZXQ9aXNvLTg4NTktMTUKQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogcXVvdGVkLXByaW50YWJsZQoKPHA+w6k8L3A+Ci0tQi0tCg==",
+      "messages": [
+        {
+          "string": "Subject: multi\nMIME-Version: 1.0\nContent-Type: multipart/mixed; boundary=\"B\"\n\npr\udcc3\udca9ambule\n--B\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: base64\n\naMOp\n\n--B\nContent-Type: text/html; charset=\"iso-8859-15\"\nContent-Transfer-Encoding: quoted-printable\n\n<p>=C3=A9</p>\n--B--\n"
+        }
+      ]
+    },
+    "8bit-unknown-charset": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiB4CkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD14LW5vdC1hLWNoYXJzZXQKCm5hw692ZQo=",
+      "messages": [
+        {
+          "error": {
+            "message": "unknown encoding: x-not-a-charset",
+            "type": "LookupError"
+          }
+        }
+      ]
+    },
+    "8bit-utf8-header-and-body": {
+      "data": "RnJvbSB4IFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiBjYWbDqQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9dXRmLTgKCmjDqSBsbG8K",
+      "messages": [
+        {
+          "string": "Subject: =?unknown-8bit?b?Y2Fmw6k=?=\nContent-Type: text/plain; charset=\"utf-8\"\nContent-Transfer-Encoding: base64\n\naMOpIGxsbwo=\n"
+        }
+      ]
+    },
+    "crlf-lines": {
+      "data": "RnJvbSBhIFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNA0KU3ViamVjdDogeA0KDQpib2R5DQoNCkZyb20gYiBUaHUgSmFuICAxIDAwOjAwOjAwIDIwMjQNClN1YmplY3Q6IHkNCg0KYm9keTINCg==",
+      "messages": [
+        {
+          "string": "Subject: x\n\nbody\n\n"
+        },
+        {
+          "string": "Subject: y\n\nbody2\n"
+        }
+      ]
+    },
+    "empty": {
+      "data": "",
+      "messages": []
+    },
+    "escaped-from-lines": {
+      "data": "RnJvbSBhIFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiB4Cgo+RnJvbSBoZXJlCj4+RnJvbSB0aGVyZQo=",
+      "messages": [
+        {
+          "string": "Subject: x\n\n>From here\n>>From there\n"
+        }
+      ]
+    },
+    "garbage-before-first-from": {
+      "data": "anVuayBsaW5lCkZyb20gYUBleGFtcGxlLmNvbSBUaHUgSmFuICAxIDAwOjAwOjAwIDIwMjQKU3ViamVjdDogeAoKYm9keQo=",
+      "messages": [
+        {
+          "string": "Subject: x\n\nbody\n"
+        }
+      ]
+    },
+    "no-blank-line-between": {
+      "data": "RnJvbSBhIFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiBvbmUKCmZpcnN0CkZyb20gYiBUaHUgSmFuICAxIDAwOjAwOjAwIDIwMjQKU3ViamVjdDogdHdvCgpzZWNvbmQ=",
+      "messages": [
+        {
+          "string": "Subject: one\n\nfirst\n"
+        },
+        {
+          "string": "Subject: two\n\nsecond"
+        }
+      ]
+    },
+    "no-from-line": {
+      "data": "U3ViamVjdDogeAoKYm9keQo=",
+      "messages": []
+    },
+    "two-messages": {
+      "data": "RnJvbSBhQGV4YW1wbGUuY29tIFRodSBKYW4gIDEgMDA6MDA6MDAgMjAyNApTdWJqZWN0OiBvbmUKCmZpcnN0CgpGcm9tIGJAZXhhbXBsZS5jb20gVGh1IEphbiAgMSAwMDowMDowMCAyMDI0ClN1YmplY3Q6IHR3bwoKc2Vjb25kCg==",
+      "messages": [
+        {
+          "string": "Subject: one\n\nfirst\n"
+        },
+        {
+          "string": "Subject: two\n\nsecond\n"
+        }
+      ]
+    }
+  },
+  "mbox_reports": {
+    "mbox": "RnJvbSBNQUlMRVItREFFTU9OIFdlZCBPY3QgMjggMDk6NDM6NTkgMjAyNgpSZXR1cm4tUGF0aDogPG5vcmVwbHktZG1hcmMtc3VwcG9ydEBnb29nbGUuY29tPgpEZWxpdmVyZWQtVG86IGRtYXJjLnJlcG9ydHNAdHdsbmV0LmNvbQpSZWNlaXZlZDogZnJvbSBtYWlsLnR3bG5ldC5jb20gKHVua25vd24gWzEwLjAuMC4xXSkKCSh1c2luZyBUTFN2MS4yIHdpdGggY2lwaGVyIEVDREhFLVJTQS1BRVMyNTYtR0NNLVNIQTM4NCAoMjU2LzI1NiBiaXRzKSkKCShObyBjbGllbnQgY2VydGlmaWNhdGUgcmVxdWVzdGVkKQoJYnkgbWFpbDAxLnR3bG5ldC5jb20gKFBvc3RmaXgpIHdpdGggRVNNVFBTIGlkIDhFNzNFMUZBQjcKCWZvciA8ZG1hcmMucmVwb3J0c0B0d2xuZXQuY29tPjsgTW9uLCAxMSBGZWIgMjAxOSAxMToyMzo0MSArMDEwMCAoQ0VUKQpSZWNlaXZlZDogZnJvbSByZWxheS10d2wtMDEudHdsbmV0LmNvbSAoWzg3LjEwNi4xMjcuMjhdOjU4OTIyKQoJYnkgbWFpbC50d2xuZXQuY29tIHdpdGggZXNtdHBzIChUTFN2MS4yOkRIRS1SU0EtQUVTMjU2LUdDTS1TSEEzODQ6MjU2KQoJKEV4aW0gNC44Ml8xLTViN2E3YzAtWFgpCgkoZW52ZWxvcGUtZnJvbSA8bm9yZXBseS1kbWFyYy1zdXBwb3J0QGdvb2dsZS5jb20+KQoJaWQgMWd0OGtOLTAwMDNBWS0xQgoJZm9yIGRtYXJjLnJlcG9ydHNAdHdsbmV0LmNvbTsgTW9uLCAxMSBGZWIgMjAxOSAxMToyMzozMSArMDEwMApSZWNlaXZlZDogYnkgcmVsYXktdHdsLTAxLnR3bG5ldC5jb20gKFBvc3RmaXgsIGZyb20gdXNlcmlkIDExMikKCWlkIDE1NzcxQTA0ODI7IE1vbiwgMTEgRmViIDIwMTkgMTE6MTU6MDUgKzAxMDAgKENFVCkKWC1DVENILVJlZklEOiBzdHI9MDAwMS4wQTBDMDIxMS41QzYxNEQyMy4wMEMwLHNzPTEscmU9MC4wMDAscmVjdT0wLjAwMCxyZWlwPTAuMDAwLGNsPTEsY2xkPTEsZmdzPTAKQXV0aGVudGljYXRpb24tUmVzdWx0czogcmVsYXktdHdsLTAxLnR3bG5ldC5jb207Cglka2ltPXBhc3MgKDIwNDgtYml0IGtleTsgdW5wcm90ZWN0ZWQpIGhlYWRlci5kPWdvb2dsZS5jb20gaGVhZGVyLmk9QGdvb2dsZS5jb20gaGVhZGVyLmI9Z2xFNzNoRTc7Cglka2ltLWF0cHM9bmV1dHJhbApYLVNwYW0tQ2hlY2tlci1WZXJzaW9uOiBTcGFtQXNzYXNzaW4gMy40LjIgKDIwMTgtMDktMTMpIG9uCglyZWxheS10d2wtMDEudHdsbmV0LmNvbQpYLVNwYW0tTGV2ZWw6IApYLVNwYW0tU3RhdHVzOiBObywgc2NvcmU9LTE0LjcgcmVxdWlyZWQ9My41IHRlc3RzPURBVEVfSU5fUEFTVF8wNl8xMiwKCURLSU1XTF9XTF9NRUQsREtJTV9TSUdORUQsREtJTV9WQUxJRCxES0lNX1ZBTElEX0FVLERLSU1fVkFMSURfRUYsCglES0lNX1ZFUklGSUVELEVOVl9BTkRfSERSX1NQRl9NQVRDSCxSQ1ZEX0lOX0ROU1dMX05PTkUsU1BGX1BBU1MsCglUVkRfU1BBQ0VfUkFUSU8sVVNFUl9JTl9ERUZfREtJTV9XTCxVU0VSX0lOX0RFRl9TUEZfV0wgYXV0b2xlYXJuPW5vCglhdXRvbGVhcm5fZm9yY2U9bm8gdmVyc2lvbj0zLjQuMgpYLUVudmVsb3BlLUZyb206IDxub3JlcGx5LWRtYXJjLXN1cHBvcnRAZ29vZ2xlLmNvbT4KRE1BUkMtRmlsdGVyOiBPcGVuRE1BUkMgRmlsdGVyIHYxLjMuMSByZWxheS10d2wtMDEudHdsbmV0LmNvbSA1MkM1RkEwMjg4CkF1dGhlbnRpY2F0aW9uLVJlc3VsdHM6IHJlbGF5LXR3bC0wMS50d2xuZXQuY29tOyBkbWFyYz1wYXNzIGhlYWRlci5mcm9tPWdvb2dsZS5jb20KUmVjZWl2ZWQtU1BGOiBQYXNzIChzZW5kZXIgU1BGIGF1dGhvcml6ZWQpIGlkZW50aXR5PW1haWxmcm9tOyBjbGllbnQtaXA9MjA5Ljg1LjE2Ni4yMDE7IGhlbG89bWFpbC1pdDEtZjIwMS5nb29nbGUuY29tOyBlbnZlbG9wZS1mcm9tPW5vcmVwbHktZG1hcmMtc3VwcG9ydEBnb29nbGUuY29tOyByZWNlaXZlcj1kbWFyYy5yZXBvcnRzQHR3bG5ldC5jb20KUmVjZWl2ZWQ6IGZyb20gbWFpbC1pdDEtZjIwMS5nb29nbGUuY29tIChtYWlsLWl0MS1mMjAxLmdvb2dsZS5jb20gWzIwOS44NS4xNjYuMjAxXSkKCSh1c2luZyBUTFN2MS4yIHdpdGggY2lwaGVyIEVDREhFLVJTQS1BRVMyNTYtR0NNLVNIQTM4NCAoMjU2LzI1NiBiaXRzKSkKCShObyBjbGllbnQgY2VydGlmaWNhdGUgcmVxdWVzdGVkKQoJYnkgcmVsYXktdHdsLTAxLnR3bG5ldC5jb20gKFBvc3RmaXgpIHdpdGggRVNNVFBTIGlkIDUyQzVGQTAyODgKCWZvciA8ZG1hcmMucmVwb3J0c0B0d2xuZXQuY29tPjsgTW9uLCAxMSBGZWIgMjAxOSAxMToxNDo1NSArMDEwMCAoQ0VUKQpSZWNlaXZlZDogYnkgbWFpbC1pdDEtZjIwMS5nb29nbGUuY29tIHdpdGggU01UUCBpZCBqM3NvMjExMTk0MzdpdGYuNQogICAgICAgIGZvciA8ZG1hcmMucmVwb3J0c0B0d2xuZXQuY29tPjsgTW9uLCAxMSBGZWIgMjAxOSAwMjoxNDo1NSAtMDgwMCAoUFNUKQpES0lNLVNpZ25hdHVyZTogdj0xOyBhPXJzYS1zaGEyNTY7IGM9cmVsYXhlZC9yZWxheGVkOwogICAgICAgIGQ9Z29vZ2xlLmNvbTsgcz0yMDE2MTAyNTsKICAgICAgICBoPW1pbWUtdmVyc2lvbjpkYXRlOm1lc3NhZ2UtaWQ6c3ViamVjdDpmcm9tOnRvOmNvbnRlbnQtZGlzcG9zaXRpb24KICAgICAgICAgOmNvbnRlbnQtdHJhbnNmZXItZW5jb2Rpbmc7CiAgICAgICAgYmg9WTcyMmpRWEZwK3YzRStKOTEvd1Z6QU1uNVRtNWlrUmw2TUlOWGFLS3BCND07CiAgICAgICAgYj1nbEU3M2hFN3lCWVlKVEg1cDkwRU9lRXZySHdTV0xGcWtwSmRoOFA0b3NkNDNycll6bVFseTJvQW95VTJWdE1VU2wKICAgICAgICAgbG1FNGI4bS9Qc1JNN0NLQkVDMWtGcCt4cENvc3FNb2tET1NCdmdRYkFaTDVFbVB2d2lYV01KTW5hUkdMVTFlQkk0S3cKICAgICAgICAgZjU0N3VsVWswRWlsTlVaVHFyV2ZkWTI5K1VzbTU3ak9OU0dOaFlGUkdkbXhlOEw1RHVBejdnZ3RZRkZBcW82WEQ2ZjQKICAgICAgICAgdW93L1pXQ3ZYdDQ3VThOUFF3dnQxREg0TVdsUzN2d3ZFVlFtS3JudXdrUXEweWtjaXExcXpheDg5MXczZXg4M3h3MVIKICAgICAgICAgZUNSUXBUMnRpdTlLNUhxRit5UkNlTCtiTmFrTW1jRm9xSm8vNUxhVnVmYnN2THJrY1UwK2lSY2dwbTU5MlpqVm1RWG0KICAgICAgICAgQUlMQT09ClgtR29vZ2xlLURLSU0tU2lnbmF0dXJlOiB2PTE7IGE9cnNhLXNoYTI1NjsgYz1yZWxheGVkL3JlbGF4ZWQ7CiAgICAgICAgZD0xZTEwMC5uZXQ7IHM9MjAxNjEwMjU7CiAgICAgICAgaD14LWdtLW1lc3NhZ2Utc3RhdGU6bWltZS12ZXJzaW9uOmRhdGU6bWVzc2FnZS1pZDpzdWJqZWN0OmZyb206dG8KICAgICAgICAgOmNvbnRlbnQtZGlzcG9zaXRpb246Y29udGVudC10cmFuc2Zlci1lbmNvZGluZzsKICAgICAgICBiaD1ZNzIyalFYRnArdjNFK0o5MS93VnpBTW41VG01aWtSbDZNSU5YYUtLcEI0PTsKICAgICAgICBiPWtuYjUyWWNMdDNrVXcvdEFsaGxyUkFTaDM3K2dZcXZCbnZKaUc0TDJZVHNVWDRSMzl0WnRMS2Q1Y0k2U0txQ3ZyRAogICAgICAgICByWGp2YVY5bGVsdDloUG94VVdDUlhNelgwV0RGTVV2d0NoenNNTWlnVGJFRU93SFhTVTBqQnovbDlrM2oyb0VBZVRzYwogICAgICAgICAxQjVGbm5RNURpT1ZvQ05CTnY3dTYwUkJrRE1yU0djaGF2OW9YK2dqQmtvbk9NdDZseUw5aHN2bWo1cU1raFpEaTZNNgogICAgICAgICAyTERWaUtwVnZOdGRUWGlrdnhBaHZyT0xQL1dEVERHT1YrMUllcURMeE5yTVVHTnc3bkhlT2Q4VkR5YlN4eDAxcG5jQwogICAgICAgICA1T2dSeUdsRnp1UlhYNENsdUxtNVJERUVnQndJaDcxTWlJWVBsRUNla04xY1hSVTVRTEVIQW5Ia2VteHhhZVR4TlNoWQogICAgICAgICBSUG5RPT0KWC1HbS1NZXNzYWdlLVN0YXRlOiBBSFFVQXVZTXRlWll0c3ZiMXBQUVdxVFFYUUgwZEpwemM0dXRQQ1oxeHBDYytVN0t3aHRra2hicwoJdERHVy8xNEhXZFY3c0NKMEl0VmloQT09ClgtR29vZ2xlLVNtdHAtU291cmNlOiBBSGdJM0libkdrNGw2QXUzL1NvSjd5ZHBDSkladUpJc2pvOEsrZElpMExlcFRoVUd6d3RFeEdqOHlZNnc5Qzg1clZwWmVyaFNPNDV6T0ZJZ3E3QkFzQT09Ck1JTUUtVmVyc2lvbjogMS4wClgtUmVjZWl2ZWQ6IGJ5IDIwMDI6YTVlOmM4MGI6OiB3aXRoIFNNVFAgaWQgeTExbXIxNjU1MTJpb2wuMjAuMTU0OTg4MDA5MDcyMzsKIE1vbiwgMTEgRmViIDIwMTkgMDI6MTQ6NTAgLTA4MDAgKFBTVCkKRGF0ZTogU3VuLCAxMCBGZWIgMjAxOSAxNTo1OTo1OSAtMDgwMApNZXNzYWdlLUlEOiA8MTYyNzcwMzMzMTUzMTY2MDgxOUBnb29nbGUuY29tPgpTdWJqZWN0OiBSZXBvcnQgZG9tYWluOiB0d2xuZXQuY29tIFN1Ym1pdHRlcjogZ29vZ2xlLmNvbSBSZXBvcnQtSUQ6IDE2Mjc3MDMzMzE1MzE2NjA4MTkKRnJvbTogbm9yZXBseS1kbWFyYy1zdXBwb3J0QGdvb2dsZS5jb20KVG86IGRtYXJjLnJlcG9ydHNAdHdsbmV0LmNvbQpDb250ZW50LXR5cGU6IG11bHRpcGFydC9taXhlZDsgYm91bmRhcnk9Ii0tLS0tLS0tLS09XzE1NDk4ODA2MjAtMTIyMDgtMCIKClRoaXMgaXMgYSBtdWx0aS1wYXJ0IG1lc3NhZ2UgaW4gTUlNRSBmb3JtYXQuLi4KCi0tLS0tLS0tLS0tLT1fMTU0OTg4MDYyMC0xMjIwOC0wCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vemlwOwoJbmFtZT0iZ29vZ2xlLmNvbSF0d2xuZXQuY29tITE1NDk3NTY4MDAhMTU0OTg0MzE5OS56aXAiCkNvbnRlbnQtRGlzcG9zaXRpb246IGF0dGFjaG1lbnQ7CglmaWxlbmFtZT0iZ29vZ2xlLmNvbSF0d2xuZXQuY29tITE1NDk3NTY4MDAhMTU0OTg0MzE5OS56aXAiCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IGJhc2U2NAoKVUVzREJBb0FBQUFJQUtKUVMwNEtNa01VNndFQUFLSUVBQUF2QUFBQVoyOXZaMnhsTG1OdmJTRjBkMnh1ClpYUXVZMjl0SVRFMU5EazNOVFk0TURBaE1UVTBPVGcwTXpFNU9TNTRiV3lsVkUxem16QVF2ZWRYTUw0YgpJYkF4N2loS1QvMEY3Wm1SeFlMVmdLU1JSSno4K3dwTGZNVHBUQTg5SWQ3dXZ0MzNWa0JlM29jK2VRTmoKaFpMUE81eG11d1FrVjQyUTNmUHUxODhmKzJxWHZOQW4wZ0kwRjhaZjZWT1NFQU5hR1ZjUDRGakRISnN3Cmp5clQxWklOUUR1bHVoNVNyZ2FDRmpEa3dNQkVUNlh5RFAzSHZobVk0WHM3Nm9udSs3WXM1TVdhZDJkWQp6WlYwakx0YXlGYlJxM1BhZmtNb2xxWnJLV0tJU1hzRGcvSkRXUjZyekhOOXJRL0VVWVpvS0M3ejB5a3IKaWdJZkMxeVdXWVhQQkszaGtPNmxRbTJZN0tJWUQxMmdFNUxpNCtGOE9wWlY1cHNGWkk2RGJPN1I2bERnCnM2ZWMzZ01aK3N5MmROdDZTclRxQmYrbzlYanBoYjNDTW9qeTdranFicjBFRi95S1VJaXo1bFVNMUJJVQpEaEcwdXIxajB6TkFtaHI0RGR3UnBDTmlWOGpPbU9hTzRrbmFkTGlQK3JleHZKbGNtWGxDbzI2TEIxYU4KaGtNdE5LMU9LYzdLRk9lbk5LOThoeVV3cDNJMVN0K01vSENZNGRnUDNsZy9ldGVhT1RCWklheFdWamgvCmUvMnRrdUNkMkNDYnZNa0l6YXczWVBVa1NtNWpZREZtby9HaHAxL1RySXlJQnFRVHJmRGZ6bEoyQmRhQQpxVnVqaGsvcjJlS1I2RXM1WWFPNzFnYnMyTHVWOFdIYWY2dytYdXVKSW9xS0x4dTkwUHY5S2tQekRGZlkKcjNVQkZ1M2JubVRqeXYvMzM1anNiK0tEM2lrNTNDR0MxdC9OSDFCTEFRSUtBQW9BQUFBSUFLSlFTMDRLCk1rTVU2d0VBQUtJRUFBQXZBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQm5iMjluYkdVdVkyOXRJWFIzYkc1bApkQzVqYjIwaE1UVTBPVGMxTmpnd01DRXhOVFE1T0RRek1UazVMbmh0YkZCTEJRWUFBQUFBQVFBQkFGMEEKQUFBNEFnQUFBQUE9CgotLS0tLS0tLS0tLS09XzE1NDk4ODA2MjAtMTIyMDgtMApDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9InV0ZjgiCkNvbnRlbnQtRGlzcG9zaXRpb246IGlubGluZQpDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nOiBxdW90ZWQtcHJpbnRhYmxlCk1JTUUtVmVyc2lvbjogMS4wClgtTWFpbGVyOiBNSU1FLXRvb2xzIDUuNTA1IChFbnRpdHkgNS41MDUpCgpUaGlzIGVtYWlsIHdhcyBWaXJ1cyBjaGVja2VkIGJ5IFNvcGhvcyBVVE0gOS4KClR3aWxpZ2h0LU5ldHdvcmtzIGh0dHBzOi8vd3d3LnR3bG5ldC5jb209CgotLS0tLS0tLS0tLS09XzE1NDk4ODA2MjAtMTIyMDgtMC0tCgpGcm9tIE1BSUxFUi1EQUVNT04gV2VkIE9jdCAyOCAwOTo0Mzo1OSAyMDI2ClJlY2VpdmVkOiBmcm9tIG1haWxmLWNkLmxpbmtlZGluLmNvbSAoWzEwOC4xNzQuNi4yMjhdKQoJYnkgZXhhbXBsZS51cmlwb3J0cy5jb20gd2l0aCBlc210cHMgKFRMUzEuMjpFQ0RIRV9SU0FfQUVTXzI1Nl9HQ01fU0hBMzg0OjI1NikKCShNVEEgMi4yMCkKCShlbnZlbG9wZS1mcm9tIDxkbWFyYy1ub3JlcGx5QGxpbmtlZGluLmNvbT4pCglpZCAxaExJQ3EtMDAwMDF6LUpVCglmb3IgZG1hcmNAZXhhbXBsZS51cmlwb3J0cy5jb207IFR1ZSwgMzAgQXByIDIwMTkgMDI6MDk6MTYgKzAwMDAKUmVjZWl2ZWQ6IGZyb20gWzEyNy4wLjAuMV0gKFtsb2NhbF0pCglieSBtYWlsNTE2LnByb2QubGlua2VkaW4uY29tIChlbnZlbG9wZS1mcm9tIDxkbWFyYy1ub3JlcGx5QGxpbmtlZGluLmNvbT4pCgkoZWNlbGVyaXR5IDMuNi4yMS41MzU2MyByKENvcmU6My42LjIxLjApKSB3aXRoIFVOS05PV04KCWlkIEFBLzAxLTE2MDE4LUQxQUExQ0M1OyBUdWUsIDMwIEFwciAyMDE5IDAyOjA5OjAwICswMDAwCkRhdGU6IFR1ZSwgMzAgQXByIDIwMTkgMDI6MDk6MDAgKzAwMDAKTWVzc2FnZS1JRDogPEJCLjkxLjI2MDE5LkMzRUE3Q0M1QG1haWw1MTYucHJvZC5saW5rZWRpbi5jb20+ClgtTGlua2VkSW4tQ2xhc3M6IEVNQUlMX1JFUE9SVFMKU3ViamVjdDogRE1BUkMgRmFpbHVyZSByZXBvcnQgZm9yIGV4YW1wbGUuY29tIE1haWwtRnJvbTogSVA6MTAuMTAuMTAuMTAKVG86IGRtYXJjLW5vcmVwbHlAbGlua2VkaW4uY29tCkZyb206IGRtYXJjLW5vcmVwbHlAbGlua2VkaW4uY29tCkNvbnRlbnQtVHlwZTogbXVsdGlwYXJ0L3JlcG9ydDsgcmVwb3J0LXR5cGU9ZmVlZGJhY2stcmVwb3J0OwogICAgYm91bmRhcnk9Il8tLS0tYWJjZGVmZ2hpamtsbW5vcHFyc3R1dj09PV9BQS8wMS0xNjAxOC1EMUFBMUNDNSIKUmVjZWl2ZWQtU1BGOiBwYXNzIGNsaWVudC1pcD0xMDguMTc0LjYuMjI4OyBlbnZlbG9wZS1mcm9tPWRtYXJjLW5vcmVwbHlAbGlua2VkaW4uY29tOyBoZWxvPW1haWxmLWNkLmxpbmtlZGluLmNvbQoKLS1fLS0tLWFiY2RlZmdoaWprbG1ub3BxcnN0dXY9PT1fQUEvMDEtMTYwMTgtRDFBQTFDQzUKQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJVUy1BU0NJSSIKQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogN2JpdAoKVGhpcyBpcyBhbiBlbWFpbCBhYnVzZSByZXBvcnQgZm9yIGFuIGVtYWlsIG1lc3NhZ2UgcmVjZWl2ZWQgZnJvbSBJUCAxMC4xMC4xMC4xMCBvbiBUdWUsIDMwIEFwciAyMDE5IDAyOjA5OjAwICswMDAwLgpUaGUgbWVzc2FnZSBiZWxvdyBkaWQgbm90IG1lZXQgdGhlIHNlbmRpbmcgZG9tYWluJ3MgZG1hcmMgcG9saWN5LgpUaGUgbWVzc2FnZSBiZWxvdyBjb3VsZCBoYXZlIGJlZW4gYWNjZXB0ZWQgb3IgcmVqZWN0ZWQgZGVwZW5kaW5nIG9uIHBvbGljeS4KRm9yIG1vcmUgaW5mb3JtYXRpb24gYWJvdXQgdGhpcyBmb3JtYXQgcGxlYXNlIHNlZSBodHRwOi8vdG9vbHMuaWV0Zi5vcmcvaHRtbC9yZmM2NTkxIC4KCi0tXy0tLS1hYmNkZWZnaGlqa2xtbm9wcXJzdHV2PT09X0FBLzAxLTE2MDE4LUQxQUExQ0M1CkNvbnRlbnQtVHlwZTogbWVzc2FnZS9mZWVkYmFjay1yZXBvcnQKCkZlZWRiYWNrLVR5cGU6IGF1dGgtZmFpbHVyZQpVc2VyLUFnZW50OiBMdWEvMS4wClZlcnNpb246IDEuMApPcmlnaW5hbC1NYWlsLUZyb206IApPcmlnaW5hbC1SY3B0LVRvOiByZWNpcGllbnRAbGlua2VkaW4uY29tCkFycml2YWwtRGF0ZTogVHVlLCAzMCBBcHIgMjAxOSAwMjowOTowMCArMDAwMApNZXNzYWdlLUlEOiA8MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDFAQUJBQjAxTVMwMDE2LnNvbWVzZXJ2ZXIubG9jPgpBdXRoZW50aWNhdGlvbi1SZXN1bHRzOiBkbWFyYz1mYWlsIChwPW5vbmU7IGRpcz1ub25lKSBoZWFkZXIuZnJvbT1leGFtcGxlLmNvbQpTb3VyY2UtSVA6IDEwLjEwLjEwLjEwCkRlbGl2ZXJ5LVJlc3VsdDogZGVsaXZlcmVkCkF1dGgtRmFpbHVyZTogZG1hcmMKUmVwb3J0ZWQtRG9tYWluOiBleGFtcGxlLmNvbQoKCi0tXy0tLS1hYmNkZWZnaGlqa2xtbm9wcXJzdHV2PT09X0FBLzAxLTE2MDE4LUQxQUExQ0M1CkNvbnRlbnQtVHlwZTogbWVzc2FnZS9yZmM4MjIKQ29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lCgpSZXR1cm4tUGF0aDogPD4KQXV0aGVudGljYXRpb24tUmVzdWx0czogbWFpbDUxNi5wcm9kLmxpbmtlZGluLmNvbTsgaXByZXY9cGFzcyBwb2xpY3kuaXByZXY9IjEwLjEwLjEwLjEwIjsgc3BmPW5ldXRyYWwgc210cC5tYWlsZnJvbT0iIiBzbXRwLmhlbG89Im1haWwwMi5zb21lc2VydmVyLmNvbSI7IGRraW09bm9uZSAobWVzc2FnZSBub3Qgc2lnbmVkKSBoZWFkZXIuZD1ub25lOyB0bHM9cGFzcyAodmVyaWZpZWQpIGtleS5jaXBoZXJzdWl0ZT0iVExTX0VDREhFX1JTQV9XSVRIX0FFU18yNTZfR0NNX1NIQTM4NCIga2V5Lmxlbmd0aD0iMjU2IiB0bHMudj0idGxzdjEuMiIgY2VydC5jbGllbnQ9Ik9VPURvbWFpbiBDb250cm9sIFZhbGlkYXRlZCxDTj0qLnNvbWVzZXJ2ZXIuY29tIiBjZXJ0LmNsaWVudGlzc3Vlcj0iQz1HQixTVD1HcmVhdGVyIE1hbmNoZXN0ZXIsTD1TYWxmb3JkLE89Q09NT0RPIENBIExpbWl0ZWQsQ049Q09NT0RPIFJTQSBEb21haW4gVmFsaWRhdGlvbiBTZWN1cmUgU2VydmVyIENBIjsgZG1hcmM9ZmFpbCAocD1ub25lOyBkaXM9bm9uZSkgaGVhZGVyLmZyb209ZXhhbXBsZS5jb20KWC1PblByZW1FeHRlcm5hbElQOiAxMC4xMC4xMC4xMApSZWNlaXZlZDogZnJvbSBbMTAuMTAuMTAuMTBdIChbMTAuMTAuMTAuMTA6NDIyN10gaGVsbz1tYWlsMDIuc29tZXNlcnZlci5jb20pCglieSBtYWlsNTE2LnByb2QubGlua2VkaW4uY29tIChlbnZlbG9wZS1mcm9tIDw+KQoJKGVjZWxlcml0eSAzLjYuMjEuNTM1NjMgcihDb3JlOjMuNi4yMS4wKSkgd2l0aCBFU01UUFMgKGNpcGhlcj1FQ0RIRS1SU0EtQUVTMjU2LUdDTS1TSEEzODQKCXN1YmplY3Q9Ii9PVT1Eb21haW4gQ29udHJvbCBWYWxpZGF0ZWQvQ049Ki5zb21lc2VydmVyLmNvbSIpCglpZCBDQS85MS0yNjAxOS1BQkNERUNDNTsgVHVlLCAzMCBBcHIgMjAxOSAwMjowOTowMCArMDAwMApSZWNlaXZlZDogZnJvbSBERU5VMDJNUzAwMTYuc29tZXNlcnZlci5sb2MgKDEwLjE1Ni42OC4xNCkgYnkKIERFTlUwMk1TMDAxNy5zb21lc2VydmVyLmxvYyAoMTAuMTAuMTAuOSkgd2l0aCBNaWNyb3NvZnQgU01UUCBTZXJ2ZXIgKFRMUykgaWQKIDE1LjAuMTM2Ny4zOyBUdWUsIDMwIEFwciAyMDE5IDA0OjA5OjA5ICswMjAwClJlY2VpdmVkOiBmcm9tIERFTlUwMk1TMDAxNi5zb21lc2VydmVyLmxvYyAoWzEyNy4wLjAuMV0pIGJ5CiBERU5VMDJNUzAwMTYuc29tZXNlcnZlci5sb2MgKFsxMC4xMC4xMC44XSkgd2l0aCBNaWNyb3NvZnQgU01UUCBTZXJ2ZXIgaWQKIDE1LjAwLjEzNjcuMDAwOyBUdWUsIDMwIEFwciAyMDE5IDA0OjA5OjA5ICswMjAwCkZyb206IFNlbmRlciA8c2VuZGVyQGV4YW1wbGUuY29tPgpUbzogTGlua2VkSW4gPHJlY2lwaWVudEBsaW5rZWRpbi5jb20+ClN1YmplY3Q6IFN1YmplY3QgbGluZSwgY291bGQgYmUgVVRGOCBlbmNvZGVkClRocmVhZC1Ub3BpYzogVGhyZWFkIFRvcGljIGxpbmUsIGNvdWxkIGJlIFVURjggZW5jb2RlZApUaHJlYWQtSW5kZXg6IEFRSFUvYWJjZFc4K2FiY2RMa0NsRjUyaFA0YWxJYVpUOVhHaApEYXRlOiBUdWUsIDMwIEFwciAyMDE5IDAyOjA5OjA5ICswMDAwCk1lc3NhZ2UtSUQ6IDwwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMUBBQkFCMDFNUzAwMTYuc29tZXNlcnZlci5sb2M+ClJlZmVyZW5jZXM6IDwxMTExMTExMTExLjExMTExMTEuMTExMTExMTExMTExMS5KYXZhTWFpbC5hcHBAbG9yMS1hcHAzNTg2LnByb2QubGlua2VkaW4uY29tPgpJbi1SZXBseS1UbzogPDExMTExMTExMTEuMTExMTExMS4xMTExMTExMTExMTExLkphdmFNYWlsLmFwcEBsb3IxLWFwcDM1ODYucHJvZC5saW5rZWRpbi5jb20+ClgtTVMtSGFzLUF0dGFjaDogClgtQXV0by1SZXNwb25zZS1TdXBwcmVzczogQWxsClgtTVMtRXhjaGFuZ2UtSW5ib3gtUnVsZXMtTG9vcDogc2VuZGVyQGV4YW1wbGUuY29tClgtTVMtVE5FRi1Db3JyZWxhdG9yOiAKeC1tcy1leGNoYW5nZS10cmFuc3BvcnQtZnJvbWVudGl0eWhlYWRlcjogSG9zdGVkCngtbXMtZXhjaGFuZ2UtcGFyZW50LW1lc3NhZ2UtaWQ6IDwxMTExMTExMTExLjExMTExMTEuMTExMTExMTExMTExMS5KYXZhTWFpbC5hcHBAbG9yMS1hcHAzNTg2LnByb2QubGlua2VkaW4uY29tPgphdXRvLXN1Ym1pdHRlZDogYXV0by1nZW5lcmF0ZWQKeC1tcy1leGNoYW5nZS1nZW5lcmF0ZWQtbWVzc2FnZS1zb3VyY2U6IE1haWxib3ggUnVsZXMgQWdlbnQKeC1leGNsYWltZXItbWQtY29uZmlnOiAxMTExMTExMS0xMTExLTExMTEtMTExMS0xMTExMTExMTExMTEKQ29udGVudC1UeXBlOiBtdWx0aXBhcnQvYWx0ZXJuYXRpdmU7Cglib3VuZGFyeT0iXzAwMF8wZDAwMDAwMDAwMDAwMDAwMDAwZDAwMDAwMDAwMDAwMGYwMDAwMHMwMDAwMHNvbWVzZXJ2ZXJsb2NfIgpNSU1FLVZlcnNpb246IDEuMApYLUxpbmtlZGluLWZlOiBmYWxzZQoKLS1fMDAwXzBkMDAwMDAwMDAwMDAwMDAwMDBkMDAwMDAwMDAwMDAwZjAwMDAwczAwMDAwc29tZXNlcnZlcmxvY18KQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJpc28tODg1OS0xIgpDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nOiBxdW90ZWQtcHJpbnRhYmxlCgpBbHRlcm5hdGl2ZQpUZXh0CgotLV8wMDBfMGQwMDAwMDAwMDAwMDAwMDAwMGQwMDAwMDAwMDAwMDBmMDAwMDBzMDAwMDBzb21lc2VydmVybG9jXwpDb250ZW50LVR5cGU6IHRleHQvaHRtbDsgY2hhcnNldD0iaXNvLTg4NTktMSIKQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogcXVvdGVkLXByaW50YWJsZQoKPGh0bWw+CjxoZWFkPgo8L2hlYWQ+Cjxib2R5PgpIVE1MIFRleHQKPC9ib2R5Pgo8L2h0bWw+CgotLV8wMDBfMGQwMDAwMDAwMDAwMDAwMDAwMGQwMDAwMDAwMDAwMDBmMDAwMDBzMDAwMDBzb21lc2VydmVybG9jXy0tCgotLV8tLS0tYWJjZGVmZ2hpamtsbW5vcHFyc3R1dj09PV9BQS8wMS0xNjAxOC1EMUFBMUNDNS0tCgpGcm9tIE1BSUxFUi1EQUVNT04gV2VkIE9jdCAyOCAwOTo0Mzo1OSAyMDI2CkF1dGhlbnRpY2F0aW9uLVJlc3VsdHMtT3JpZ2luYWw6IGVzYS5oYzI3ODEtNjQuaXBobXguY29tOyBzcGY9UGFzcwogc210cC5tYWlsZnJvbT0zSUR6WVpob0tBRGNnaGtYaWVyLWxmbWktbWVsLWtYaWhrbWJnWlpoaFplWC5WaGZAc210cC10bHMtcmVwb3J0aW5nLmJvdW5jZXMuZ29vZ2xlLmNvbTsKIGRraW09cGFzcyAoc2lnbmF0dXJlIHZlcmlmaWVkKSBoZWFkZXIuaT1AZ29vZ2xlLmNvbTsgZG1hcmM9cGFzcyAocD1yZWplY3QKIGRpcz1ub25lKSBkPWdvb2dsZS5jb20KREtJTS1TaWduYXR1cmU6IHY9MTsgYT1yc2Etc2hhMjU2OyBjPXJlbGF4ZWQvcmVsYXhlZDsKICAgICAgICBkPWdvb2dsZS5jb207IHM9MjAyMzA2MDE7IHQ9MTcyNTQ0NzIwMDsgeD0xNzI2MDUyMDAwOyBkYXJuPWNhcmRpbmFsaGVhbHRoLmNvbTsKICAgICAgICBoPXRvOmZyb206c3ViamVjdDptZXNzYWdlLWlkOnRscy1yZXBvcnQtc3VibWl0dGVyOnRscy1yZXBvcnQtZG9tYWluCiAgICAgICAgIDpkYXRlOm1pbWUtdmVyc2lvbjpmcm9tOnRvOmNjOnN1YmplY3Q6ZGF0ZTptZXNzYWdlLWlkOnJlcGx5LXRvOwogICAgICAgIGJoPTJrYmhmNTRtdFgwNk9pWlIwVUpYZUJyVXZhNUo4Y0w5bTY0SFNnSUsvWkU9OwogICAgICAgIGI9Q3MvenAwZFBhOFpiM1dNazQzVnppS0hWbHFiU1ZaRjRHcTh0QllrdXhMMzN1RWMzQXFsanJLU1ZaNUUwQzQ0NkxCCiAgICAgICAgIHJVaHp5eXVTMmVMaEJDdlF1Tzc3eUxoNFRjRzVqd1FNb3JpWW1vOXdaN0pMSXF3RTJRQmtraVNQQ2sxY3Q1OFFiMlZRCiAgICAgICAgIHlkTzJ0ZzlialdHSFFvWnkvTzZCc0MvVnRoeHZYOU4xTWRwSUZ4eUlXSmdFbU9VcUl5ekNrNk8wSGNjVzV1RUUraDZHCiAgICAgICAgIGFlYjRSNiszMmEvZkY1dmRHRXZUUldHaHIxUHJNT2xsMzI4bHNrUy9ENXRXYnByaUtSZWRDWEcvakZHV0txZHNoR3dZCiAgICAgICAgIEtSZTNxbW1MSnVFVTNMRE1GZWU3THZ6bWlkRWpTaUIyY3BpQWV3T3lETndRVlFHTC9YWGdXWEI0UHU5ZWtSc04wUTBDCiAgICAgICAgIHhkdHc9PQpYLUdvb2dsZS1ES0lNLVNpZ25hdHVyZTogdj0xOyBhPXJzYS1zaGEyNTY7IGM9cmVsYXhlZC9yZWxheGVkOwogICAgICAgIGQ9MWUxMDAubmV0OyBzPTIwMjMwNjAxOyB0PTE3MjU0NDcyMDA7IHg9MTcyNjA1MjAwMDsKICAgICAgICBoPXRvOmZyb206c3ViamVjdDptZXNzYWdlLWlkOnRscy1yZXBvcnQtc3VibWl0dGVyOnRscy1yZXBvcnQtZG9tYWluCiAgICAgICAgIDpkYXRlOm1pbWUtdmVyc2lvbjp4LWdtLW1lc3NhZ2Utc3RhdGU6ZnJvbTp0bzpjYzpzdWJqZWN0OmRhdGUKICAgICAgICAgOm1lc3NhZ2UtaWQ6cmVwbHktdG87CiAgICAgICAgYmg9MmtiaGY1NG10WDA2T2laUjBVSlhlQnJVdmE1SjhjTDltNjRIU2dJSy9aRT07CiAgICAgICAgYj1LbThKYThyVGdUZitBVERtbmtrSHppcWFaMktBQ0s3U3YvWkpsWk1IRnpqellHWXJuMURCQk1FVW9lNHg4eUFZQ3AKICAgICAgICAgVnV3SExUY1JiSFRRb0E3c0ZxQm5RUFlUVnRGSE1qSWczOEQ3YzhSd3FYZkg5SWZLUHBvMTNpcktPdDFpR25abGZWREYKICAgICAgICAgZ25QUjBKRDg4R21GcFkyNkFLUFNaZStVc0JETkk1WEZ2RVJxc0JiZXhBL1h6eWtHVGZqQ1VTRU5yUUdGMFV4UHlzZjIKICAgICAgICAgcGJ3a3hsRklHblZyLy9kaTZHWmpzRlh6RmlheFArTmRaWnlFSmlRVzZhTVFQY1RLdXFrcEZ3cjVkTnJQUmFxTDlKRTkKICAgICAgICAgNnNHVTRnQlhITnk1WThMbXQ5YXowYVJYTGJQRjRzYzJIWXlJLzQ4OC9MK2R4RVNRZlQxdDBMME54b3BwSWM0Wng1UGUKICAgICAgICAgcUpLQT09ClgtR20tTWVzc2FnZS1TdGF0ZTogQU9KdTBZeE83dklSSDJpbWllTXRHUk1jOCs4cG9KZ2Q5TFRvRkI1Y0FqV0tza2dzUHVtRUlQMVkKCVkxL1pkc1ZRU2V1SzBQVnlqS3huNlo4bC9MMFRybjhIM3V0NWMzUTVyUEdnWmFSSVZaUGlXelhyN3JWL1pUWjZsbzMrY0RpWTZpTwoJY3lZNjNKaFBFZ2Q0djlTMFBWZDR2UEhJWDg3OXJvMmFTOFR2Q2NEeE1JUSsvbENNd21RV0JRMytFemxTSGd1STdRZz09ClgtR29vZ2xlLVNtdHAtU291cmNlOiBBR0hUK0lFYm5MVlNUc01CMmdjUHpaSTZLMnovbFd0WmUvMXZGdmhnVHNuTENlcGgwc1hCamNVN3Bac1VGMGtPejRIT0kzY1owTVVNaHc1d3RDcndkbU8xNmVaQ3EyWklHZjBFaGdyc3VSRT0KWC1SZWNlaXZlZDogYnkgMjAwMjphMDU6NjgzMDoyNWMxOmIwOjcwZjo2ZmY0OjdiYzUgd2l0aCBTTVRQIGlkCiA0NmUwOWE3YWY3NjktNzBmNzBmZmYxNjNtcjE1MjAxNzkwYTM0LjguMTcyNTQ0NzIwMDYwMDsgV2VkLCAwNCBTZXAgMjAyNAogMDM6NTM6MjAgLTA3MDAgKFBEVCkKRGF0ZTogV2VkLCAwNCBTZXAgMjAyNCAwMzo1MzoyMCAtMDcwMApUTFMtUmVwb3J0LURvbWFpbjogY2FyZGluYWxoZWFsdGguY2EKVExTLVJlcG9ydC1TdWJtaXR0ZXI6IGdvb2dsZS5jb20KTWVzc2FnZS1JRDogPDY2ZDgzYzIwLjA1MGEwMjIwLmEwNTY2LjFlOGR0bHNAZ29vZ2xlLmNvbT4KU3ViamVjdDogUmVwb3J0IERvbWFpbjogY2FyZGluYWxoZWFsdGguY2EgU3VibWl0dGVyOiBnb29nbGUuY29tIFJlcG9ydC1JRDogPDIwMjQuMDkuMDNUMDAuMDAuMDBaK2NhcmRpbmFsaGVhbHRoLmNhQGdvb2dsZS5jb20+CkZyb206IG5vcmVwbHktc210cC10bHMtcmVwb3J0aW5nQGdvb2dsZS5jb20KVG86IGRtYXJjcmVwb3J0c0BjYXJkaW5hbGhlYWx0aC5jb20KQ29udGVudC1UeXBlOiBtdWx0aXBhcnQvcmVwb3J0OyBib3VuZGFyeT0iMDAwMDAwMDAwMDAwNzg3N2NlMDYyMTQ4ZmJhOSI7IHJlcG9ydC10eXBlPXRsc3JwdApSZXR1cm4tUGF0aDogM0lEellaaG9LQURjZ2hrWGllci1sZm1pLW1lbC1rWGloa21iZ1paaGhaZVguVmhmQHNtdHAtdGxzLXJlcG9ydGluZy5ib3VuY2VzLmdvb2dsZS5jb20KTUlNRS1WZXJzaW9uOiAxLjAKCi0tMDAwMDAwMDAwMDAwNzg3N2NlMDYyMTQ4ZmJhOQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9IlVURi04IjsgZm9ybWF0PWZsb3dlZDsgZGVsc3A9eWVzCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IHF1b3RlZC1wcmludGFibGUKCiAgICAgICAgRXh0ZXJuYWwgRW1haWwgPUUyPTgwPTkzIFBsZWFzZSB1c2UgY2F1dGlvbiBiZWZvcmUgb3BlbmluZyBhdHRhY2htZT0KbnRzIG9yIGNsaWNraW5nIGxpbmtzCgoKVGhpcyBpcyBhbiBhZ2dyZWdhdGUgVExTIHJlcG9ydCBmcm9tIGdvb2dsZS5jb20KCi0tMDAwMDAwMDAwMDAwNzg3N2NlMDYyMTQ4ZmJhOQpDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3Rsc3JwdCtnemlwOwoJbmFtZT0iZ29vZ2xlLmNvbSFjYXJkaW5hbGhlYWx0aC5jYSExNzI1MzIxNjAwITE3MjU0MDc5OTkhMDAxLmpzb24uZ3oiCkNvbnRlbnQtRGlzcG9zaXRpb246IGF0dGFjaG1lbnQ7CglmaWxlbmFtZT0iZ29vZ2xlLmNvbSFjYXJkaW5hbGhlYWx0aC5jYSExNzI1MzIxNjAwITE3MjU0MDc5OTkhMDAxLmpzb24uZ3oiCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IGJhc2U2NAoKSDRzSUFBQUFBQUFBQUhXUVFXdkRNQXlGLzhyd09Rb203V0ROYWJmUiswNGRaUWpiU1EyMkZHemxrSWI4OXpsSmQ5a29DQ3pMMzN0Kwo5cXc0OVVqK2p1S1pnREE2MWFvUDVqNjRsek9aV2xYS29qaElTSDA1bWxVV1RBTHJUUHdHTjdvNWdqNkJQbnhxM1c1MUtTcEg5Z25WCkhOclhVNm1MV2lwbG1BU05nS2VPQzVhakRDQWhRM0lESi9IVXYvZGJtTnB3TEs3N0dMeDljdkczd1dROVliZzVESEtyRFJiUndNRWIKNzdKcXYrWjlNNjB2MlR1UWFWZ0RFc05qMFBGSTlsYzJnZVdJbmdyeDM3cmt6Mk9NbURZL1ljRUFlVFRHNWR5TnBTM3IrcXVtR0lwcQpqMi9WZytuUWh6RzV2NEJlbHV2eUErK1E4cmlTQVFBQQoKLS0wMDAwMDAwMDAwMDA3ODc3Y2UwNjIxNDhmYmE5LS0KCkZyb20gTUFJTEVSLURBRU1PTiBXZWQgT2N0IDI4IDA5OjQzOjU5IDIwMjYKUmV0dXJuLVBhdGg6IDxub3JlcGx5LWRtYXJjLXN1cHBvcnRAZ29vZ2xlLmNvbT4KRGVsaXZlcmVkLVRvOiBkbWFyYy5yZXBvcnRzQHR3bG5ldC5jb20KUmVjZWl2ZWQ6IGZyb20gbWFpbC50d2xuZXQuY29tICh1bmtub3duIFsxMC4wLjAuMV0pCgkodXNpbmcgVExTdjEuMiB3aXRoIGNpcGhlciBFQ0RIRS1SU0EtQUVTMjU2LUdDTS1TSEEzODQgKDI1Ni8yNTYgYml0cykpCgkoTm8gY2xpZW50IGNlcnRpZmljYXRlIHJlcXVlc3RlZCkKCWJ5IG1haWwwMS50d2xuZXQuY29tIChQb3N0Zml4KSB3aXRoIEVTTVRQUyBpZCA4RTczRTFGQUI3Cglmb3IgPGRtYXJjLnJlcG9ydHNAdHdsbmV0LmNvbT47IE1vbiwgMTEgRmViIDIwMTkgMTE6MjM6NDEgKzAxMDAgKENFVCkKUmVjZWl2ZWQ6IGZyb20gcmVsYXktdHdsLTAxLnR3bG5ldC5jb20gKFs4Ny4xMDYuMTI3LjI4XTo1ODkyMikKCWJ5IG1haWwudHdsbmV0LmNvbSB3aXRoIGVzbXRwcyAoVExTdjEuMjpESEUtUlNBLUFFUzI1Ni1HQ00tU0hBMzg0OjI1NikKCShFeGltIDQuODJfMS01YjdhN2MwLVhYKQoJKGVudmVsb3BlLWZyb20gPG5vcmVwbHktZG1hcmMtc3VwcG9ydEBnb29nbGUuY29tPikKCWlkIDFndDhrTi0wMDAzQVktMUIKCWZvciBkbWFyYy5yZXBvcnRzQHR3bG5ldC5jb207IE1vbiwgMTEgRmViIDIwMTkgMTE6MjM6MzEgKzAxMDAKUmVjZWl2ZWQ6IGJ5IHJlbGF5LXR3bC0wMS50d2xuZXQuY29tIChQb3N0Zml4LCBmcm9tIHVzZXJpZCAxMTIpCglpZCAxNTc3MUEwNDgyOyBNb24sIDExIEZlYiAyMDE5IDExOjE1OjA1ICswMTAwIChDRVQpClgtQ1RDSC1SZWZJRDogc3RyPTAwMDEuMEEwQzAyMTEuNUM2MTREMjMuMDBDMCxzcz0xLHJlPTAuMDAwLHJlY3U9MC4wMDAscmVpcD0wLjAwMCxjbD0xLGNsZD0xLGZncz0wCkF1dGhlbnRpY2F0aW9uLVJlc3VsdHM6IHJlbGF5LXR3bC0wMS50d2xuZXQuY29tOwoJZGtpbT1wYXNzICgyMDQ4LWJpdCBrZXk7IHVucHJvdGVjdGVkKSBoZWFkZXIuZD1nb29nbGUuY29tIGhlYWRlci5pPUBnb29nbGUuY29tIGhlYWRlci5iPWdsRTczaEU3OwoJZGtpbS1hdHBzPW5ldXRyYWwKWC1TcGFtLUNoZWNrZXItVmVyc2lvbjogU3BhbUFzc2Fzc2luIDMuNC4yICgyMDE4LTA5LTEzKSBvbgoJcmVsYXktdHdsLTAxLnR3bG5ldC5jb20KWC1TcGFtLUxldmVsOiAKWC1TcGFtLVN0YXR1czogTm8sIHNjb3JlPS0xNC43IHJlcXVpcmVkPTMuNSB0ZXN0cz1EQVRFX0lOX1BBU1RfMDZfMTIsCglES0lNV0xfV0xfTUVELERLSU1fU0lHTkVELERLSU1fVkFMSUQsREtJTV9WQUxJRF9BVSxES0lNX1ZBTElEX0VGLAoJREtJTV9WRVJJRklFRCxFTlZfQU5EX0hEUl9TUEZfTUFUQ0gsUkNWRF9JTl9ETlNXTF9OT05FLFNQRl9QQVNTLAoJVFZEX1NQQUNFX1JBVElPLFVTRVJfSU5fREVGX0RLSU1fV0wsVVNFUl9JTl9ERUZfU1BGX1dMIGF1dG9sZWFybj1ubwoJYXV0b2xlYXJuX2ZvcmNlPW5vIHZlcnNpb249My40LjIKWC1FbnZlbG9wZS1Gcm9tOiA8bm9yZXBseS1kbWFyYy1zdXBwb3J0QGdvb2dsZS5jb20+CkRNQVJDLUZpbHRlcjogT3BlbkRNQVJDIEZpbHRlciB2MS4zLjEgcmVsYXktdHdsLTAxLnR3bG5ldC5jb20gNTJDNUZBMDI4OApBdXRoZW50aWNhdGlvbi1SZXN1bHRzOiByZWxheS10d2wtMDEudHdsbmV0LmNvbTsgZG1hcmM9cGFzcyBoZWFkZXIuZnJvbT1nb29nbGUuY29tClJlY2VpdmVkLVNQRjogUGFzcyAoc2VuZGVyIFNQRiBhdXRob3JpemVkKSBpZGVudGl0eT1tYWlsZnJvbTsgY2xpZW50LWlwPTIwOS44NS4xNjYuMjAxOyBoZWxvPW1haWwtaXQxLWYyMDEuZ29vZ2xlLmNvbTsgZW52ZWxvcGUtZnJvbT1ub3JlcGx5LWRtYXJjLXN1cHBvcnRAZ29vZ2xlLmNvbTsgcmVjZWl2ZXI9ZG1hcmMucmVwb3J0c0B0d2xuZXQuY29tClJlY2VpdmVkOiBmcm9tIG1haWwtaXQxLWYyMDEuZ29vZ2xlLmNvbSAobWFpbC1pdDEtZjIwMS5nb29nbGUuY29tIFsyMDkuODUuMTY2LjIwMV0pCgkodXNpbmcgVExTdjEuMiB3aXRoIGNpcGhlciBFQ0RIRS1SU0EtQUVTMjU2LUdDTS1TSEEzODQgKDI1Ni8yNTYgYml0cykpCgkoTm8gY2xpZW50IGNlcnRpZmljYXRlIHJlcXVlc3RlZCkKCWJ5IHJlbGF5LXR3bC0wMS50d2xuZXQuY29tIChQb3N0Zml4KSB3aXRoIEVTTVRQUyBpZCA1MkM1RkEwMjg4Cglmb3IgPGRtYXJjLnJlcG9ydHNAdHdsbmV0LmNvbT47IE1vbiwgMTEgRmViIDIwMTkgMTE6MTQ6NTUgKzAxMDAgKENFVCkKUmVjZWl2ZWQ6IGJ5IG1haWwtaXQxLWYyMDEuZ29vZ2xlLmNvbSB3aXRoIFNNVFAgaWQgajNzbzIxMTE5NDM3aXRmLjUKICAgICAgICBmb3IgPGRtYXJjLnJlcG9ydHNAdHdsbmV0LmNvbT47IE1vbiwgMTEgRmViIDIwMTkgMDI6MTQ6NTUgLTA4MDAgKFBTVCkKREtJTS1TaWduYXR1cmU6IHY9MTsgYT1yc2Etc2hhMjU2OyBjPXJlbGF4ZWQvcmVsYXhlZDsKICAgICAgICBkPWdvb2dsZS5jb207IHM9MjAxNjEwMjU7CiAgICAgICAgaD1taW1lLXZlcnNpb246ZGF0ZTptZXNzYWdlLWlkOnN1YmplY3Q6ZnJvbTp0bzpjb250ZW50LWRpc3Bvc2l0aW9uCiAgICAgICAgIDpjb250ZW50LXRyYW5zZmVyLWVuY29kaW5nOwogICAgICAgIGJoPVk3MjJqUVhGcCt2M0UrSjkxL3dWekFNbjVUbTVpa1JsNk1JTlhhS0twQjQ9OwogICAgICAgIGI9Z2xFNzNoRTd5QllZSlRINXA5MEVPZUV2ckh3U1dMRnFrcEpkaDhQNG9zZDQzcnJZem1RbHkyb0FveVUyVnRNVVNsCiAgICAgICAgIGxtRTRiOG0vUHNSTTdDS0JFQzFrRnAreHBDb3NxTW9rRE9TQnZnUWJBWkw1RW1QdndpWFdNSk1uYVJHTFUxZUJJNEt3CiAgICAgICAgIGY1NDd1bFVrMEVpbE5VWlRxcldmZFkyOStVc201N2pPTlNHTmhZRlJHZG14ZThMNUR1QXo3Z2d0WUZGQXFvNlhENmY0CiAgICAgICAgIHVvdy9aV0N2WHQ0N1U4TlBRd3Z0MURINE1XbFMzdnd2RVZRbUtybnV3a1FxMHlrY2lxMXF6YXg4OTF3M2V4ODN4dzFSCiAgICAgICAgIGVDUlFwVDJ0aXU5SzVIcUYreVJDZUwrYk5ha01tY0ZvcUpvLzVMYVZ1ZmJzdkxya2NVMCtpUmNncG01OTJaalZtUVhtCiAgICAgICAgIEFJTEE9PQpYLUdvb2dsZS1ES0lNLVNpZ25hdHVyZTogdj0xOyBhPXJzYS1zaGEyNTY7IGM9cmVsYXhlZC9yZWxheGVkOwogICAgICAgIGQ9MWUxMDAubmV0OyBzPTIwMTYxMDI1OwogICAgICAgIGg9eC1nbS1tZXNzYWdlLXN0YXRlOm1pbWUtdmVyc2lvbjpkYXRlOm1lc3NhZ2UtaWQ6c3ViamVjdDpmcm9tOnRvCiAgICAgICAgIDpjb250ZW50LWRpc3Bvc2l0aW9uOmNvbnRlbnQtdHJhbnNmZXItZW5jb2Rpbmc7CiAgICAgICAgYmg9WTcyMmpRWEZwK3YzRStKOTEvd1Z6QU1uNVRtNWlrUmw2TUlOWGFLS3BCND07CiAgICAgICAgYj1rbmI1MlljTHQza1V3L3RBbGhsclJBU2gzNytnWXF2Qm52SmlHNEwyWVRzVVg0UjM5dFp0TEtkNWNJNlNLcUN2ckQKICAgICAgICAgclhqdmFWOWxlbHQ5aFBveFVXQ1JYTXpYMFdERk1VdndDaHpzTU1pZ1RiRUVPd0hYU1UwakJ6L2w5azNqMm9FQWVUc2MKICAgICAgICAgMUI1Rm5uUTVEaU9Wb0NOQk52N3U2MFJCa0RNclNHY2hhdjlvWCtnakJrb25PTXQ2bHlMOWhzdm1qNXFNa2haRGk2TTYKICAgICAgICAgMkxEVmlLcFZ2TnRkVFhpa3Z4QWh2ck9MUC9XRFRER09WKzFJZXFETHhOck1VR053N25IZU9kOFZEeWJTeHgwMXBuY0MKICAgICAgICAgNU9nUnlHbEZ6dVJYWDRDbHVMbTVSREVFZ0J3SWg3MU1pSVlQbEVDZWtOMWNYUlU1UUxFSEFuSGtlbXh4YWVUeE5TaFkKICAgICAgICAgUlBuUT09ClgtR20tTWVzc2FnZS1TdGF0ZTogQUhRVUF1WU10ZVpZdHN2YjFwUFFXcVRRWFFIMGRKcHpjNHV0UENaMXhwQ2MrVTdLd2h0a2toYnMKCXRER1cvMTRIV2RWN3NDSjBJdFZpaEE9PQpYLUdvb2dsZS1TbXRwLVNvdXJjZTogQUhnSTNJYm5HazRsNkF1My9Tb0o3eWRwQ0pJWnVKSXNqbzhLK2RJaTBMZXBUaFVHend0RXhHajh5WTZ3OUM4NXJWcFplcmhTTzQ1ek9GSWdxN0JBc0E9PQpNSU1FLVZlcnNpb246IDEuMApYLVJlY2VpdmVkOiBieSAyMDAyOmE1ZTpjODBiOjogd2l0aCBTTVRQIGlkIHkxMW1yMTY1NTEyaW9sLjIwLjE1NDk4ODAwOTA3MjM7CiBNb24sIDExIEZlYiAyMDE5IDAyOjE0OjUwIC0wODAwIChQU1QpCkRhdGU6IFN1biwgMTAgRmViIDIwMTkgMTU6NTk6NTkgLTA4MDAKTWVzc2FnZS1JRDogPDE2Mjc3MDMzMzE1MzE2NjA4MTlAZ29vZ2xlLmNvbT4KU3ViamVjdDogUmVwb3J0IGRvbWFpbjogdHdsbmV0LmNvbSBTdWJtaXR0ZXI6IGdvb2dsZS5jb20gUmVwb3J0LUlEOiAxNjI3NzAzMzMxNTMxNjYwODE5CkZyb206IG5vcmVwbHktZG1hcmMtc3VwcG9ydEBnb29nbGUuY29tClRvOiBkbWFyYy5yZXBvcnRzQHR3bG5ldC5jb20KQ29udGVudC10eXBlOiBtdWx0aXBhcnQvbWl4ZWQ7IGJvdW5kYXJ5PSItLS0tLS0tLS0tPV8xNTQ5ODgwNjIwLTEyMjA4LTAiCgpUaGlzIGlzIGEgbXVsdGktcGFydCBtZXNzYWdlIGluIE1JTUUgZm9ybWF0Li4uCgotLS0tLS0tLS0tLS09XzE1NDk4ODA2MjAtMTIyMDgtMApDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL3ppcDsKCW5hbWU9Imdvb2dsZS5jb20hdHdsbmV0LmNvbSExNTQ5NzU2ODAwITE1NDk4NDMxOTkuemlwIgpDb250ZW50LURpc3Bvc2l0aW9uOiBhdHRhY2htZW50OwoJZmlsZW5hbWU9Imdvb2dsZS5jb20hdHdsbmV0LmNvbSExNTQ5NzU2ODAwITE1NDk4NDMxOTkuemlwIgpDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nOiBiYXNlNjQKClVFc0RCQW9BQUFBSUFLSlFTMDRLTWtNVTZ3RUFBS0lFQUFBdkFBQUFaMjl2WjJ4bExtTnZiU0YwZDJ4dQpaWFF1WTI5dElURTFORGszTlRZNE1EQWhNVFUwT1RnME16RTVPUzU0Yld5bFZFMXptekFRdmVkWE1MNGIKSWJBeDdpaEtULzBGN1ptUnhZTFZnS1NSUkp6OCt3cExmTVRwVEE4OUlkN3V2dDMzVmtCZTNvYytlUU5qCmhaTFBPNXhtdXdRa1Y0MlEzZlB1MTg4ZisycVh2TkFuMGdJMEY4WmY2Vk9TRUFOYUdWY1A0RmpESEpzdwpqeXJUMVpJTlFEdWx1aDVTcmdhQ0ZqRGt3TUJFVDZYeURQM0h2aG1ZNFhzNzZvbnUrN1lzNU1XYWQyZFkKelpWMGpMdGF5RmJScTNQYWZrTW9scVpyS1dLSVNYc0RnL0pEV1I2cnpITjlyUS9FVVlab0tDN3oweWtyCmlnSWZDMXlXV1lYUEJLM2hrTzZsUW0yWTdLSVlEMTJnRTVMaTQrRjhPcFpWNXBzRlpJNkRiTzdSNmxEZwpzNmVjM2dNWitzeTJkTnQ2U3JUcUJmK285WGpwaGIzQ01vank3a2pxYnIwRUYveUtVSWl6NWxVTTFCSVUKRGhHMHVyMWowek5BbWhyNERkd1JwQ05pVjhqT21PYU80a25hZExpUCtyZXh2SmxjbVhsQ28yNkxCMWFOCmhrTXROSzFPS2M3S0ZPZW5OSzk4aHlVd3AzSTFTdCtNb0hDWTRkZ1AzbGcvZXRlYU9UQlpJYXhXVmpoLwplLzJ0a3VDZDJDQ2J2TWtJemF3M1lQVWtTbTVqWURGbW8vR2hwMS9Uckl5SUJxUVRyZkRmemxKMkJkYUEKcVZ1amhrL3IyZUtSNkVzNVlhTzcxZ2JzMkx1VjhXSGFmNncrWHV1SklvcUtMeHU5MFB2OUtrUHpERmZZCnIzVUJGdTNibm1Uanl2LzMzNWpzYitLRDNpazUzQ0dDMXQvTkgxQkxBUUlLQUFvQUFBQUlBS0pRUzA0SwpNa01VNndFQUFLSUVBQUF2QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUJuYjI5bmJHVXVZMjl0SVhSM2JHNWwKZEM1amIyMGhNVFUwT1RjMU5qZ3dNQ0V4TlRRNU9EUXpNVGs1TG5odGJGQkxCUVlBQUFBQUFRQUJBRjBBCkFBQTRBZ0FBQUFBPQoKLS0tLS0tLS0tLS0tPV8xNTQ5ODgwNjIwLTEyMjA4LTAKQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJ1dGY4IgpDb250ZW50LURpc3Bvc2l0aW9uOiBpbmxpbmUKQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogcXVvdGVkLXByaW50YWJsZQpNSU1FLVZlcnNpb246IDEuMApYLU1haWxlcjogTUlNRS10b29scyA1LjUwNSAoRW50aXR5IDUuNTA1KQoKVGhpcyBlbWFpbCB3YXMgVmlydXMgY2hlY2tlZCBieSBTb3Bob3MgVVRNIDkuCgpUd2lsaWdodC1OZXR3b3JrcyBodHRwczovL3d3dy50d2xuZXQuY29tPQoKLS0tLS0tLS0tLS0tPV8xNTQ5ODgwNjIwLTEyMjA4LTAtLQoKRnJvbSBNQUlMRVItREFFTU9OIFdlZCBPY3QgMjggMDk6NDM6NTkgMjAyNgpGcm9tOiBub2lzZUBleGFtcGxlLmNvbQpTdWJqZWN0OiBub3QgYSByZXBvcnQKCnBsYWluIHRleHQKCg==",
+    "result": {
+      "aggregate_reports": [
+        {
+          "policy_published": {
+            "adkim": "s",
+            "aspf": "s",
+            "discovery_method": null,
+            "domain": "twlnet.com",
+            "fo": null,
+            "np": null,
+            "p": "reject",
+            "pct": "100",
+            "sp": "reject",
+            "testing": null
+          },
+          "records": [
+            {
+              "alignment": {
+                "dkim": true,
+                "dmarc": true,
+                "spf": true
+              },
+              "auth_results": {
+                "dkim": [
+                  {
+                    "domain": "twlnet.com",
+                    "human_result": null,
+                    "result": "pass",
+                    "selector": "201810"
+                  }
+                ],
+                "spf": [
+                  {
+                    "domain": "twlnet.com",
+                    "human_result": null,
+                    "result": "pass",
+                    "scope": "mfrom"
+                  }
+                ]
+              },
+              "count": 1,
+              "identifiers": {
+                "envelope_from": "twlnet.com",
+                "envelope_to": null,
+                "header_from": "twlnet.com"
+              },
+              "interval_begin": "2019-02-10 00:00:00",
+              "interval_end": "2019-02-10 23:59:59",
+              "normalized_timespan": false,
+              "policy_evaluated": {
+                "disposition": "none",
+                "dkim": "pass",
+                "policy_override_reasons": [],
+                "spf": "pass"
+              },
+              "source": {
+                "as_domain": "ionos.com",
+                "as_name": "IONOS SE",
+                "asn": 8560,
+                "base_domain": null,
+                "country": "DE",
+                "ip_address": "87.106.127.28",
+                "name": "IONOS",
+                "reverse_dns": null,
+                "type": "Web Host"
+              }
+            }
+          ],
+          "report_metadata": {
+            "begin_date": "2019-02-10 00:00:00",
+            "end_date": "2019-02-10 23:59:59",
+            "errors": [],
+            "generator": null,
+            "org_email": "noreply-dmarc-support@google.com",
+            "org_extra_contact_info": "https://support.google.com/a/answer/2466580",
+            "org_name": "google.com",
+            "original_timespan_seconds": 86399,
+            "report_id": "1627703331531660819",
+            "timespan_requires_normalization": false
+          },
+          "xml_namespace": null,
+          "xml_schema": "draft"
+        }
+      ],
+      "failure_reports": [
+        {
+          "arrival_date": "Tue, 30 Apr 2019 02:09:00 +0000",
+          "arrival_date_utc": "2019-04-30 02:09:00",
+          "auth_failure": ["dmarc"],
+          "authentication_mechanisms": [],
+          "authentication_results": "dmarc=fail (p=none; dis=none) header.from=example.com",
+          "delivery_result": "delivered",
+          "dkim_domain": null,
+          "feedback_type": "auth-failure",
+          "message_id": "<01010101010101010101010101010101@ABAB01MS0016.someserver.loc>",
+          "original_envelope_id": null,
+          "original_mail_from": null,
+          "original_rcpt_to": "recipient@linkedin.com",
+          "parsed_sample": {
+            "attachments": [],
+            "authentication-results": "mail516.prod.linkedin.com; iprev=pass policy.iprev=\"10.10.10.10\"; spf=neutral smtp.mailfrom=\"\" smtp.helo=\"mail02.someserver.com\"; dkim=none (message not signed) header.d=none; tls=pass (verified) key.ciphersuite=\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\" key.length=\"256\" tls.v=\"tlsv1.2\" cert.client=\"OU=Domain Control Validated,CN=*.someserver.com\" cert.clientissuer=\"C=GB,ST=Greater Manchester,L=Salford,O=COMODO CA Limited,CN=COMODO RSA Domain Validation Secure Server CA\"; dmarc=fail (p=none; dis=none) header.from=example.com",
+            "auto-submitted": "auto-generated",
+            "bcc": [],
+            "body": "Alternative\nText\n\n--- mail_boundary ---\n<html>\n<head>\n</head>\n<body>\nHTML Text\n</body>\n</html>\n",
+            "cc": [],
+            "content-type": "multipart/alternative;\n\tboundary=\"_000_0d00000000000000000d000000000000f00000s00000someserverloc_\"",
+            "date": "2019-04-30 02:09:09+00:00",
+            "filename_safe_subject": "Subject line, could be UTF8 encoded",
+            "from": {
+              "address": "sender@example.com",
+              "display_name": "Sender",
+              "domain": "example.com",
+              "local": "sender"
+            },
+            "has_defects": false,
+            "headers": {
+              "Authentication-Results": "mail516.prod.linkedin.com; iprev=pass policy.iprev=\"10.10.10.10\"; spf=neutral smtp.mailfrom=\"\" smtp.helo=\"mail02.someserver.com\"; dkim=none (message not signed) header.d=none; tls=pass (verified) key.ciphersuite=\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\" key.length=\"256\" tls.v=\"tlsv1.2\" cert.client=\"OU=Domain Control Validated,CN=*.someserver.com\" cert.clientissuer=\"C=GB,ST=Greater Manchester,L=Salford,O=COMODO CA Limited,CN=COMODO RSA Domain Validation Secure Server CA\"; dmarc=fail (p=none; dis=none) header.from=example.com",
+              "Content-Type": "multipart/alternative;\n\tboundary=\"_000_0d00000000000000000d000000000000f00000s00000someserverloc_\"",
+              "Date": "Tue, 30 Apr 2019 02:09:09 +0000",
+              "From": [["Sender", "sender@example.com"]],
+              "In-Reply-To": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+              "MIME-Version": "1.0",
+              "Message-ID": "<01010101010101010101010101010101@ABAB01MS0016.someserver.loc>",
+              "Received": [
+                "from [10.10.10.10] ([10.10.10.10:4227] helo=mail02.someserver.com)\n\tby mail516.prod.linkedin.com (envelope-from <>)\n\t(ecelerity 3.6.21.53563 r(Core:3.6.21.0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384\n\tsubject=\"/OU=Domain Control Validated/CN=*.someserver.com\")\n\tid CA/91-26019-ABCDECC5; Tue, 30 Apr 2019 02:09:00 +0000",
+                "from DENU02MS0016.someserver.loc (10.156.68.14) by\n DENU02MS0017.someserver.loc (10.10.10.9) with Microsoft SMTP Server (TLS) id\n 15.0.1367.3; Tue, 30 Apr 2019 04:09:09 +0200",
+                "from DENU02MS0016.someserver.loc ([127.0.0.1]) by\n DENU02MS0016.someserver.loc ([10.10.10.8]) with Microsoft SMTP Server id\n 15.00.1367.000; Tue, 30 Apr 2019 04:09:09 +0200"
+              ],
+              "References": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+              "Return-Path": "<>",
+              "Subject": "Subject line, could be UTF8 encoded",
+              "Thread-Index": "AQHU/abcdW8+abcdLkClF52hP4alIaZT9XGh",
+              "Thread-Topic": "Thread Topic line, could be UTF8 encoded",
+              "To": [["LinkedIn", "recipient@linkedin.com"]],
+              "X-Auto-Response-Suppress": "All",
+              "X-Linkedin-fe": "false",
+              "X-MS-Exchange-Inbox-Rules-Loop": "sender@example.com",
+              "X-MS-Has-Attach": "",
+              "X-MS-TNEF-Correlator": "",
+              "X-OnPremExternalIP": "10.10.10.10",
+              "auto-submitted": "auto-generated",
+              "x-exclaimer-md-config": "11111111-1111-1111-1111-111111111111",
+              "x-ms-exchange-generated-message-source": "Mailbox Rules Agent",
+              "x-ms-exchange-parent-message-id": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+              "x-ms-exchange-transport-fromentityheader": "Hosted"
+            },
+            "in-reply-to": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+            "message-id": "<01010101010101010101010101010101@ABAB01MS0016.someserver.loc>",
+            "mime-version": "1.0",
+            "received": [
+              {
+                "by": "DENU02MS0016.someserver.loc ([10.10.10.8])",
+                "date": "Tue, 30 Apr 2019 04:09:09 +0200",
+                "date_utc": "2019-04-30 02:09:09+00:00",
+                "delay": 0,
+                "from": "DENU02MS0016.someserver.loc ([127.0.0.1])",
+                "hop": 1,
+                "id": "15.00.1367.000",
+                "with": "Microsoft SMTP Server"
+              },
+              {
+                "by": "DENU02MS0017.someserver.loc (10.10.10.9)",
+                "date": "Tue, 30 Apr 2019 04:09:09 +0200",
+                "date_utc": "2019-04-30 02:09:09+00:00",
+                "delay": 0.0,
+                "from": "DENU02MS0016.someserver.loc (10.156.68.14)",
+                "hop": 2,
+                "id": "15.0.1367.3",
+                "with": "Microsoft SMTP Server (TLS)"
+              },
+              {
+                "by": "mail516.prod.linkedin.com (envelope-from <>) (ecelerity 3.6.21.53563 r(Core:3.6.21.0))",
+                "date": "Tue, 30 Apr 2019 02:09:00 +0000",
+                "date_utc": "2019-04-30 02:09:00+00:00",
+                "delay": -9.0,
+                "from": "[10.10.10.10] ([10.10.10.10:4227] helo=mail02.someserver.com)",
+                "hop": 3,
+                "id": "CA/91-26019-ABCDECC5",
+                "with": "ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384 subject=\"/OU=Domain Control Validated/CN=*.someserver.com\")"
+              }
+            ],
+            "references": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+            "reply_to": [],
+            "return-path": "<>",
+            "subject": "Subject line, could be UTF8 encoded",
+            "thread-index": "AQHU/abcdW8+abcdLkClF52hP4alIaZT9XGh",
+            "thread-topic": "Thread Topic line, could be UTF8 encoded",
+            "timezone": "+0.0",
+            "to": [
+              {
+                "address": "recipient@linkedin.com",
+                "display_name": "LinkedIn",
+                "domain": "linkedin.com",
+                "local": "recipient"
+              }
+            ],
+            "to_domains": ["linkedin.com"],
+            "x-auto-response-suppress": "All",
+            "x-exclaimer-md-config": "11111111-1111-1111-1111-111111111111",
+            "x-linkedin-fe": "false",
+            "x-ms-exchange-generated-message-source": "Mailbox Rules Agent",
+            "x-ms-exchange-inbox-rules-loop": "sender@example.com",
+            "x-ms-exchange-parent-message-id": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+            "x-ms-exchange-transport-fromentityheader": "Hosted",
+            "x-onpremexternalip": "10.10.10.10"
+          },
+          "reported_domain": "example.com",
+          "sample": "Return-Path: <>\nAuthentication-Results: mail516.prod.linkedin.com; iprev=pass policy.iprev=\"10.10.10.10\"; spf=neutral smtp.mailfrom=\"\" smtp.helo=\"mail02.someserver.com\"; dkim=none (message not signed) header.d=none; tls=pass (verified) key.ciphersuite=\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\" key.length=\"256\" tls.v=\"tlsv1.2\" cert.client=\"OU=Domain Control Validated,CN=*.someserver.com\" cert.clientissuer=\"C=GB,ST=Greater Manchester,L=Salford,O=COMODO CA Limited,CN=COMODO RSA Domain Validation Secure Server CA\"; dmarc=fail (p=none; dis=none) header.from=example.com\nX-OnPremExternalIP: 10.10.10.10\nReceived: from [10.10.10.10] ([10.10.10.10:4227] helo=mail02.someserver.com)\n\tby mail516.prod.linkedin.com (envelope-from <>)\n\t(ecelerity 3.6.21.53563 r(Core:3.6.21.0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384\n\tsubject=\"/OU=Domain Control Validated/CN=*.someserver.com\")\n\tid CA/91-26019-ABCDECC5; Tue, 30 Apr 2019 02:09:00 +0000\nReceived: from DENU02MS0016.someserver.loc (10.156.68.14) by\n DENU02MS0017.someserver.loc (10.10.10.9) with Microsoft SMTP Server (TLS) id\n 15.0.1367.3; Tue, 30 Apr 2019 04:09:09 +0200\nReceived: from DENU02MS0016.someserver.loc ([127.0.0.1]) by\n DENU02MS0016.someserver.loc ([10.10.10.8]) with Microsoft SMTP Server id\n 15.00.1367.000; Tue, 30 Apr 2019 04:09:09 +0200\nFrom: Sender <sender@example.com>\nTo: LinkedIn <recipient@linkedin.com>\nSubject: Subject line, could be UTF8 encoded\nThread-Topic: Thread Topic line, could be UTF8 encoded\nThread-Index: AQHU/abcdW8+abcdLkClF52hP4alIaZT9XGh\nDate: Tue, 30 Apr 2019 02:09:09 +0000\nMessage-ID: <01010101010101010101010101010101@ABAB01MS0016.someserver.loc>\nReferences: <1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>\nIn-Reply-To: <1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>\nX-MS-Has-Attach: \nX-Auto-Response-Suppress: All\nX-MS-Exchange-Inbox-Rules-Loop: sender@example.com\nX-MS-TNEF-Correlator: \nx-ms-exchange-transport-fromentityheader: Hosted\nx-ms-exchange-parent-message-id: <1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>\nauto-submitted: auto-generated\nx-ms-exchange-generated-message-source: Mailbox Rules Agent\nx-exclaimer-md-config: 11111111-1111-1111-1111-111111111111\nContent-Type: multipart/alternative;\n\tboundary=\"_000_0d00000000000000000d000000000000f00000s00000someserverloc_\"\nMIME-Version: 1.0\nX-Linkedin-fe: false\n\n--_000_0d00000000000000000d000000000000f00000s00000someserverloc_\nContent-Type: text/plain; charset=\"iso-8859-1\"\nContent-Transfer-Encoding: quoted-printable\n\nAlternative\nText\n\n--_000_0d00000000000000000d000000000000f00000s00000someserverloc_\nContent-Type: text/html; charset=\"iso-8859-1\"\nContent-Transfer-Encoding: quoted-printable\n\n<html>\n<head>\n</head>\n<body>\nHTML Text\n</body>\n</html>\n\n--_000_0d00000000000000000d000000000000f00000s00000someserverloc_--\n",
+          "sample_headers_only": false,
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "10.10.10.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          },
+          "user_agent": "Lua/1.0",
+          "version": "1.0"
+        }
+      ],
+      "smtp_tls_reports": [
+        {
+          "begin_date": "2024-09-03T00:00:00Z",
+          "contact_info": "smtp-tls-reporting@google.com",
+          "end_date": "2024-09-03T23:59:59Z",
+          "organization_name": "Google Inc.",
+          "policies": [
+            {
+              "failed_session_count": 0,
+              "policy_domain": "cardinalhealth.ca",
+              "policy_type": "no-policy-found",
+              "successful_session_count": 48
+            }
+          ],
+          "report_id": "2024-09-03T00:00:00Z_cardinalhealth.ca"
+        }
+      ]
+    }
+  },
+  "parsedmarc": "11.2.1"
+}

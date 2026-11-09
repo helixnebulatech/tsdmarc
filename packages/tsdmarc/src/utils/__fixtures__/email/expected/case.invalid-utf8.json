@@ -1,0 +1,34 @@
+{
+  "input": "cases/invalid-utf8.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "body �( here\n",
+    "cc": [],
+    "date": null,
+    "filename_safe_subject": "caf� �� bytes",
+    "from": {
+      "address": "a@example.com",
+      "display_name": "ok",
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": false,
+    "headers": {
+      "From": [["ok", "a@example.com"]],
+      "Subject": "caf� �� bytes",
+      "To": [["", "b@example.com"]]
+    },
+    "reply_to": [],
+    "subject": "caf� �� bytes",
+    "to": [
+      {
+        "address": "b@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "b"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

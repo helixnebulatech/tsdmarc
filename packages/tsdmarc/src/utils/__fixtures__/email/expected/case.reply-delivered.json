@@ -1,0 +1,94 @@
+{
+  "input": "cases/reply-delivered.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [
+      {
+        "address": "e@f.com",
+        "display_name": null,
+        "domain": "f.com",
+        "local": "e"
+      }
+    ],
+    "body": "Body\r\n",
+    "cc": [
+      {
+        "address": "c@d.com",
+        "display_name": null,
+        "domain": "d.com",
+        "local": "c"
+      },
+      {
+        "address": "c2@d.com",
+        "display_name": "C, Two",
+        "domain": "d.com",
+        "local": "c2"
+      }
+    ],
+    "date": null,
+    "delivered_to": [
+      {
+        "address": "box@example.org",
+        "display_name": null,
+        "domain": "example.org",
+        "local": "box"
+      }
+    ],
+    "filename_safe_subject": "Hi",
+    "from": {
+      "address": "sender@example.com",
+      "display_name": "Sender",
+      "domain": "example.com",
+      "local": "sender"
+    },
+    "has_defects": false,
+    "headers": {
+      "Bcc": [["", "e@f.com"]],
+      "Cc": [
+        ["", "c@d.com"],
+        ["C, Two", "c2@d.com"]
+      ],
+      "Delivered-To": [["", "box@example.org"]],
+      "From": [["Sender", "sender@example.com"]],
+      "Reply-To": [
+        ["Real One", "real@phish.example"],
+        ["Second", "two@phish.example"]
+      ],
+      "Subject": "Hi",
+      "To": [
+        ["", "victim@example.org"],
+        ["", "VICTIM2@Example.ORG"]
+      ]
+    },
+    "reply_to": [
+      {
+        "address": "real@phish.example",
+        "display_name": "Real One",
+        "domain": "phish.example",
+        "local": "real"
+      },
+      {
+        "address": "two@phish.example",
+        "display_name": "Second",
+        "domain": "phish.example",
+        "local": "two"
+      }
+    ],
+    "subject": "Hi",
+    "to": [
+      {
+        "address": "victim@example.org",
+        "display_name": null,
+        "domain": "example.org",
+        "local": "victim"
+      },
+      {
+        "address": "VICTIM2@Example.ORG",
+        "display_name": null,
+        "domain": "example.org",
+        "local": "victim2"
+      }
+    ],
+    "to_domains": ["example.org", "phish.example"]
+  }
+}

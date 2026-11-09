@@ -1,0 +1,23 @@
+{
+  "name": "@tsdmarc/example-node",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "tsdmarc examples for Node.js",
+  "scripts": {
+    "parse-file": "node src/parse-file.ts",
+    "maildir": "node src/maildir.ts",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@tsdmarc/ipinfo-lite": "workspace:*",
+    "tsdmarc": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@types/node": "26.6.5"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

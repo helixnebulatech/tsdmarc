@@ -1,0 +1,181 @@
+{
+  "input": "cases/received.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "body\n",
+    "cc": [],
+    "date": "2019-04-29 22:24:09+00:00",
+    "date_header_defects": [
+      {
+        "header": "received",
+        "occurrence": 8,
+        "raw": "from a by b with SMTP; Wed, 30 Apr 2019 01:00:00 EST",
+        "reason": "weekday-mismatch",
+        "recovered": true,
+        "value": "2019-04-30T06:00:00+00:00"
+      },
+      {
+        "header": "received",
+        "occurrence": 7,
+        "raw": "from a by b; Tue, 31 Apr 2019 01:00:00 +0000",
+        "reason": "invalid-calendar-date",
+        "recovered": false,
+        "value": null
+      },
+      {
+        "header": "received",
+        "occurrence": 6,
+        "raw": "from sendgrid.net by mx.example.org 2019-04-30 01:30:00.123456789 +0000 UTC m=+0.123456789",
+        "reason": "invalid-date-syntax",
+        "recovered": false,
+        "value": null
+      }
+    ],
+    "defects": [
+      {
+        "received-headers": [
+          "ReceivedHeaderDefect: received[3]: unclosed-comment",
+          "ReceivedHeaderDefect: received[5]: misplaced-date-separator"
+        ]
+      },
+      {
+        "date-headers": [
+          "DateHeaderDefect: received[8]: weekday-mismatch",
+          "DateHeaderDefect: received[7]: invalid-calendar-date",
+          "DateHeaderDefect: received[6]: invalid-date-syntax"
+        ]
+      }
+    ],
+    "defects_categories": ["DateHeaderDefect", "ReceivedHeaderDefect"],
+    "filename_safe_subject": "received",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Date": "Tue, 30 Apr 2019 04:09:09 +0545",
+      "From": [["", "a@example.com"]],
+      "Received": [
+        "from mail.example.com (mail.example.com [192.0.2.1])\n\tby mx.example.org (Postfix) with ESMTPS id 4ABC123\n\tfor <user@example.org>; Tue, 30 Apr 2019 04:09:09 +0200 (CEST)",
+        "from [10.0.0.1] (helo=client.example.com)\n\tby mail.example.com with esmtpsa (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256)\n\t(Exim 4.92) (envelope-from <bounce@example.com>)\n\tid 1hLabc-0001; Tue, 30 Apr 2019 02:00:00 +0000",
+        "by 2002:a05:6000:1:0:0:0:0 with SMTP id abc; Mon, 29 Apr 2019 19:00:00 -0700 (PDT)",
+        "from host (unclosed comment",
+        "garbage without clauses",
+        "from x by y id z; for <a@b.c>; Tue, 30 Apr 2019 01:00:00 +0000",
+        "from sendgrid.net by mx.example.org 2019-04-30 01:30:00.123456789 +0000 UTC m=+0.123456789",
+        "from a by b; Tue, 31 Apr 2019 01:00:00 +0000",
+        "from a by b with SMTP; Wed, 30 Apr 2019 01:00:00 EST",
+        "from a by b; Tue, 30 Apr 19 01:00:60 +0000"
+      ],
+      "Subject": "received"
+    },
+    "received": [
+      {
+        "by": "b",
+        "date": "Tue, 30 Apr 19 01:00:60 +0000",
+        "date_utc": "2019-04-30 01:01:00+00:00",
+        "delay": 0,
+        "from": "a",
+        "hop": 1
+      },
+      {
+        "by": "b",
+        "date": "Wed, 30 Apr 2019 01:00:00 EST",
+        "date_utc": "2019-04-30 06:00:00+00:00",
+        "delay": 17940.0,
+        "from": "a",
+        "hop": 2,
+        "with": "SMTP"
+      },
+      {
+        "by": "b",
+        "date": "Tue, 31 Apr 2019 01:00:00 +0000",
+        "delay": 0,
+        "from": "a",
+        "hop": 3
+      },
+      {
+        "by": "mx.example.org",
+        "date": "2019-04-30 01:30:00.123456789 +0000 UTC",
+        "delay": 0,
+        "from": "sendgrid.net",
+        "hop": 4
+      },
+      {
+        "by": "y",
+        "date": "Tue, 30 Apr 2019 01:00:00 +0000",
+        "date_utc": "2019-04-30 01:00:00+00:00",
+        "delay": 0,
+        "for": "<a@b.c>",
+        "from": "x",
+        "hop": 5,
+        "id": "z"
+      },
+      {
+        "delay": 0,
+        "hop": 6,
+        "raw": "garbage without clauses"
+      },
+      {
+        "delay": 0,
+        "hop": 7,
+        "raw": "from host (unclosed comment"
+      },
+      {
+        "by": "2002:a05:6000:1:0:0:0:0",
+        "date": "Mon, 29 Apr 2019 19:00:00 -0700 (PDT)",
+        "date_utc": "2019-04-30 02:00:00+00:00",
+        "delay": 0,
+        "hop": 8,
+        "id": "abc",
+        "with": "SMTP"
+      },
+      {
+        "by": "mail.example.com",
+        "date": "Tue, 30 Apr 2019 02:00:00 +0000",
+        "date_utc": "2019-04-30 02:00:00+00:00",
+        "delay": 0.0,
+        "envelope_from": "bounce@example.com",
+        "from": "[10.0.0.1] (helo=client.example.com)",
+        "hop": 9,
+        "id": "1hLabc-0001",
+        "with": "esmtpsa (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92) (envelope-from <bounce@example.com>)"
+      },
+      {
+        "by": "mx.example.org (Postfix)",
+        "date": "Tue, 30 Apr 2019 04:09:09 +0200 (CEST)",
+        "date_utc": "2019-04-30 02:09:09+00:00",
+        "delay": 549.0,
+        "for": "<user@example.org>",
+        "from": "mail.example.com (mail.example.com [192.0.2.1])",
+        "hop": 10,
+        "id": "4ABC123",
+        "with": "ESMTPS"
+      }
+    ],
+    "received_header_defects": [
+      {
+        "header": "received",
+        "occurrence": 3,
+        "raw": "from host (unclosed comment",
+        "reason": "unclosed-comment",
+        "recovered": false
+      },
+      {
+        "header": "received",
+        "occurrence": 5,
+        "raw": "from x by y id z; for <a@b.c>; Tue, 30 Apr 2019 01:00:00 +0000",
+        "reason": "misplaced-date-separator",
+        "recovered": true
+      }
+    ],
+    "reply_to": [],
+    "subject": "received",
+    "timezone": "+5.8",
+    "to": []
+  }
+}

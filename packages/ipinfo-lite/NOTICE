@@ -1,0 +1,11 @@
+@tsdmarc/ipinfo-lite
+
+data/ipinfo_lite.mmdb is the IPinfo Lite database, (c) IPinfo
+(https://ipinfo.io/lite), licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International License (see LICENSE, or
+https://creativecommons.org/licenses/by-sa/4.0/). It is distributed
+unmodified, as shipped with parsedmarc 11.1.0
+(https://github.com/domainaware/parsedmarc).
+
+index.js and index.d.ts only export the path of the database file and are
+distributed under the same license.

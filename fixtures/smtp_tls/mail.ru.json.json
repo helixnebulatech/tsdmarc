@@ -1,0 +1,35 @@
+{
+  "csv": "organization_name,begin_date,end_date,report_id,result_type,successful_session_count,failed_session_count,policy_domain,policy_type,policy_strings,mx_host_patterns,sending_mta_ip,receiving_ip,receiving_mx_hostname,receiving_mx_helo,additional_info_uri,failure_reason_code\r\nMail.ru,2024-02-22T00:00:00Z,2024-02-23T00:00:00Z,b28254de-7b2e-be36-bb5c-4c3b92da8b25@mail.ru,,0,1,example.com,sts,,,,,,,,\r\nMail.ru,2024-02-22T00:00:00Z,2024-02-23T00:00:00Z,b28254de-7b2e-be36-bb5c-4c3b92da8b25@mail.ru,sts-policy-fetch-error,,1,,,,,,,,,,bad https response code: 404\r\nMail.ru,2024-02-22T00:00:00Z,2024-02-23T00:00:00Z,b28254de-7b2e-be36-bb5c-4c3b92da8b25@mail.ru,sts-policy-fetch-error,,1,,,,,,,,,,bad https response code: 500\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "begin_date": "2024-02-22T00:00:00Z",
+      "contact_info": "tls_support@corp.mail.ru",
+      "end_date": "2024-02-23T00:00:00Z",
+      "organization_name": "Mail.ru",
+      "policies": [
+        {
+          "failed_session_count": 1,
+          "failure_details": [
+            {
+              "failed_session_count": 1,
+              "failure_reason_code": "bad https response code: 404",
+              "result_type": "sts-policy-fetch-error"
+            },
+            {
+              "failed_session_count": 1,
+              "failure_reason_code": "bad https response code: 500",
+              "result_type": "sts-policy-fetch-error"
+            }
+          ],
+          "policy_domain": "example.com",
+          "policy_type": "sts",
+          "successful_session_count": 0
+        }
+      ],
+      "report_id": "b28254de-7b2e-be36-bb5c-4c3b92da8b25@mail.ru"
+    },
+    "report_type": "smtp_tls"
+  },
+  "sample": "smtp_tls/mail.ru.json"
+}

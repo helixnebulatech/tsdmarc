@@ -1,0 +1,29 @@
+{
+  "input": "cases/digest.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "first\n--- mail_boundary ---\nsecond",
+    "cc": [],
+    "content-type": "multipart/digest; boundary=\"D\"",
+    "date": null,
+    "filename_safe_subject": "digest",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Type": "multipart/digest; boundary=\"D\"",
+      "From": [["", "a@example.com"]],
+      "MIME-Version": "1.0",
+      "Subject": "digest"
+    },
+    "mime-version": "1.0",
+    "reply_to": [],
+    "subject": "digest",
+    "to": []
+  }
+}

@@ -1,0 +1,57 @@
+From: a@example.com
+To: b@example.com
+Subject: charsets
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="XX"
+
+--XX
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Caf=E9 cr=E8me br=FBl=E9e=
+ soft break
+--XX
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: base64
+
+k1NtYXJ0lCBxdW90ZXMgliCA
+--XX
+Content-Type: text/plain; charset=koi8-r
+Content-Transfer-Encoding: base64
+
+8NLJ18XUIM3J0g==
+--XX
+Content-Type: text/plain; charset=shift_jis
+Content-Transfer-Encoding: base64
+
+k/qWe4zqgsyDZYNMg1iDZw==
+--XX
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: base64
+
+1tDOxM7Esb4=
+--XX
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+bad ascii =E9 here
+--XX
+Content-Type: text/plain; charset=x-no-such-charset
+Content-Transfer-Encoding: quoted-printable
+
+unknown =C3=A9 charset
+--XX
+Content-Type: text/plain; charset=iso-8859-15
+Content-Transfer-Encoding: 8bit
+
+8bit body with é raw
+--XX
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+PGI+SGVsbG88L2I+
+--XX
+Content-Type: text/enriched
+
+<bold>enriched</bold>
+--XX--

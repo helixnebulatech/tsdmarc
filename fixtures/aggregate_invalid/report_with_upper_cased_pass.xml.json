@@ -1,0 +1,89 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,example.com,postmaster@example.com,,aggr_report_example.com_20191202_1638,2019-11-29 00:00:00,2019-11-30 00:00:00,True,,example.com,r,r,reject,reject,,100,,,,23.104.41.189,US,,,Leaseweb,Web Host,395954,\"Leaseweb USA, Inc.\",leaseweb.com,1,True,True,True,none,,,example.com,example.com,,example.com,none,pass,example.com,mfrom,pass\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": null,
+        "np": null,
+        "p": "reject",
+        "pct": "100",
+        "sp": "reject",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": "verify result: all signatures verified",
+                "result": "pass",
+                "selector": "none"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2019-11-29 00:00:00",
+          "interval_end": "2019-11-30 00:00:00",
+          "normalized_timespan": true,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "leaseweb.com",
+            "as_name": "Leaseweb USA, Inc.",
+            "asn": 395954,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "23.104.41.189",
+            "name": "Leaseweb",
+            "reverse_dns": null,
+            "type": "Web Host"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2019-11-28 15:35:00",
+        "end_date": "2019-12-02 16:38:03",
+        "errors": [],
+        "generator": null,
+        "org_email": "postmaster@example.com",
+        "org_extra_contact_info": null,
+        "org_name": "example.com",
+        "original_timespan_seconds": 349383,
+        "report_id": "aggr_report_example.com_20191202_1638",
+        "timespan_requires_normalization": true
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate_invalid/report_with_upper_cased_pass.xml"
+}

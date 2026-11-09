@@ -1,0 +1,14 @@
+From: a@example.com
+Subject: epilogue recovery
+Content-Type: multipart/mixed; boundary="OUT"
+
+--OUT
+Content-Type: multipart/alternative; boundary="IN"
+
+inner part has no boundary lines
+--OUT--
+--OUT
+Content-Type: text/plain
+
+recovered from the epilogue
+--OUT--

@@ -1,0 +1,20 @@
+Received: from mail.example.com (mail.example.com [192.0.2.1])
+	by mx.example.org (Postfix) with ESMTPS id 4ABC123
+	for <user@example.org>; Tue, 30 Apr 2019 04:09:09 +0200 (CEST)
+Received: from [10.0.0.1] (helo=client.example.com)
+	by mail.example.com with esmtpsa (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(Exim 4.92) (envelope-from <bounce@example.com>)
+	id 1hLabc-0001; Tue, 30 Apr 2019 02:00:00 +0000
+Received: by 2002:a05:6000:1:0:0:0:0 with SMTP id abc; Mon, 29 Apr 2019 19:00:00 -0700 (PDT)
+Received: from host (unclosed comment
+Received: garbage without clauses
+Received: from x by y id z; for <a@b.c>; Tue, 30 Apr 2019 01:00:00 +0000
+Received: from sendgrid.net by mx.example.org 2019-04-30 01:30:00.123456789 +0000 UTC m=+0.123456789
+Received: from a by b; Tue, 31 Apr 2019 01:00:00 +0000
+Received: from a by b with SMTP; Wed, 30 Apr 2019 01:00:00 EST
+Received: from a by b; Tue, 30 Apr 19 01:00:60 +0000
+From: a@example.com
+Subject: received
+Date: Tue, 30 Apr 2019 04:09:09 +0545
+
+body

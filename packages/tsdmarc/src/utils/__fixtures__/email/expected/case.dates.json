@@ -1,0 +1,56 @@
+{
+  "input": "cases/dates.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "body\n",
+    "cc": [],
+    "date": "2019-04-30 08:39:09+00:00",
+    "date_header_defects": [
+      {
+        "header": "date",
+        "occurrence": 0,
+        "raw": "Mon, 30 Apr 2019 04:09:09 -0430",
+        "reason": "weekday-mismatch",
+        "recovered": true,
+        "value": "2019-04-30T08:39:09+00:00"
+      },
+      {
+        "header": "resent-date",
+        "occurrence": 0,
+        "raw": "garbage date",
+        "reason": "invalid-date-syntax",
+        "recovered": false,
+        "value": null
+      }
+    ],
+    "defects": [
+      {
+        "date-headers": [
+          "DateHeaderDefect: date[0]: weekday-mismatch",
+          "DateHeaderDefect: resent-date[0]: invalid-date-syntax"
+        ]
+      }
+    ],
+    "defects_categories": ["DateHeaderDefect"],
+    "filename_safe_subject": "dates",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Date": "Mon, 30 Apr 2019 04:09:09 -0430",
+      "From": [["", "a@example.com"]],
+      "Resent-Date": ["garbage date", "1 Jan 49 00:00 PST"],
+      "Subject": "dates"
+    },
+    "reply_to": [],
+    "resent-date": ["garbage date", "1 Jan 49 00:00 PST"],
+    "subject": "dates",
+    "timezone": "-4.5",
+    "to": []
+  }
+}

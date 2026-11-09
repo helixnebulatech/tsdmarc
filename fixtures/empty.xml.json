@@ -1,0 +1,8 @@
+{
+  "error": {
+    "message": "Not a recognized report format (not a DMARC aggregate XML report, an SMTP TLS JSON report, or a DMARC report email)",
+    "type": "ParserError"
+  },
+  "parsedmarc": "11.2.1",
+  "sample": "empty.xml"
+}

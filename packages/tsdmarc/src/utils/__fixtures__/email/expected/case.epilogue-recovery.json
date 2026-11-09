@@ -1,0 +1,35 @@
+{
+  "input": "cases/epilogue-recovery.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "recovered from the epilogue\n--- mail_boundary ---\ninner part has no boundary lines\n",
+    "cc": [],
+    "content-type": "multipart/mixed; boundary=\"OUT\"",
+    "date": null,
+    "defects": [
+      {
+        "multipart/alternative": [
+          "StartBoundaryNotFoundDefect: The claimed start boundary was never found."
+        ]
+      }
+    ],
+    "defects_categories": ["StartBoundaryNotFoundDefect"],
+    "filename_safe_subject": "epilogue recovery",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Content-Type": "multipart/mixed; boundary=\"OUT\"",
+      "From": [["", "a@example.com"]],
+      "Subject": "epilogue recovery"
+    },
+    "reply_to": [],
+    "subject": "epilogue recovery",
+    "to": []
+  }
+}

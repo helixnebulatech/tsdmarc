@@ -1,0 +1,82 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\n1.0,FastMail Pty Ltd,reports@fastmaildmarc.com,https://fastmail.com/,102675056,2018-01-16 00:00:00,2018-01-16 23:59:59,False,,indemed.com,r,r,none,none,,100,0,,,104.195.80.20,US,,,,,,,,1,False,False,False,none,,,example.com,example.com,fastmail.fm,,,,example.com,mfrom,softfail\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "indemed.com",
+        "fo": "0",
+        "np": null,
+        "p": "none",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "softfail",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": "fastmail.fm",
+            "header_from": "example.com"
+          },
+          "interval_begin": "2018-01-16 00:00:00",
+          "interval_end": "2018-01-16 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "104.195.80.20",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2018-01-16 00:00:00",
+        "end_date": "2018-01-16 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "reports@fastmaildmarc.com",
+        "org_extra_contact_info": "https://fastmail.com/",
+        "org_name": "FastMail Pty Ltd",
+        "original_timespan_seconds": 86399,
+        "report_id": "102675056",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "1.0"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/fastmail.com!example.com!1516060800!1516147199!102675056.xml.gz"
+}

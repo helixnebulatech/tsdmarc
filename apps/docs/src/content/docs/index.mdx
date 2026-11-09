@@ -1,0 +1,81 @@
+---
+title: tsdmarc
+description: Parse DMARC aggregate, failure and SMTP TLS reports in TypeScript. A 1:1 port of parsedmarc for Node.js, Bun and Deno.
+template: splash
+hero:
+  tagline: Parse DMARC aggregate, failure and SMTP TLS reports in TypeScript. A faithful 1:1 port of parsedmarc for Node.js, Bun and Deno — same output, same configuration file, camelCase API.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Get started
+      link: getting-started/introduction/
+      icon: right-arrow
+    - text: Quick start
+      link: getting-started/quick-start/
+      variant: minimal
+    - text: View on GitHub
+      link: https://github.com/helixnebulatech/tsdmarc
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## What it does
+
+<CardGrid stagger>
+  <Card title="Every report type" icon="document">
+    Aggregate (rua) reports in the draft, RFC 7489 and RFC 9990 schemas, failure
+    (ruf) reports (RFC 6591 / RFC 9991) and SMTP TLS reports (RFC 8460),
+    compressed or not, as files, emails or mbox archives.
+  </Card>
+  <Card title="Enriched data" icon="information">
+    Reverse DNS, base domain, sending service name and type, country and ASN for
+    every source IP, with an offline IPinfo Lite database available.
+  </Card>
+  <Card title="Mailboxes" icon="email">
+    Read reports from IMAP, Gmail, Microsoft Graph (Microsoft 365) or a Maildir,
+    archive what was processed, and watch for new reports.
+  </Card>
+  <Card title="Outputs" icon="rocket">
+    JSON and CSV files, Elasticsearch 9, OpenSearch, Splunk HEC, PostgreSQL,
+    Kafka, Amazon S3, Azure Log Analytics, Grafana Loki, syslog, GELF, webhooks
+    and email.
+  </Card>
+  <Card title="Drop-in CLI" icon="seti:shell">
+    The `tsdmarc` command reads parsedmarc's INI file and accepts both
+    `TSDMARC_*` and `PARSEDMARC_*` environment variables.
+  </Card>
+  <Card title="Same output as parsedmarc" icon="approve-check">
+    Output files, documents and payloads use parsedmarc's snake_case fields, so
+    the premade Kibana, OpenSearch, Grafana and Splunk dashboards work
+    unchanged.
+  </Card>
+</CardGrid>
+
+## Start here
+
+<CardGrid>
+  <LinkCard
+    title="Install"
+    description="The core package, the integrations and the CLI."
+    href="getting-started/installation/"
+  />
+  <LinkCard
+    title="Use the library"
+    description="Parse files, emails and mailboxes from TypeScript."
+    href="guides/library/"
+  />
+  <LinkCard
+    title="Configure the CLI"
+    description="Every INI option and environment variable."
+    href="guides/configuration/"
+  />
+  <LinkCard
+    title="Coming from parsedmarc?"
+    description="What is identical and what is different."
+    href="guides/migrating-from-parsedmarc/"
+  />
+</CardGrid>
+
+tsdmarc is a TypeScript port of [parsedmarc](https://github.com/domainaware/parsedmarc) by Sean Whalen and contributors, licensed under the Apache License 2.0. This documentation is adapted from [parsedmarc's documentation](https://domainaware.github.io/parsedmarc/).

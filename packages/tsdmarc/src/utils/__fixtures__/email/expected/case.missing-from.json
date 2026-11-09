@@ -1,0 +1,28 @@
+{
+  "input": "cases/missing-from.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "body\r\n",
+    "cc": [],
+    "date": null,
+    "filename_safe_subject": "No sender",
+    "from": null,
+    "has_defects": false,
+    "headers": {
+      "Subject": "No sender",
+      "To": [["", "b@example.com"]]
+    },
+    "reply_to": [],
+    "subject": "No sender",
+    "to": [
+      {
+        "address": "b@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "b"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

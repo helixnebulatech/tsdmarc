@@ -1,0 +1,64 @@
+{
+  "input": "inputs/failure_DMARC_Failure_Report_for_domain.de_mail-from_sharepoint_domain.de_ip_10.10.10.10_.eml.part4.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "<html><head><base href='\nwettbewerb' /></head><body><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2//EN\"><HTML><HEAD><META NAME=\"Generator\" CONTENT=\"MS Exchange Server version 08.01.0240.003\"></html>\n",
+    "cc": [],
+    "content-transfer-encoding": "quoted-printable",
+    "content-type": "text/html; charset=utf-8",
+    "date": "2018-10-01 09:20:27+00:00",
+    "filename_safe_subject": "Subject",
+    "from": {
+      "address": "sharepoint@domain.de",
+      "display_name": "=?utf-8?B?SW50ZXJha3RpdmUgV2V0dGJld2VyYmVyLcOcYmVyc2ljaHQ=?=",
+      "domain": "domain.de",
+      "local": "sharepoint"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Transfer-Encoding": "quoted-printable",
+      "Content-Type": "text/html; charset=utf-8",
+      "Date": "01 Oct 2018 11:20:27 +0200",
+      "MIME-Version": "1.0",
+      "Message-ID": "<38.E7.30937.BD6E1BB5@ mailrelay.de>",
+      "Received": "from Servernameone.domain.local (Servernameone.domain.local [10.10.10.10])\n\tby  mailrelay.de (mail.DOMAIN.de) with SMTP id 38.E7.30937.BD6E1BB5; Mon,  1 Oct 2018 11:20:27 +0200 (CEST)",
+      "Subject": "Subject",
+      "To": [["", "peter.pan@domain.de"]],
+      "X-Mailer": "Microsoft SharePoint Foundation 2010",
+      "from": [
+        [
+          "=?utf-8?B?SW50ZXJha3RpdmUgV2V0dGJld2VyYmVyLcOcYmVyc2ljaHQ=?=",
+          "sharepoint@domain.de"
+        ]
+      ]
+    },
+    "message-id": "<38.E7.30937.BD6E1BB5@ mailrelay.de>",
+    "mime-version": "1.0",
+    "received": [
+      {
+        "by": "mailrelay.de (mail.DOMAIN.de)",
+        "date": "Mon,  1 Oct 2018 11:20:27 +0200 (CEST)",
+        "date_utc": "2018-10-01 09:20:27+00:00",
+        "delay": 0,
+        "from": "Servernameone.domain.local (Servernameone.domain.local [10.10.10.10])",
+        "hop": 1,
+        "id": "38.E7.30937.BD6E1BB5",
+        "with": "SMTP"
+      }
+    ],
+    "reply_to": [],
+    "subject": "Subject",
+    "timezone": "+2.0",
+    "to": [
+      {
+        "address": "peter.pan@domain.de",
+        "display_name": null,
+        "domain": "domain.de",
+        "local": "peter.pan"
+      }
+    ],
+    "to_domains": ["domain.de"],
+    "x-mailer": "Microsoft SharePoint Foundation 2010"
+  }
+}

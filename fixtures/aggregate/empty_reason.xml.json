@@ -1,0 +1,94 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\n1.0,example.org,noreply-dmarc-support@example.org,https://support.example.org/dmarc,20240125141224705995,2024-01-25 05:12:24,2024-01-25 12:28:53,False,,example.com,r,r,quarantine,quarantine,,100,1,,,198.51.100.123,,,,,,,,,2,False,True,True,none,none,none,example.edu,example.com,example.net,example.com,example,pass,example.edu,mfrom,pass\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": "1",
+        "np": null,
+        "p": "quarantine",
+        "pct": "100",
+        "sp": "quarantine",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": "2048-bit key",
+                "result": "pass",
+                "selector": "example"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.edu",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 2,
+          "identifiers": {
+            "envelope_from": "example.edu",
+            "envelope_to": "example.net",
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-01-25 05:12:24",
+          "interval_end": "2024-01-25 12:28:53",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [
+              {
+                "comment": null,
+                "type": null
+              }
+            ],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "198.51.100.123",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2024-01-25 05:12:24",
+        "end_date": "2024-01-25 12:28:53",
+        "errors": [],
+        "generator": null,
+        "org_email": "noreply-dmarc-support@example.org",
+        "org_extra_contact_info": "https://support.example.org/dmarc",
+        "org_name": "example.org",
+        "original_timespan_seconds": 26189,
+        "report_id": "20240125141224705995",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "1.0"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/empty_reason.xml"
+}

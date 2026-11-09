@@ -1,0 +1,188 @@
+---
+title: Installation
+description: Install the tsdmarc core, the integration packages and the tsdmarc command on Node.js, Bun or Deno.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Requirements
+
+- **Node.js 24** or later, **Bun**, or **Deno** 2.
+- Network access for DNS lookups and for refreshing the IP database and the reverse DNS map, unless you run with the `offline` option.
+
+tsdmarc is published as ES modules only (no CommonJS build).
+
+## The library
+
+Install the core package, plus the integration packages you need:
+
+<Tabs syncKey="pkg">
+<TabItem label="npm">
+
+```sh
+npm install tsdmarc
+# optional: integrations
+npm install @tsdmarc/imap @tsdmarc/elasticsearch
+```
+
+</TabItem>
+<TabItem label="pnpm">
+
+```sh
+pnpm add tsdmarc
+# optional: integrations
+pnpm add @tsdmarc/imap @tsdmarc/elasticsearch
+```
+
+</TabItem>
+<TabItem label="Bun">
+
+```sh
+bun add tsdmarc
+# optional: integrations
+bun add @tsdmarc/imap @tsdmarc/elasticsearch
+```
+
+</TabItem>
+<TabItem label="Deno">
+
+```sh
+deno add npm:tsdmarc
+# optional: integrations
+deno add npm:@tsdmarc/imap npm:@tsdmarc/elasticsearch
+```
+
+</TabItem>
+</Tabs>
+
+The integration packages declare `tsdmarc` as a peer dependency, so an application always has a single copy of the core (one logger, one set of caches). Install `tsdmarc` next to them.
+
+### Choosing what to install
+
+| You want to… | Install |
+| --- | --- |
+| Parse report files, emails, mbox files | `tsdmarc` |
+| Read a Maildir; write JSON/CSV; send to Splunk HEC, Loki, syslog, GELF or a webhook | `tsdmarc` |
+| Read an IMAP mailbox | `@tsdmarc/imap` |
+| Read a Gmail mailbox through the Gmail API | `@tsdmarc/gmail` |
+| Read a Microsoft 365 mailbox through Microsoft Graph | `@tsdmarc/msgraph` |
+| Email the results over SMTP | `@tsdmarc/smtp` |
+| Save to Elasticsearch | `@tsdmarc/elasticsearch` |
+| Save to OpenSearch | `@tsdmarc/opensearch` |
+| Save to PostgreSQL | `@tsdmarc/postgres` |
+| Publish to Apache Kafka | `@tsdmarc/kafka` |
+| Upload to Amazon S3 (or an S3-compatible service) | `@tsdmarc/s3` |
+| Send to Azure Log Analytics / Microsoft Sentinel | `@tsdmarc/loganalytics` |
+| Look up countries and ASNs without network access | `@tsdmarc/ipinfo-lite` |
+| Use the `tsdmarc` command | `@tsdmarc/cli` |
+
+## The command-line tool
+
+`@tsdmarc/cli` provides the `tsdmarc` command and depends on every integration, so one install gives you all of parsedmarc's features.
+
+<Tabs syncKey="pkg">
+<TabItem label="npm">
+
+```sh
+npm install --global @tsdmarc/cli
+tsdmarc --help
+# or without installing
+npx --package @tsdmarc/cli tsdmarc --help
+```
+
+</TabItem>
+<TabItem label="pnpm">
+
+```sh
+pnpm add --global @tsdmarc/cli
+tsdmarc --help
+# or without installing
+pnpm --package @tsdmarc/cli dlx tsdmarc --help
+```
+
+</TabItem>
+<TabItem label="Bun">
+
+```sh
+bun add --global @tsdmarc/cli
+tsdmarc --help
+```
+
+</TabItem>
+<TabItem label="Deno">
+
+```sh
+deno install --global --allow-all --name tsdmarc npm:@tsdmarc/cli
+tsdmarc --help
+```
+
+</TabItem>
+</Tabs>
+
+For a service, install it in its own directory under a dedicated user (see [Running as a service](../../guides/running-as-a-service/)):
+
+```sh
+sudo useradd tsdmarc -r -s /bin/false -m -b /opt
+sudo -u tsdmarc npm install --prefix /opt/tsdmarc @tsdmarc/cli
+/opt/tsdmarc/node_modules/.bin/tsdmarc --version
+```
+
+## IP-to-country database
+
+tsdmarc looks up the country and ASN of each source IP address in an MMDB database. Like parsedmarc, it uses [IPinfo Lite](https://ipinfo.io/lite) (licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)):
+
+- The **`tsdmarc` command** downloads the current IPinfo Lite database at startup (and on each configuration reload) unless `offline` or `always_use_local_files` is set, and caches it per user in `$XDG_CACHE_HOME/tsdmarc`, `~/.cache/tsdmarc` or `%LOCALAPPDATA%\tsdmarc`.
+- **`@tsdmarc/ipinfo-lite`** contains a copy of the database (about 25 MB). When it is installed, it is used whenever no downloaded copy is available, so lookups work offline. `@tsdmarc/cli` depends on it.
+- In the **library**, call `loadIpDb()` once to download and cache the current database like the CLI does; otherwise lookups use `ipDbPath`, then `@tsdmarc/ipinfo-lite` if installed, then a MaxMind GeoLite2 database in a standard system location.
+
+```sh
+npm install @tsdmarc/ipinfo-lite
+```
+
+### Using MaxMind GeoLite2 (optional)
+
+To use the [MaxMind GeoLite2 Country database](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) instead, point `ip_db_path` (CLI) or the `ipDbPath` option (library) at it:
+
+```ini
+[general]
+ip_db_path = /usr/share/GeoIP/GeoLite2-Country.mmdb
+```
+
+Use this only if you specifically prefer MaxMind data: country databases like GeoLite2 carry no ASN data, so source attribution for IP addresses without reverse DNS is reduced. MaxMind requires a free account; keep the file current with [geoipupdate](https://github.com/maxmind/geoipupdate).
+
+## Optional system dependencies
+
+To parse emails saved from Microsoft Outlook (OLE `.msg` files), install `msgconvert`. On Debian or Ubuntu:
+
+```sh
+sudo apt-get install libemail-outlook-message-perl
+```
+
+On CentOS, RHEL or Rocky Linux, install the `Email::Outlook::Message` Perl module from CPAN:
+
+```sh
+sudo dnf install -y perl perl-CPAN make gcc
+sudo cpan -i Email::Outlook::Message
+```
+
+## Network notes
+
+### Using a web proxy
+
+tsdmarc's HTTP downloads (IP database, reverse DNS map, PSL overrides, the IPinfo API, DNS over HTTPS) use `fetch`. On Node.js, the standard `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY` variables apply only when `NODE_USE_ENV_PROXY=1` is set:
+
+```sh
+export NODE_USE_ENV_PROXY=1
+export HTTPS_PROXY=http://proxy.example.net:3128
+export NO_PROXY=elasticsearch.example.net,127.0.0.1
+```
+
+If the proxy inspects TLS, add your organization's CA with `NODE_EXTRA_CA_CERTS=/etc/ssl/certs/corporate-ca.pem` (parsedmarc uses `SSL_CERT_FILE`).
+
+### Testing multiple report analyzers
+
+To test tsdmarc and another report processing solution at the same time, you can have up to two `mailto` URIs in each of the `rua` and `ruf` tags of your DMARC record, separated by commas.
+
+### Using Microsoft Exchange
+
+If your mail server is Microsoft Exchange, make sure it is patched to at least Exchange Server 2010 Update Rollup 22 ([KB4295699](https://support.microsoft.com/KB/4295699)), Exchange Server 2013 Cumulative Update 21 ([KB4099855](https://support.microsoft.com/KB/4099855)) or Exchange Server 2016 Cumulative Update 11 ([KB4134118](https://support.microsoft.com/kb/4134118)).

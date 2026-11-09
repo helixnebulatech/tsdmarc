@@ -1,0 +1,5 @@
+From: a@example.com
+Subject: start boundary missing
+Content-Type: multipart/mixed; boundary="ZZ"
+
+no boundary lines at all

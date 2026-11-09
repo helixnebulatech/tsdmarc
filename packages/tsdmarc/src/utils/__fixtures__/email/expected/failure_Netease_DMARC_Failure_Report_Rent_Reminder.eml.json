@@ -1,0 +1,104 @@
+{
+  "input": "samples/failure/[Netease DMARC Failure Report] Rent Reminder.eml",
+  "result": {
+    "attachments": [
+      {
+        "binary": false,
+        "charset": null,
+        "content-disposition": "attachment;\n\tfilename=\"ATT00001\"",
+        "content-id": "<C9EED1E253B7F5459DB3AC82BC6E9953@namprd04.prod.outlook.com>",
+        "content_transfer_encoding": "base64",
+        "filename": "ATT00001",
+        "mail_content_type": "message/feedback-report",
+        "payload": "\nRmVlZGJhY2stVHlwZTogYXV0aC1mYWlsdXJlDQpVc2VyLUFnZW50OiBOdGVzRG1hcmNSZXBv\ncnRlci8xLjANClZlcnNpb246IDENCk9yaWdpbmFsLU1haWwtRnJvbTogPGJvdW5jZXMrMTEz\nNzYxNi1jMWFkLXhzajM5OT0xNjMuY29tQGVtYWlsLmVudHJhdGEuY29tPg0KQXJyaXZhbC1E\nYXRlOiBGcmksIDI4IFNlcCAyMDE4IDE2OjQ4OjQyICswODAwDQpTb3VyY2UtSVA6IDE2Ny44\nOS42OS4yNA0KUmVwb3J0ZWQtRG9tYWluOiBjYXJkaW5hbC5jb20NCk9yaWdpbmFsLUVudmVs\nb3BlLUlkOiBOOENvd0VBcGNVUG82cTFiblhsTUFBLS0uNDQzOTJTMw0KQXV0aGVudGljYXRp\nb24tUmVzdWx0czogMTYzLmNvbTsgZGtpbT1wYXNzICh2ZXJpZnkgcmVzdWx0OiBhbGwgc2ln\nbmF0dXJlcyB2ZXJpZmllZCkgaGVhZGVyLmQ9ZW50cmF0YS5jb207IHNwZj1wYXNzIHNtdHAu\nbWFpbGZyb209Ym91bmNlcysxMTM3NjE2LWMxYWQteHNqMzk5PTE2My5jb21AZW1haWwuZW50\ncmF0YS5jb20NCkRLSU0tRG9tYWluOiBlbnRyYXRhLmNvbQ0KRGVsaXZlcnktUmVzdWx0OiBk\nZWxpdmVyZWQNCklkZW50aXR5LUFsaWdubWVudDogc3BmLGRraW0=",
+        "safe_filename": "ATT00001",
+        "sha256": "31ae991e73669775496867579fe76095009566be4ad531eadf88ed8ba5a79117"
+      },
+      {
+        "binary": false,
+        "charset": null,
+        "content-disposition": "attachment",
+        "content-id": "",
+        "content_transfer_encoding": "",
+        "filename": "txsseukncq.txt",
+        "mail_content_type": "message/rfc822",
+        "payload": "Received: by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242\nReceived: from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)\nFrom: 700 on Washington <info@cardinal.com>\nTo: \"redacted@163.com\" <redacted@163.com>\nSubject: Rent Reminder\nThread-Topic: Rent Reminder\nThread-Index: AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==\nX-MS-Exchange-MessageSentRepresentingType: 1\nDate: Fri, 28 Sep 2018 04:48:39 -0400\nMessage-ID: <oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>\nX-MS-Has-Attach: \nX-MS-TNEF-Correlator: \nX-MS-Exchange-Organization-RecordReviewCfmType: 0\nContent-Type: text/plain; charset=\"us-ascii\"\nMIME-Version: 1.0\n\n",
+        "safe_filename": "txsseukncq.txt",
+        "sha256": "c12cbc397f573338e0d49daffef61647081680e98c3826af4cdaa35cd7013b8b"
+      }
+    ],
+    "authentication-results-original": "smtp.cardhealth.com; spf=Pass\n smtp.mailfrom=abuse@163.com",
+    "bcc": [],
+    "body": "This is a spf/dkim authentication-failure report for an email message received from IP 167.89.69.24 on Fri, 28 Sep 2018 16:48:42 +0800.\nBelow is some detail information about this message:\n 1. SPF-authenticated Identifiers: email.entrata.com;\n 2. DKIM-authenticated Identifiers: entrata.com;\n 3. DMARC Mechanism Check Result: Identifier non-aligned, DMARC mechanism check failures;\n\nFor more information please check Aggregate Reports or mail to abuse@163.com.\n\n\n--- mail_boundary ---\nRmVlZGJhY2stVHlwZTogYXV0aC1mYWlsdXJlDQpVc2VyLUFnZW50OiBOdGVzRG1hcmNSZXBv\ncnRlci8xLjANClZlcnNpb246IDENCk9yaWdpbmFsLU1haWwtRnJvbTogPGJvdW5jZXMrMTEz\nNzYxNi1jMWFkLXhzajM5OT0xNjMuY29tQGVtYWlsLmVudHJhdGEuY29tPg0KQXJyaXZhbC1E\nYXRlOiBGcmksIDI4IFNlcCAyMDE4IDE2OjQ4OjQyICswODAwDQpTb3VyY2UtSVA6IDE2Ny44\nOS42OS4yNA0KUmVwb3J0ZWQtRG9tYWluOiBjYXJkaW5hbC5jb20NCk9yaWdpbmFsLUVudmVs\nb3BlLUlkOiBOOENvd0VBcGNVUG82cTFiblhsTUFBLS0uNDQzOTJTMw0KQXV0aGVudGljYXRp\nb24tUmVzdWx0czogMTYzLmNvbTsgZGtpbT1wYXNzICh2ZXJpZnkgcmVzdWx0OiBhbGwgc2ln\nbmF0dXJlcyB2ZXJpZmllZCkgaGVhZGVyLmQ9ZW50cmF0YS5jb207IHNwZj1wYXNzIHNtdHAu\nbWFpbGZyb209Ym91bmNlcysxMTM3NjE2LWMxYWQteHNqMzk5PTE2My5jb21AZW1haWwuZW50\ncmF0YS5jb20NCkRLSU0tRG9tYWluOiBlbnRyYXRhLmNvbQ0KRGVsaXZlcnktUmVzdWx0OiBk\nZWxpdmVyZWQNCklkZW50aXR5LUFsaWdubWVudDogc3BmLGRraW0=",
+    "cc": [],
+    "content-type": "multipart/mixed;\n\tboundary=\"B_3622128044_155770608\"",
+    "date": "2018-09-28 08:48:43+00:00",
+    "filename_safe_subject": "[Netease DMARC Failure Report] Rent Reminder",
+    "from": {
+      "address": "abuse@163.com",
+      "display_name": null,
+      "domain": "163.com",
+      "local": "abuse"
+    },
+    "has_defects": false,
+    "headers": {
+      "Authentication-Results-Original": "smtp.cardhealth.com; spf=Pass\n smtp.mailfrom=abuse@163.com",
+      "Content-type": "multipart/mixed;\n\tboundary=\"B_3622128044_155770608\"",
+      "Date": "Fri, 28 Sep 2018 16:48:43 +0800",
+      "From": [["", "abuse@163.com"]],
+      "MIME-Version": "1.0",
+      "Message-ID": "<5BADEAEC.AC2A83.17156@m12-184.163.com>",
+      "Received": [
+        "from m12-184.163.com ([220.181.12.184])  by smtp.cardhealth.com with\n ESMTP; 28 Sep 2018 04:48:45 -0400",
+        "from 163.com (unknown [192.168.201.141])\tby mfast9 (Coremail) with\n SMTP id uMCowEAJ6lTs6q1bwLXEEg--.1184S2;\tFri, 28 Sep 2018 16:48:44 +0800\n (CST)"
+      ],
+      "Received-SPF": "Pass (smtp.cardhealth.com: domain of abuse@163.com\n  designates 220.181.12.184 as permitted sender)\n  identity=mailfrom; client-ip=220.181.12.184;\n  receiver=smtp.cardhealth.com; envelope-from=\"abuse@163.com\";\n  x-sender=\"abuse@163.com\"; x-conformance=spf_only;\n  x-record-type=\"v=spf1\"",
+      "Return-Path": "abuse@163.com",
+      "Subject": "[Netease DMARC Failure Report] Rent Reminder",
+      "To": [["", "dmarcreports@cardinalhealth.com"]],
+      "X-CM-SenderInfo": "5dex2vi6rwjhhfrp/",
+      "X-Coremail-Antispam": "1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73\n\tVFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvj4RJUUUUUUUU",
+      "X-Originating-IP": "[192.168.201.141]"
+    },
+    "message-id": "<5BADEAEC.AC2A83.17156@m12-184.163.com>",
+    "mime-version": "1.0",
+    "received": [
+      {
+        "by": "mfast9 (Coremail)",
+        "date": "Fri, 28 Sep 2018 16:48:44 +0800\n (CST)",
+        "date_utc": "2018-09-28 08:48:44+00:00",
+        "delay": 0,
+        "from": "163.com (unknown [192.168.201.141])",
+        "hop": 1,
+        "id": "uMCowEAJ6lTs6q1bwLXEEg--.1184S2",
+        "with": "SMTP"
+      },
+      {
+        "by": "smtp.cardhealth.com",
+        "date": "28 Sep 2018 04:48:45 -0400",
+        "date_utc": "2018-09-28 08:48:45+00:00",
+        "delay": 1.0,
+        "from": "m12-184.163.com ([220.181.12.184])",
+        "hop": 2,
+        "with": "ESMTP"
+      }
+    ],
+    "received-spf": "Pass (smtp.cardhealth.com: domain of abuse@163.com\n  designates 220.181.12.184 as permitted sender)\n  identity=mailfrom; client-ip=220.181.12.184;\n  receiver=smtp.cardhealth.com; envelope-from=\"abuse@163.com\";\n  x-sender=\"abuse@163.com\"; x-conformance=spf_only;\n  x-record-type=\"v=spf1\"",
+    "reply_to": [],
+    "return-path": "abuse@163.com",
+    "subject": "[Netease DMARC Failure Report] Rent Reminder",
+    "timezone": "+8.0",
+    "to": [
+      {
+        "address": "dmarcreports@cardinalhealth.com",
+        "display_name": null,
+        "domain": "cardinalhealth.com",
+        "local": "dmarcreports"
+      }
+    ],
+    "to_domains": ["cardinalhealth.com"],
+    "x-cm-senderinfo": "5dex2vi6rwjhhfrp/",
+    "x-coremail-antispam": "1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73\n\tVFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvj4RJUUUUUUUU",
+    "x-originating-ip": "[192.168.201.141]"
+  }
+}

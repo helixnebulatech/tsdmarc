@@ -1,0 +1,29 @@
+---
+// Starlight's footer plus the project credit line.
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default><slot /></Default>
+<p class="credit">
+  Created by <a href="https://helixnebula.tech">HelixNebula</a>.{' '}
+  Documentation adapted from{' '}
+  <a href="https://domainaware.github.io/parsedmarc/">
+    parsedmarc's documentation
+  </a>{' '}
+  (Apache-2.0).
+</p>
+
+<style>
+  .credit {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+  .credit a {
+    color: var(--sl-color-gray-2);
+  }
+  .credit a:hover {
+    color: var(--sl-color-white);
+  }
+</style>

@@ -1,0 +1,22 @@
+{
+  "name": "@tsdmarc/smoke",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runs the built packages (dist/) under Node, Bun and Deno",
+  "dependencies": {
+    "@tsdmarc/cli": "workspace:*",
+    "@tsdmarc/elasticsearch": "workspace:*",
+    "@tsdmarc/gmail": "workspace:*",
+    "@tsdmarc/imap": "workspace:*",
+    "@tsdmarc/ipinfo-lite": "workspace:*",
+    "@tsdmarc/kafka": "workspace:*",
+    "@tsdmarc/loganalytics": "workspace:*",
+    "@tsdmarc/msgraph": "workspace:*",
+    "@tsdmarc/opensearch": "workspace:*",
+    "@tsdmarc/postgres": "workspace:*",
+    "@tsdmarc/s3": "workspace:*",
+    "@tsdmarc/smtp": "workspace:*",
+    "tsdmarc": "workspace:*"
+  }
+}

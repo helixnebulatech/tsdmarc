@@ -1,0 +1,14 @@
+From: a@example.com
+To: b@example.com
+Subject: special names
+__proto__: polluted
+Body: header named body
+Defects: header named defects
+Reply_To: underscore header
+Constructor: x
+toString: y
+X-Repeated: one
+X-Repeated: two
+x-repeated: three
+
+body

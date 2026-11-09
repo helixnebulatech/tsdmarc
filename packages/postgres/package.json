@@ -1,0 +1,76 @@
+{
+  "name": "@tsdmarc/postgres",
+  "version": "0.0.0",
+  "description": "PostgreSQL output for tsdmarc: save DMARC aggregate, failure and SMTP TLS reports to PostgreSQL tables.",
+  "license": "Apache-2.0",
+  "author": "HelixNebula (https://helixnebula.tech)",
+  "homepage": "https://github.com/helixnebulatech/tsdmarc/tree/main/packages/postgres#readme",
+  "bugs": {
+    "url": "https://github.com/helixnebulatech/tsdmarc/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepack": "node ../../tools/license-files.mjs",
+    "publint": "publint && attw --pack . --profile esm-only --ignore-rules cjs-resolves-to-esm",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@tsdmarc/tsdown-config": "workspace:*",
+    "@types/node": "26.6.5",
+    "@types/pg": "^8.23.1",
+    "tsdmarc": "workspace:*",
+    "tsdown": "0.23.2",
+    "vitest": "5.0.5"
+  },
+  "peerDependencies": {
+    "tsdmarc": "workspace:^"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helixnebulatech/tsdmarc.git",
+    "directory": "packages/postgres"
+  },
+  "keywords": [
+    "dmarc",
+    "tsdmarc",
+    "postgres",
+    "postgresql",
+    "database",
+    "dmarc-reports",
+    "smtp-tls"
+  ]
+}
