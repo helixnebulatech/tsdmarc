@@ -1,0 +1,275 @@
+# Modelled on vercel/ai's release workflow (changesets opens a "Version
+# Packages" PR; merging it publishes to npm with trusted publishing, OIDC and
+# provenance, no NPM_TOKEN) and on Better Auth's: both publish from a
+# protected environment (`npm-release` and `Release`). Here only the job that
+# publishes runs in the `Release` environment, with read-only contents and the
+# OIDC token, so it needs a reviewer's approval and is the only place npm
+# accepts a publish from. Unlike both, that job doesn't build: it only runs npm
+# on tarballs built in an earlier job, so the workspace's tools never run next
+# to the token.
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.changeset/**'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+    inputs:
+      snapshot:
+        description: 'Publish a snapshot release instead of a normal release'
+        type: boolean
+        default: false
+
+concurrency:
+  group: 'release-${{ github.ref_name }}'
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  # Opens or updates the "Version Packages" PR while there are changesets.
+  # No environment: it never publishes.
+  version:
+    name: Version Packages PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+      # dispatch CI for the "Version Packages" PR
+      actions: write
+    # do not attempt running in forks; a manual normal release only from main
+    if: >
+      github.repository_owner == 'helixnebulatech' && inputs.snapshot != true && github.ref == 'refs/heads/main'
+    outputs:
+      has-changesets: ${{ steps.changesets.outputs.hasChangesets }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
+        with:
+          runtime: node@24
+          require-lockfile: true
+
+      # Without a publish command the action only versions: with no
+      # changesets left it does nothing and the publish job takes over.
+      - name: Create or update the Version Packages PR
+        id: changesets
+        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
+        with:
+          version: pnpm ci:version
+          setupGitUser: false
+          # With "github-api", commits are signed and attributed to the GITHUB_TOKEN owner.
+          commitMode: 'github-api'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # PRs opened with GITHUB_TOKEN don't trigger workflows, so run the
+      # required checks on the release branch explicitly.
+      - name: Run checks on the Version Packages PR
+        if: steps.changesets.outputs.pullRequestNumber != ''
+        run: |
+          gh workflow run ci.yml --ref changeset-release/main
+          gh workflow run verify-changesets.yml --ref changeset-release/main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+
+  # Builds and packs what isn't on npm yet, once the Version Packages PR is
+  # merged (no changesets left). No environment and no OIDC token.
+  build:
+    name: Build tarballs
+    needs: version
+    if: needs.version.outputs.has-changesets == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    outputs:
+      packages: ${{ steps.pack.outputs.packages }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
+        with:
+          runtime: node@24
+          require-lockfile: true
+
+      - name: Build
+        run: pnpm clean && pnpm build:packages
+
+      - name: Pack
+        id: pack
+        run: node .github/scripts/pack-release.mjs
+
+      - name: Upload tarballs
+        if: steps.pack.outputs.packages != '[]'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-tarballs
+          path: release-tarballs
+          retention-days: 7
+
+  publish:
+    name: Publish to npm
+    needs: build
+    if: needs.build.outputs.packages != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: Release
+    permissions:
+      contents: read
+      # npm trusted publishing (OIDC) and provenance
+      id-token: write
+    steps:
+      # Only the release scripts: nothing here may install or run the workspace.
+      - name: Checkout the release scripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+          sparse-checkout-cone-mode: false
+
+      # Node 24's npm is recent enough for trusted publishing (>= 11.5.1).
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Download tarballs
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-tarballs
+          path: release-tarballs
+
+      # Skips what is on npm already, so re-running this job is safe.
+      - name: Publish
+        run: node .github/scripts/publish-tarballs.mjs
+
+  # Tags and GitHub Releases for what is on npm, outside the environment (it
+  # needs to write, not to publish). Also after a failed publish, so that the
+  # packages that did get published don't stay without a release.
+  github-releases:
+    name: GitHub Releases
+    needs: [build, publish]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Create GitHub Releases
+        id: releases
+        run: node .github/scripts/github-releases.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PUBLISHED_PACKAGES: ${{ needs.publish.result == 'success' && needs.build.outputs.packages || '[]' }}
+
+      - name: Attach SLSA provenance to GitHub Releases
+        run: node .github/scripts/upload-provenance.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISHED_PACKAGES: ${{ steps.releases.outputs.packages }}
+
+  # Snapshot release path: built like a normal release, without the token.
+  snapshot-build:
+    name: Build snapshot tarballs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    # A dispatch from another branch runs that branch's copy of this file, so
+    # the ref check only stops accidents; the Release environment (main only)
+    # and npm's trusted publisher settings stop a dispatch on purpose.
+    if: >
+      github.repository_owner == 'helixnebulatech' && inputs.snapshot == true && github.ref == 'refs/heads/main'
+    outputs:
+      packages: ${{ steps.pack.outputs.packages }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4 # v3.1.1
+        with:
+          runtime: node@24
+          require-lockfile: true
+
+      - name: Delete pre.json if it exists
+        run: rm -f .changeset/pre.json
+
+      - name: Version Packages (snapshot)
+        run: pnpm changeset version --snapshot "${GITHUB_SHA::8}"
+
+      - name: Build
+        run: pnpm clean && pnpm build:packages
+
+      - name: Pack
+        id: pack
+        run: node .github/scripts/pack-release.mjs
+
+      - name: Upload tarballs
+        if: steps.pack.outputs.packages != '[]'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-tarballs
+          path: release-tarballs
+          retention-days: 7
+
+  # Publishes the snapshot, also through the protected environment.
+  snapshot:
+    name: Snapshot Release
+    needs: snapshot-build
+    if: needs.snapshot-build.outputs.packages != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: Release
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout the release scripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+          sparse-checkout-cone-mode: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Download tarballs
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-tarballs
+          path: release-tarballs
+
+      - name: Publish Snapshot Release
+        run: node .github/scripts/publish-tarballs.mjs
+        env:
+          NPM_DIST_TAG: snapshot

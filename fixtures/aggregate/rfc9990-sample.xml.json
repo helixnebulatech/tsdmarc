@@ -1,0 +1,89 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\n1.0,Sample Reporter,report_sender@example-reporter.com,...,3v98abbp8ya9n3va8yr8oa3ya,1979-08-07 00:00:00,1979-08-07 23:59:59,False,,example.com,r,r,quarantine,none,none,,,n,treewalk,192.0.2.123,,,,,,,,,123,False,True,True,pass,,,example.com,example.com,,example.com,abc123,pass,example.com,mfrom,fail\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": "treewalk",
+        "domain": "example.com",
+        "fo": null,
+        "np": "none",
+        "p": "quarantine",
+        "pct": null,
+        "sp": "none",
+        "testing": "n"
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "abc123"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "fail",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 123,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "1979-08-07 00:00:00",
+          "interval_end": "1979-08-07 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "pass",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "192.0.2.123",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "1979-08-07 00:00:00",
+        "end_date": "1979-08-07 23:59:59",
+        "errors": [],
+        "generator": "Example DMARC Aggregate Reporter v1.2",
+        "org_email": "report_sender@example-reporter.com",
+        "org_extra_contact_info": "...",
+        "org_name": "Sample Reporter",
+        "original_timespan_seconds": 86399,
+        "report_id": "3v98abbp8ya9n3va8yr8oa3ya",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": "urn:ietf:params:xml:ns:dmarc-2.0",
+      "xml_schema": "1.0"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/rfc9990-sample.xml"
+}

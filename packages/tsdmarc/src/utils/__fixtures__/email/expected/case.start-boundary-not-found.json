@@ -1,0 +1,39 @@
+{
+  "input": "cases/start-boundary-not-found.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "no boundary lines at all\n",
+    "cc": [],
+    "content-type": "multipart/mixed; boundary=\"ZZ\"",
+    "date": null,
+    "defects": [
+      {
+        "multipart/mixed": [
+          "StartBoundaryNotFoundDefect: The claimed start boundary was never found.",
+          "MultipartInvariantViolationDefect: A message claimed to be a multipart but no subparts were found."
+        ]
+      }
+    ],
+    "defects_categories": [
+      "MultipartInvariantViolationDefect",
+      "StartBoundaryNotFoundDefect"
+    ],
+    "filename_safe_subject": "start boundary missing",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Content-Type": "multipart/mixed; boundary=\"ZZ\"",
+      "From": [["", "a@example.com"]],
+      "Subject": "start boundary missing"
+    },
+    "reply_to": [],
+    "subject": "start boundary missing",
+    "to": []
+  }
+}

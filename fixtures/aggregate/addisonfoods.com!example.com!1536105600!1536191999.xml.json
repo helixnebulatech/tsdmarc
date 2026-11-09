@@ -1,0 +1,82 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\n1.0,addisonfoods.com,postmaster@addisonfoods.com,,3ceb5548498640beaeb47327e202b0b9,2018-09-05 00:00:00,2018-09-05 23:59:59,False,,example.com,r,r,none,none,,100,0,,,109.203.100.17,GB,,,Node4,MSP,31727,Node4 Limited,node4.co.uk,1,False,False,False,none,,,example.com,example.com,,toptierhighticket.club,default,pass,,,\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": "0",
+        "np": null,
+        "p": "none",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "toptierhighticket.club",
+                "human_result": null,
+                "result": "pass",
+                "selector": "default"
+              }
+            ],
+            "spf": []
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2018-09-05 00:00:00",
+          "interval_end": "2018-09-05 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "node4.co.uk",
+            "as_name": "Node4 Limited",
+            "asn": 31727,
+            "base_domain": null,
+            "country": "GB",
+            "ip_address": "109.203.100.17",
+            "name": "Node4",
+            "reverse_dns": null,
+            "type": "MSP"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2018-09-05 00:00:00",
+        "end_date": "2018-09-05 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "postmaster@addisonfoods.com",
+        "org_extra_contact_info": null,
+        "org_name": "addisonfoods.com",
+        "original_timespan_seconds": 86399,
+        "report_id": "3ceb5548498640beaeb47327e202b0b9",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "1.0"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/addisonfoods.com!example.com!1536105600!1536191999.xml"
+}

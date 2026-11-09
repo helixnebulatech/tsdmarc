@@ -1,0 +1,38 @@
+{
+  "input": "cases/malformed-headers.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "not a header line\nTo: b@example.com\n\nbody\n",
+    "cc": [],
+    "date": null,
+    "defects": [
+      {
+        "text/plain": [
+          "MissingHeaderBodySeparatorDefect: Found line with no leading whitespace and no colon before blank line.",
+          "FirstHeaderLineIsContinuationDefect: A message had a continuation line as its first header line."
+        ]
+      }
+    ],
+    "defects_categories": [
+      "FirstHeaderLineIsContinuationDefect",
+      "MissingHeaderBodySeparatorDefect"
+    ],
+    "filename_safe_subject": "malformed",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "From": [["", "a@example.com"]],
+      "Subject": "malformed",
+      "X-Empty": ""
+    },
+    "reply_to": [],
+    "subject": "malformed",
+    "to": []
+  }
+}

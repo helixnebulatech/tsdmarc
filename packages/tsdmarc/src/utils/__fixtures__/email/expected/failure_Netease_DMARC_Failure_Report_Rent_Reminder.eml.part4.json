@@ -1,0 +1,103 @@
+{
+  "input": "inputs/failure_Netease_DMARC_Failure_Report_Rent_Reminder.eml.part4.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": null,
+    "cc": [],
+    "content-type": "text/plain; charset=\"us-ascii\"",
+    "date": "2018-09-28 08:48:39+00:00",
+    "date_header_defects": [
+      {
+        "header": "received",
+        "occurrence": 1,
+        "raw": "from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)",
+        "reason": "invalid-date-syntax",
+        "recovered": false,
+        "value": null
+      },
+      {
+        "header": "received",
+        "occurrence": 0,
+        "raw": "by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242",
+        "reason": "invalid-date-syntax",
+        "recovered": false,
+        "value": null
+      }
+    ],
+    "defects": [
+      {
+        "date-headers": [
+          "DateHeaderDefect: received[1]: invalid-date-syntax",
+          "DateHeaderDefect: received[0]: invalid-date-syntax"
+        ]
+      }
+    ],
+    "defects_categories": ["DateHeaderDefect"],
+    "filename_safe_subject": "Rent Reminder",
+    "from": {
+      "address": "info@cardinal.com",
+      "display_name": "700 on Washington",
+      "domain": "cardinal.com",
+      "local": "info"
+    },
+    "has_defects": true,
+    "headers": {
+      "Content-Type": "text/plain; charset=\"us-ascii\"",
+      "Date": "Fri, 28 Sep 2018 04:48:39 -0400",
+      "From": [["700 on Washington", "info@cardinal.com"]],
+      "MIME-Version": "1.0",
+      "Message-ID": "<oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>",
+      "Received": [
+        "by filter1356p1mdw1.sendgrid.net with SMTP id filter1356p1mdw1-30359-5BADEAE4-E\n        2018-09-28 08:48:36.858842501 +0000 UTC m=+1856335.516585242",
+        "from MTEzNzYxNg (unknown [198.190.14.10])\n\tby ismtpd0007p1las1.sendgrid.net (SG) with HTTP id oguVx1AxQayV5Sv2nYK-rA\n\tfor <system@entrata.com>; Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)"
+      ],
+      "Subject": "Rent Reminder",
+      "Thread-Index": "AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==",
+      "Thread-Topic": "Rent Reminder",
+      "To": [["", "redacted@163.com"]],
+      "X-MS-Exchange-MessageSentRepresentingType": "1",
+      "X-MS-Exchange-Organization-RecordReviewCfmType": "0",
+      "X-MS-Has-Attach": "",
+      "X-MS-TNEF-Correlator": ""
+    },
+    "message-id": "<oguVx1AxQayV5Sv2nYK-rA@ismtpd0007p1las1.sendgrid.net>",
+    "mime-version": "1.0",
+    "received": [
+      {
+        "by": "ismtpd0007p1las1.sendgrid.net (SG)",
+        "date": "Fri, 28 Sep 2018 08:48:36.716 +0000 (UTC)",
+        "delay": 0,
+        "for": "<system@entrata.com>",
+        "from": "MTEzNzYxNg (unknown [198.190.14.10])",
+        "hop": 1,
+        "id": "oguVx1AxQayV5Sv2nYK-rA",
+        "with": "HTTP"
+      },
+      {
+        "by": "filter1356p1mdw1.sendgrid.net",
+        "date": "2018-09-28 08:48:36.858842501 +0000 UTC",
+        "delay": 0,
+        "hop": 2,
+        "id": "filter1356p1mdw1-30359-5BADEAE4-E",
+        "with": "SMTP"
+      }
+    ],
+    "reply_to": [],
+    "subject": "Rent Reminder",
+    "thread-index": "AQHUVwgr2Hz5Jp/wMEGsfVZ94P1m5Q==",
+    "thread-topic": "Rent Reminder",
+    "timezone": "-4.0",
+    "to": [
+      {
+        "address": "redacted@163.com",
+        "display_name": null,
+        "domain": "163.com",
+        "local": "redacted"
+      }
+    ],
+    "to_domains": ["163.com"],
+    "x-ms-exchange-messagesentrepresentingtype": "1",
+    "x-ms-exchange-organization-recordreviewcfmtype": "0"
+  }
+}

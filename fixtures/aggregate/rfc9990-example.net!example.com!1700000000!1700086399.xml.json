@@ -1,0 +1,138 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\n2.0,example.net,postmaster@example.net,,dmarcbis-test-report-001,2023-11-14 22:13:20,2023-11-15 22:13:19,False,,example.com,s,s,reject,quarantine,reject,,1,y,treewalk,198.51.100.1,,,,,,,,,5,True,True,True,none,,,example.com,example.com,,example.com,selector1,pass,example.com,mfrom,pass\r\n2.0,example.net,postmaster@example.net,,dmarcbis-test-report-001,2023-11-14 22:13:20,2023-11-15 22:13:19,False,,example.com,s,s,reject,quarantine,reject,,1,y,treewalk,203.0.113.10,,,,,,,,,2,False,False,False,reject,other,sender not authorized,spoofed.example.com,example.com,,,,,spoofed.example.com,mfrom,fail\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "s",
+        "aspf": "s",
+        "discovery_method": "treewalk",
+        "domain": "example.com",
+        "fo": "1",
+        "np": "reject",
+        "p": "reject",
+        "pct": null,
+        "sp": "quarantine",
+        "testing": "y"
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "selector1"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 5,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2023-11-14 22:13:20",
+          "interval_end": "2023-11-15 22:13:19",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "198.51.100.1",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          }
+        },
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [],
+            "spf": [
+              {
+                "domain": "spoofed.example.com",
+                "human_result": null,
+                "result": "fail",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 2,
+          "identifiers": {
+            "envelope_from": "spoofed.example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2023-11-14 22:13:20",
+          "interval_end": "2023-11-15 22:13:19",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "reject",
+            "dkim": "fail",
+            "policy_override_reasons": [
+              {
+                "comment": "sender not authorized",
+                "type": "other"
+              }
+            ],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "203.0.113.10",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2023-11-14 22:13:20",
+        "end_date": "2023-11-15 22:13:19",
+        "errors": [],
+        "generator": null,
+        "org_email": "postmaster@example.net",
+        "org_extra_contact_info": null,
+        "org_name": "example.net",
+        "original_timespan_seconds": 86399,
+        "report_id": "dmarcbis-test-report-001",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "2.0"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/rfc9990-example.net!example.com!1700000000!1700086399.xml"
+}

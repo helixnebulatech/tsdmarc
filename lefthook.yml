@@ -1,0 +1,7 @@
+# https://github.com/evilmartians/lefthook
+pre-commit:
+  jobs:
+    - name: format and lint staged files
+      glob: '*.{js,mjs,ts,json,jsonc,md,yml,yaml}'
+      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files} && pnpm exec oxlint --fix --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true

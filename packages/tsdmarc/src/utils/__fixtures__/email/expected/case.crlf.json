@@ -1,0 +1,40 @@
+{
+  "input": "cases/crlf.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "line one\r\nline two\n--- mail_boundary ---\n<p>html</p>",
+    "cc": [],
+    "content-type": "multipart/alternative; boundary=\"alt\"",
+    "date": "2019-04-30 04:09:09+00:00",
+    "filename_safe_subject": "CRLF subject continued",
+    "from": {
+      "address": "crlf@example.com",
+      "display_name": "CRLF Sender",
+      "domain": "example.com",
+      "local": "crlf"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Type": "multipart/alternative; boundary=\"alt\"",
+      "Date": "30 Apr 2019 04:09:09 GMT",
+      "From": [["CRLF Sender", "crlf@example.com"]],
+      "MIME-Version": "1.0",
+      "Subject": "CRLF\r\n subject continued",
+      "To": [["", "rcpt@example.com"]]
+    },
+    "mime-version": "1.0",
+    "reply_to": [],
+    "subject": "CRLF\r\n subject continued",
+    "timezone": "+0.0",
+    "to": [
+      {
+        "address": "rcpt@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "rcpt"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

@@ -1,0 +1,18 @@
+/* TypeScript blue accent, light and dark. */
+:root {
+  --sl-color-accent-low: #0d2440;
+  --sl-color-accent: #3178c6;
+  --sl-color-accent-high: #b9d4f2;
+  --sl-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d3e3f6;
+  --sl-color-accent: #235a97;
+  --sl-color-accent-high: #12355c;
+}
+
+/* Wide option tables in the configuration reference. */
+.sl-markdown-content table code {
+  white-space: nowrap;
+}

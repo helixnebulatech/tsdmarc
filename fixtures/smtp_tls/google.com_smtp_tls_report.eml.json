@@ -1,0 +1,23 @@
+{
+  "csv": "organization_name,begin_date,end_date,report_id,result_type,successful_session_count,failed_session_count,policy_domain,policy_type,policy_strings,mx_host_patterns,sending_mta_ip,receiving_ip,receiving_mx_hostname,receiving_mx_helo,additional_info_uri,failure_reason_code\r\nGoogle Inc.,2024-09-03T00:00:00Z,2024-09-03T23:59:59Z,2024-09-03T00:00:00Z_cardinalhealth.ca,,48,0,cardinalhealth.ca,no-policy-found,,,,,,,,\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "begin_date": "2024-09-03T00:00:00Z",
+      "contact_info": "smtp-tls-reporting@google.com",
+      "end_date": "2024-09-03T23:59:59Z",
+      "organization_name": "Google Inc.",
+      "policies": [
+        {
+          "failed_session_count": 0,
+          "policy_domain": "cardinalhealth.ca",
+          "policy_type": "no-policy-found",
+          "successful_session_count": 48
+        }
+      ],
+      "report_id": "2024-09-03T00:00:00Z_cardinalhealth.ca"
+    },
+    "report_type": "smtp_tls"
+  },
+  "sample": "smtp_tls/google.com_smtp_tls_report.eml"
+}

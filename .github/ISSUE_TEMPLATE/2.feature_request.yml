@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest a new feature or an improvement.
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        tsdmarc is a 1:1 port of parsedmarc. Features that change parsing or output are usually best proposed to [parsedmarc](https://github.com/domainaware/parsedmarc) first, and then ported here. Features specific to the TypeScript API, packaging or runtimes belong here.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what is missing or hard today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How would you like it to work? An example of the API or config you'd use helps.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Does this exist in parsedmarc?
+      options:
+        - 'Yes, parsedmarc has it (a version to port)'
+        - 'No, it is specific to tsdmarc'
+        - I don't know
+    validations:
+      required: true

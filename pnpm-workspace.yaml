@@ -1,0 +1,36 @@
+packages:
+  - packages/*
+  - apps/*
+  - tools/*
+  - examples/*
+linkWorkspacePackages: true
+# Peers are declared as devDependencies where the workspace needs them; this
+# keeps optional native peers (@azure/identity-cache-persistence) out.
+autoInstallPeers: false
+allowBuilds:
+  esbuild: true
+  lefthook: true
+minimumReleaseAgeExclude:
+  - tsdown@0.23.2
+  - '@aws-sdk/checksums@3.1001.6'
+  - '@aws-sdk/client-s3@3.1157.0'
+  - '@aws-sdk/core@3.978.6'
+  - '@aws-sdk/credential-provider-cognito-identity@3.972.76'
+  - '@aws-sdk/credential-provider-env@3.972.77'
+  - '@aws-sdk/credential-provider-http@3.972.79'
+  - '@aws-sdk/credential-provider-ini@3.973.22'
+  - '@aws-sdk/credential-provider-login@3.972.84'
+  - '@aws-sdk/credential-provider-node@3.972.89'
+  - '@aws-sdk/credential-provider-process@3.972.77'
+  - '@aws-sdk/credential-provider-sso@3.973.21'
+  - '@aws-sdk/credential-provider-web-identity@3.972.83'
+  - '@aws-sdk/credential-providers@3.1157.0'
+  - '@aws-sdk/middleware-sdk-s3@3.972.82'
+  - '@aws-sdk/nested-clients@3.997.51'
+  - '@aws-sdk/token-providers@3.1157.0'
+  - '@smithy/core@3.37.0'
+  - '@smithy/node-http-handler@4.13.0'
+# GHSA-xcx6-jx8p-x3h5: the docs site gets @azure/identity through astro's
+# unstorage, still at 4.14.0 (msal-node ^6). Remove once unstorage allows 4.14.1.
+overrides:
+  'unstorage>@azure/identity': ^4.14.1

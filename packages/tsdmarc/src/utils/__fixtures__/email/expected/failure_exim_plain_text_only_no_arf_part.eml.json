@@ -1,0 +1,86 @@
+{
+  "input": "samples/failure/exim_plain_text_only_no_arf_part.eml",
+  "result": {
+    "attachments": [],
+    "auto-submitted": "auto-replied",
+    "bcc": [],
+    "body": "A message claiming to be from you has failed the published DMARC policy for your domain.\n\n  Sender Domain: example.com\n  Sender IP Address: 203.0.113.68\n  Received date: Mon, 07 Apr 2025 23:16:09 +0200\n  SPF Alignment: no\n  DKIM Alignment: no\n  DMARC Results: None, Accept\n\n------ This is a copy of the headers that were received before the error was detected.\n\nReceived: from [203.0.113.68] (helo=smtpclient.apple)\n\tby node04.mailgate.example.net with esmtp (Exim 4.92)\n\t(envelope-from <user@example.com>)\n\tid 1u1tpA-00AAwZ-CR\n\tfor user@example.com; Mon, 07 Apr 2025 23:16:08 +0200\nReceived: from [IPv6:::ffff:203.0.113.68] (unknown [203.0.113.68])\n\tby example.com (Postfix) with ESMTP id 9CCA25FC9873\n\tfor <user@example.com>; Mon, 7 Apr 2025 10:10:06 -0600 (UTC)\nContent-Type: text/plain;\n\tcharset=windows-1250\nContent-Transfer-Encoding: 8bit\nFrom: <user@example.com>\nMIME-Version: 1.0 (1.0)\nDate: Mon, 7 Apr 2025 10:10:06 -0600\nSubject: Payment from your account.\nMessage-Id: <134117F8-2145-AECE-9CCA-25FC98731341@example.com>\nTo: <user@example.com>\nX-Mailer: iPhone Mail (22A3351)\nReceived-SPF: softfail (node04.mailgate.example.net: transitioning domain of example.com does not designate 203.0.113.68 as permitted sender) client-ip=203.0.113.68; envelope-from=user@example.com; helo=smtpclient.apple;\nX-SPF-Result: node04.mailgate.example.net: transitioning domain of example.com does not designate 203.0.113.68 as permitted sender\nX-Sender-Warning: Reverse DNS lookup failed for 203.0.113.68 (failed)\nX-DKIM-Status: none /  / example.com /  /  /\nAuthentication-Results: node04.mailgate.example.net;\n\tiprev=fail smtp.remote-ip=203.0.113.68;\n\tspf=softfail smtp.mailfrom=example.com;\n\tdmarc=none header.from=example.com\nAuthentication-Results:  mailgate.example.net; spf=softfail smtp.mailfrom=user@example.com\n",
+    "cc": [],
+    "content-type": "multipart/report;\n boundary=\"===============2510560795302005415==\"",
+    "date": "2025-04-07 21:16:09+00:00",
+    "delivered_to": [
+      {
+        "address": "dmarc@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "dmarc"
+      }
+    ],
+    "filename_safe_subject": "DMARC Forensic Report for example.com from IP 203.0.113.68",
+    "from": {
+      "address": "no-reply@node01.mailgate.example.net",
+      "display_name": null,
+      "domain": "node01.mailgate.example.net",
+      "local": "no-reply"
+    },
+    "has_defects": false,
+    "headers": {
+      "Auto-Submitted": "auto-replied",
+      "Content-Type": "multipart/report;\n boundary=\"===============2510560795302005415==\"",
+      "Date": "Mon, 07 Apr 2025 23:16:09 +0200",
+      "Delivered-To": [["", "dmarc@example.com"]],
+      "From": [["", "no-reply@node01.mailgate.example.net"]],
+      "MIME-Version": "1.0",
+      "Message-Id": "<E1u1tpB-00AA5u-ED@node04.mailgate.example.net>",
+      "Received": [
+        "from node04.mailgate.example.net (node04.mailgate.example.net [198.51.100.176])\n\tby web01.hosting.example.net (Postfix) with ESMTPS id 9AD6912398C\n\tfor <dmarc@example.com>; Mon,  7 Apr 2025 23:16:09 +0200 (CEST)",
+        "from root by node04.mailgate.example.net with local-generated (Exim 4.92)\n\t(envelope-from <no-reply@node01.mailgate.example.net>)\n\tid 1u1tpB-00AA5u-ED\n\tfor dmarc@example.com; Mon, 07 Apr 2025 23:16:09 +0200"
+      ],
+      "Return-Path": "<no-reply@node01.mailgate.example.net>",
+      "Subject": "DMARC Forensic Report for example.com from IP 203.0.113.68",
+      "To": [["", "dmarc@example.com"]],
+      "X-Original-To": "dmarc@example.com"
+    },
+    "message-id": "<E1u1tpB-00AA5u-ED@node04.mailgate.example.net>",
+    "mime-version": "1.0",
+    "received": [
+      {
+        "by": "node04.mailgate.example.net",
+        "date": "Mon, 07 Apr 2025 23:16:09 +0200",
+        "date_utc": "2025-04-07 21:16:09+00:00",
+        "delay": 0,
+        "envelope_from": "no-reply@node01.mailgate.example.net",
+        "for": "dmarc@example.com",
+        "from": "root",
+        "hop": 1,
+        "id": "1u1tpB-00AA5u-ED",
+        "with": "local-generated (Exim 4.92) (envelope-from <no-reply@node01.mailgate.example.net>)"
+      },
+      {
+        "by": "web01.hosting.example.net (Postfix)",
+        "date": "Mon,  7 Apr 2025 23:16:09 +0200 (CEST)",
+        "date_utc": "2025-04-07 21:16:09+00:00",
+        "delay": 0.0,
+        "for": "<dmarc@example.com>",
+        "from": "node04.mailgate.example.net (node04.mailgate.example.net [198.51.100.176])",
+        "hop": 2,
+        "id": "9AD6912398C",
+        "with": "ESMTPS"
+      }
+    ],
+    "reply_to": [],
+    "return-path": "<no-reply@node01.mailgate.example.net>",
+    "subject": "DMARC Forensic Report for example.com from IP 203.0.113.68",
+    "timezone": "+2.0",
+    "to": [
+      {
+        "address": "dmarc@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "dmarc"
+      }
+    ],
+    "to_domains": ["example.com"],
+    "x-original-to": "dmarc@example.com"
+  }
+}

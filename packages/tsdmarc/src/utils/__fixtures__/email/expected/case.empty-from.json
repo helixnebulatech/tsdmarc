@@ -1,0 +1,29 @@
+{
+  "input": "cases/empty-from.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "body\r\n",
+    "cc": [],
+    "date": null,
+    "filename_safe_subject": "t",
+    "from": null,
+    "has_defects": false,
+    "headers": {
+      "From": [],
+      "Subject": "t",
+      "To": [["", "a@b.com"]]
+    },
+    "reply_to": [],
+    "subject": "t",
+    "to": [
+      {
+        "address": "a@b.com",
+        "display_name": null,
+        "domain": "b.com",
+        "local": "a"
+      }
+    ],
+    "to_domains": ["b.com"]
+  }
+}

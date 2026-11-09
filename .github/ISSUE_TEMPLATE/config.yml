@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/helixnebulatech/tsdmarc/security/advisories/new
+    about: Report vulnerabilities privately, never in a public issue.
+  - name: parsedmarc documentation
+    url: https://domainaware.github.io/parsedmarc/
+    about: Config file options and dashboards are shared with parsedmarc.

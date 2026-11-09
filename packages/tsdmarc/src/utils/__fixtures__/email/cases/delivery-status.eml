@@ -1,0 +1,24 @@
+From: MAILER-DAEMON@example.com
+To: a@example.com
+Subject: Undelivered
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status; boundary="R"
+
+--R
+Content-Type: text/plain
+
+Delivery failed.
+--R
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mx.example.com
+
+Final-Recipient: rfc822; nobody@example.com
+Action: failed
+Status: 5.1.1
+--R
+Content-Type: text/rfc822-headers
+
+From: a@example.com
+Subject: original
+--R--

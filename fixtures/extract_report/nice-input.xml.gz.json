@@ -1,0 +1,1141 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.69,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,1,True,False,True,none,,,example.com,example.com,,,,,example.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.41,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,2,False,True,True,none,,,gmail.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",gmail.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.48.90,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,40,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.8.31,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,40,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.8.33,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,33,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.48.92,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,40,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.48.110,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,24,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.41,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,12,False,True,True,none,,,connectivityu.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",connectivityu.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,2607:f8b0:4864:20::132,US,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,1,True,True,True,none,,,example.com,example.com,,example.com,google,pass,example.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.8.83,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,36,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.8.96,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,27,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.48.95,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,25,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.69,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,2252,True,True,True,none,,,example.com,example.com,,example.com,google,pass,example.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.48.94,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,46,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.8.88,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,37,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.55,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,1,True,True,True,none,,,example.com,example.com,,example.com,google,pass,example.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,54.240.48.93,US,,,Amazon,Technology,14618,\"Amazon.com, Inc.\",amazon.com,24,False,True,True,none,,,amazonses.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",amazonses.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.41,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,23,True,True,True,none,,,example.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",example.com,mfrom,pass\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.41,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,24,False,True,True,none,,,rphvac.com,example.com,,\"example.com,amazonses.com\",\"awbr2rp4egb35wbg4umq4e5dcoe5kc4n,ug7nbtf4gccmlpwj322ax3p6ow6yfsug\",\"pass,pass\",rphvac.com,mfrom,none\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,11038226378739404135,2024-06-13 00:00:00,2024-06-13 23:59:59,False,,example.com,r,r,none,none,none,100,,,,209.85.220.41,FI,,,Google (Including Gmail and Google Workspace),Email Provider,15169,Google LLC,google.com,359,True,True,True,none,,,example.com,example.com,,example.com,google,pass,example.com,mfrom,pass\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": null,
+        "np": "none",
+        "p": "none",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.69",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "gmail.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 2,
+          "identifiers": {
+            "envelope_from": "gmail.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.41",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 40,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.48.90",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 40,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.8.31",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 33,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.8.33",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 40,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.48.92",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 24,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.48.110",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "connectivityu.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 12,
+          "identifiers": {
+            "envelope_from": "connectivityu.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.41",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "google"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "2607:f8b0:4864:20::132",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 36,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.8.83",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 27,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.8.96",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 25,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.48.95",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "google"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 2252,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.69",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 46,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.48.94",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 37,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.8.88",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "google"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.55",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 24,
+          "identifiers": {
+            "envelope_from": "amazonses.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 14618,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "54.240.48.93",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 23,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.41",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "awbr2rp4egb35wbg4umq4e5dcoe5kc4n"
+              },
+              {
+                "domain": "amazonses.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "ug7nbtf4gccmlpwj322ax3p6ow6yfsug"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "rphvac.com",
+                "human_result": null,
+                "result": "none",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 24,
+          "identifiers": {
+            "envelope_from": "rphvac.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.41",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        },
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "google"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 359,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2024-06-13 00:00:00",
+          "interval_end": "2024-06-13 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "google.com",
+            "as_name": "Google LLC",
+            "asn": 15169,
+            "base_domain": null,
+            "country": "FI",
+            "ip_address": "209.85.220.41",
+            "name": "Google (Including Gmail and Google Workspace)",
+            "reverse_dns": null,
+            "type": "Email Provider"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2024-06-13 00:00:00",
+        "end_date": "2024-06-13 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "noreply-dmarc-support@google.com",
+        "org_extra_contact_info": "https://support.google.com/a/answer/2466580",
+        "org_name": "google.com",
+        "original_timespan_seconds": 86399,
+        "report_id": "11038226378739404135",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "extract_report/nice-input.xml.gz"
+}

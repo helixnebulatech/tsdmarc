@@ -1,0 +1,6 @@
+From: not an address at all
+To: b@example.com, , broken <, c@example.com
+Cc: Group: g1@example.com, g2@example.com;
+Subject: invalid from
+
+body

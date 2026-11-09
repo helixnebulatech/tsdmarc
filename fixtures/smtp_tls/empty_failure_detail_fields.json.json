@@ -1,0 +1,36 @@
+{
+  "csv": "organization_name,begin_date,end_date,report_id,result_type,successful_session_count,failed_session_count,policy_domain,policy_type,policy_strings,mx_host_patterns,sending_mta_ip,receiving_ip,receiving_mx_hostname,receiving_mx_helo,additional_info_uri,failure_reason_code\r\nReporter Example,2024-06-01T00:00:00Z,2024-06-01T23:59:59Z,2024-06-01T00:00:00Z_example.com,,0,1,example.com,sts,version: STSv1|mode: enforce|mx: example.com|max_age: 86400,,,,,,,\r\nReporter Example,2024-06-01T00:00:00Z,2024-06-01T23:59:59Z,2024-06-01T00:00:00Z_example.com,sts-policy-fetch-error,,1,,,version: STSv1|mode: enforce|mx: example.com|max_age: 86400,,,,,,,no-policy-served\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "begin_date": "2024-06-01T00:00:00Z",
+      "contact_info": "smtp-tls-reporting@reporter.example",
+      "end_date": "2024-06-01T23:59:59Z",
+      "organization_name": "Reporter Example",
+      "policies": [
+        {
+          "failed_session_count": 1,
+          "failure_details": [
+            {
+              "failed_session_count": 1,
+              "failure_reason_code": "no-policy-served",
+              "result_type": "sts-policy-fetch-error"
+            }
+          ],
+          "policy_domain": "example.com",
+          "policy_strings": [
+            "version: STSv1",
+            "mode: enforce",
+            "mx: example.com",
+            "max_age: 86400"
+          ],
+          "policy_type": "sts",
+          "successful_session_count": 0
+        }
+      ],
+      "report_id": "2024-06-01T00:00:00Z_example.com"
+    },
+    "report_type": "smtp_tls"
+  },
+  "sample": "smtp_tls/empty_failure_detail_fields.json"
+}

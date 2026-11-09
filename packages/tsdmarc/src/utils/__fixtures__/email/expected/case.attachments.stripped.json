@@ -1,0 +1,137 @@
+{
+  "input": "cases/attachments.eml",
+  "result": {
+    "attachments": [
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "attachment; filename=\"a.bin\"",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "a.bin",
+        "mail_content_type": "application/octet-stream",
+        "safe_filename": "a.bin",
+        "sha256": "40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "attachment; filename*=UTF-8''r%C3%A9port%20final.csv",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "réport final.csv",
+        "mail_content_type": "text/csv",
+        "safe_filename": "réport final.csv",
+        "sha256": "cee66dadf95acaa98c0cdae6e2866fdd6551ed4d0bce6ac324b8813c95551699"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "attachment; filename=\"plain.txt\"",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "plain.txt",
+        "mail_content_type": "application/octet-stream",
+        "safe_filename": "plain.txt",
+        "sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "attachment; filename=\"uu.bin\"",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "uu.bin",
+        "mail_content_type": "application/octet-stream",
+        "safe_filename": "uu.bin",
+        "sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "inline",
+        "content-id": "<logo@example>",
+        "content_transfer_encoding": "base64",
+        "filename": "logo.png",
+        "mail_content_type": "image/png",
+        "safe_filename": "logo.png",
+        "sha256": "4c4b6a3be1314ab86138bef4314dde022e600960d8689a2c8f8631802d20dab6"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "attachment; filename=\"../../etc/passwd\"",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "../../etc/passwd",
+        "mail_content_type": "application/pdf",
+        "safe_filename": "passwd"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "attachment; filename=\"bad-pad.bin\"",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "bad-pad.bin",
+        "mail_content_type": "application/octet-stream",
+        "safe_filename": "bad-pad.bin",
+        "sha256": "e12e115acf4552b2568b55e93cbd39394c4ef81c82447fafc997882a02d23677"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "inline; filename=\"notes.txt\"",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "notes.txt",
+        "mail_content_type": "text/plain",
+        "safe_filename": "notes.txt",
+        "sha256": "f05245ef83b15c88b59f72247243da9fa873afff5cf11e3bbd38d3613e87ad40"
+      },
+      {
+        "binary": true,
+        "charset": null,
+        "content-disposition": "",
+        "content-id": "",
+        "content_transfer_encoding": "base64",
+        "filename": "naïve.bin",
+        "mail_content_type": "application/octet-stream",
+        "safe_filename": "naïve.bin",
+        "sha256": "ae4b3280e56e2faf83f414a6e3dabe9d5fbe18976544c05fed121accb85b53fc"
+      }
+    ],
+    "bcc": [],
+    "body": "body text\n--- mail_boundary ---\ninline named text",
+    "cc": [],
+    "content-type": "multipart/mixed; boundary=\"B\"",
+    "date": null,
+    "filename_safe_subject": "att",
+    "from": {
+      "address": "a@b.com",
+      "display_name": null,
+      "domain": "b.com",
+      "local": "a"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Type": "multipart/mixed; boundary=\"B\"",
+      "From": [["", "a@b.com"]],
+      "MIME-Version": "1.0",
+      "Subject": "att",
+      "To": [["", "t@e.com"]]
+    },
+    "mime-version": "1.0",
+    "reply_to": [],
+    "subject": "att",
+    "to": [
+      {
+        "address": "t@e.com",
+        "display_name": null,
+        "domain": "e.com",
+        "local": "t"
+      }
+    ],
+    "to_domains": ["e.com"]
+  }
+}

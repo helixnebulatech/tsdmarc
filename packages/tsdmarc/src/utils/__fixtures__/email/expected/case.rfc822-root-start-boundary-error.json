@@ -1,0 +1,7 @@
+{
+  "error": {
+    "message": "can only concatenate str (not \"NoneType\") to str",
+    "type": "TypeError"
+  },
+  "input": "cases/rfc822-root-start-boundary-error.eml"
+}

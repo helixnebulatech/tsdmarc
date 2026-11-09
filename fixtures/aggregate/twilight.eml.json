@@ -1,0 +1,89 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,1627703331531660819,2019-02-10 00:00:00,2019-02-10 23:59:59,False,,twlnet.com,s,s,reject,reject,,100,,,,87.106.127.28,DE,,,IONOS,Web Host,8560,IONOS SE,ionos.com,1,True,True,True,none,,,twlnet.com,twlnet.com,,twlnet.com,201810,pass,twlnet.com,mfrom,pass\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "s",
+        "aspf": "s",
+        "discovery_method": null,
+        "domain": "twlnet.com",
+        "fo": null,
+        "np": null,
+        "p": "reject",
+        "pct": "100",
+        "sp": "reject",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "twlnet.com",
+                "human_result": null,
+                "result": "pass",
+                "selector": "201810"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "twlnet.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "twlnet.com",
+            "envelope_to": null,
+            "header_from": "twlnet.com"
+          },
+          "interval_begin": "2019-02-10 00:00:00",
+          "interval_end": "2019-02-10 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "ionos.com",
+            "as_name": "IONOS SE",
+            "asn": 8560,
+            "base_domain": null,
+            "country": "DE",
+            "ip_address": "87.106.127.28",
+            "name": "IONOS",
+            "reverse_dns": null,
+            "type": "Web Host"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2019-02-10 00:00:00",
+        "end_date": "2019-02-10 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "noreply-dmarc-support@google.com",
+        "org_extra_contact_info": "https://support.google.com/a/answer/2466580",
+        "org_name": "google.com",
+        "original_timespan_seconds": 86399,
+        "report_id": "1627703331531660819",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/twilight.eml"
+}

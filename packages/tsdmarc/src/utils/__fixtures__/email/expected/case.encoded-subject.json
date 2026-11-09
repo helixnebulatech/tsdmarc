@@ -1,0 +1,59 @@
+{
+  "input": "cases/encoded-subject.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "body\n",
+    "cc": [],
+    "date": "2019-04-30 02:09:09+00:00",
+    "filename_safe_subject": "Élènve déjà vu et encore € 100 tail",
+    "from": {
+      "address": "juergen@example.de",
+      "display_name": "Jürgen Müller",
+      "domain": "example.de",
+      "local": "juergen"
+    },
+    "has_defects": false,
+    "headers": {
+      "Date": "Tue, 30 Apr 2019 04:09:09 +0200",
+      "From": [["Jürgen Müller", "juergen@example.de"]],
+      "Message-ID": "<abc@example.com>",
+      "Subject": "Élènve déjà vu et encore € 100 tail",
+      "Thread-Topic": "“quoted” text",
+      "To": [
+        ["Doe, John", "john@example.com"],
+        ["André", "andre@example.fr"]
+      ],
+      "X-Bad-B64": "=?utf-8?b?A===?=",
+      "X-Lang": "hello",
+      "X-Latin1": "café",
+      "X-Mixed": "Caf café \\u65e5\\u672c",
+      "X-Unknown-Charset": "caf"
+    },
+    "message-id": "<abc@example.com>",
+    "reply_to": [],
+    "subject": "Élènve déjà vu et encore € 100 tail",
+    "thread-topic": "“quoted” text",
+    "timezone": "+2.0",
+    "to": [
+      {
+        "address": "john@example.com",
+        "display_name": "Doe, John",
+        "domain": "example.com",
+        "local": "john"
+      },
+      {
+        "address": "andre@example.fr",
+        "display_name": "André",
+        "domain": "example.fr",
+        "local": "andre"
+      }
+    ],
+    "to_domains": ["example.com", "example.fr"],
+    "x-bad-b64": "=?utf-8?b?A===?=",
+    "x-lang": "hello",
+    "x-latin1": "café",
+    "x-mixed": "Caf café \\u65e5\\u672c",
+    "x-unknown-charset": "caf"
+  }
+}

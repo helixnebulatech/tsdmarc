@@ -1,0 +1,91 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,ikea.com,double-bounce@ikea.com,,aggr_report_2018_10_05_5bc7e9b4f3e8a,2018-10-04 22:00:00,2018-10-05 22:00:00,False,\"Invalid XML: no element found: line 47, column 11\",example.de,r,r,none,none,,100,0,,,234.234.234.234,,,,,,,,,1,False,False,False,none,,,example.de,example.de,,example.de,none,pass,mailrelay.com,helo,none\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.de",
+        "fo": "0",
+        "np": null,
+        "p": "none",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.de",
+                "human_result": null,
+                "result": "pass",
+                "selector": "none"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "mailrelay.com",
+                "human_result": null,
+                "result": "none",
+                "scope": "helo"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "example.de",
+            "envelope_to": null,
+            "header_from": "example.de"
+          },
+          "interval_begin": "2018-10-04 22:00:00",
+          "interval_end": "2018-10-05 22:00:00",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": null,
+            "as_name": null,
+            "asn": null,
+            "base_domain": null,
+            "country": null,
+            "ip_address": "234.234.234.234",
+            "name": null,
+            "reverse_dns": null,
+            "type": null
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2018-10-04 22:00:00",
+        "end_date": "2018-10-05 22:00:00",
+        "errors": [
+          "Invalid XML: no element found: line 47, column 11"
+        ],
+        "generator": null,
+        "org_email": "double-bounce@ikea.com",
+        "org_extra_contact_info": null,
+        "org_name": "ikea.com",
+        "original_timespan_seconds": 86400,
+        "report_id": "aggr_report_2018_10_05_5bc7e9b4f3e8a",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": "http://www.w3.org/2001/XMLSchema",
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/ikea.com!example.de!1538690400!1538776800.xml"
+}

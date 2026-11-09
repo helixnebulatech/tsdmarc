@@ -1,0 +1,131 @@
+{
+  "csv": "feedback_type,user_agent,version,original_envelope_id,original_mail_from,original_rcpt_to,arrival_date,arrival_date_utc,subject,message_id,authentication_results,dkim_domain,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,delivery_result,auth_failure,reported_domain,authentication_mechanisms,sample_headers_only\r\nauth-failure,test/1.0,1,,sender@example.com,,\"Thu, 1 Jan 2024 00:00:00 +0000\",2024-01-01 00:00:00,Test,,,,203.0.113.1,,,,,,,,,other,dmarc,example.com,,False\r\n",
+  "feedback_report": "Feedback-Type: auth-failure\nUser-Agent: test/1.0\nVersion: 1\nOriginal-Mail-From: sender@example.com\nArrival-Date: Thu, 1 Jan 2024 00:00:00 +0000\nSource-IP: 203.0.113.1\nReported-Domain: example.com\nAuth-Failure: dmarc\n__proto__: polluted\nconstructor: c\n123: digits\nÜnïcode-Field: value\nX_Custom-Field: custom\nNoSpace:value\nTrailing-Space: value  \nEmpty-Value: \n  Indented: no\n",
+  "input": "case odd-field-names",
+  "logs": [
+    "WARNING:Failure report missing required 'Identity-Alignment' field (RFC 9991 §4); defaulting to no aligned mechanisms",
+    "WARNING:Failure report missing required 'Authentication-Results' field (RFC 6591 §3.1); defaulting to None"
+  ],
+  "msg_date": "2024-01-01T00:00:00+00:00",
+  "options": {},
+  "result": {
+    "123": "digits",
+    "__proto__": "polluted",
+    "arrival_date": "Thu, 1 Jan 2024 00:00:00 +0000",
+    "arrival_date_utc": "2024-01-01 00:00:00",
+    "auth_failure": ["dmarc"],
+    "authentication_mechanisms": [],
+    "authentication_results": null,
+    "constructor": "c",
+    "delivery_result": "other",
+    "dkim_domain": null,
+    "feedback_type": "auth-failure",
+    "original_envelope_id": null,
+    "original_mail_from": "sender@example.com",
+    "original_rcpt_to": null,
+    "parsed_sample": {
+      "attachments": [],
+      "bcc": [],
+      "body": "Test body",
+      "cc": [],
+      "date": "2024-01-01 00:00:00+00:00",
+      "date_header_defects": [
+        {
+          "header": "date",
+          "occurrence": 0,
+          "raw": "Thu, 1 Jan 2024 00:00:00 +0000",
+          "reason": "weekday-mismatch",
+          "recovered": true,
+          "value": "2024-01-01T00:00:00+00:00"
+        }
+      ],
+      "defects": [
+        {
+          "date-headers": ["DateHeaderDefect: date[0]: weekday-mismatch"]
+        }
+      ],
+      "defects_categories": ["DateHeaderDefect"],
+      "filename_safe_subject": "Test",
+      "from": {
+        "address": "sender@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "sender"
+      },
+      "has_defects": true,
+      "headers": {
+        "Date": "Thu, 1 Jan 2024 00:00:00 +0000",
+        "From": [["", "sender@example.com"]],
+        "Subject": "Test",
+        "To": [["", "recipient@example.com"]]
+      },
+      "reply_to": [],
+      "subject": "Test",
+      "timezone": "+0.0",
+      "to": [
+        {
+          "address": "recipient@example.com",
+          "display_name": null,
+          "domain": "example.com",
+          "local": "recipient"
+        }
+      ],
+      "to_domains": ["example.com"]
+    },
+    "reported_domain": "example.com",
+    "sample": "From: sender@example.com\nTo: recipient@example.com\nSubject: Test\nDate: Thu, 1 Jan 2024 00:00:00 +0000\n\nTest body",
+    "sample_headers_only": false,
+    "source": {
+      "as_domain": null,
+      "as_name": null,
+      "asn": null,
+      "base_domain": null,
+      "country": null,
+      "ip_address": "203.0.113.1",
+      "name": null,
+      "reverse_dns": null,
+      "type": null
+    },
+    "trailing_space": "value  ",
+    "user_agent": "test/1.0",
+    "version": "1",
+    "x_custom_field": "custom",
+    "ünïcode_field": "value"
+  },
+  "rows": [
+    {
+      "123": "digits",
+      "__proto__": "polluted",
+      "arrival_date": "Thu, 1 Jan 2024 00:00:00 +0000",
+      "arrival_date_utc": "2024-01-01 00:00:00",
+      "auth_failure": "dmarc",
+      "authentication_mechanisms": "",
+      "authentication_results": null,
+      "constructor": "c",
+      "delivery_result": "other",
+      "dkim_domain": null,
+      "feedback_type": "auth-failure",
+      "original_envelope_id": null,
+      "original_mail_from": "sender@example.com",
+      "original_rcpt_to": null,
+      "reported_domain": "example.com",
+      "sample_headers_only": false,
+      "source_as_domain": null,
+      "source_as_name": null,
+      "source_asn": null,
+      "source_base_domain": null,
+      "source_country": null,
+      "source_ip_address": "203.0.113.1",
+      "source_name": null,
+      "source_reverse_dns": null,
+      "source_type": null,
+      "subject": "Test",
+      "trailing_space": "value  ",
+      "user_agent": "test/1.0",
+      "version": "1",
+      "x_custom_field": "custom",
+      "ünïcode_field": "value"
+    }
+  ],
+  "sample": "From: sender@example.com\nTo: recipient@example.com\nSubject: Test\nDate: Thu, 1 Jan 2024 00:00:00 +0000\n\nTest body"
+}

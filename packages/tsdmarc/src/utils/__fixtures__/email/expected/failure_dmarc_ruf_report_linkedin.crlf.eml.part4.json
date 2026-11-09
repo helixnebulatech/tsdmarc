@@ -1,0 +1,111 @@
+{
+  "input": "inputs/failure_dmarc_ruf_report_linkedin.crlf.eml.part4.eml",
+  "result": {
+    "attachments": [],
+    "authentication-results": "mail516.prod.linkedin.com; iprev=pass policy.iprev=\"10.10.10.10\"; spf=neutral smtp.mailfrom=\"\" smtp.helo=\"mail02.someserver.com\"; dkim=none (message not signed) header.d=none; tls=pass (verified) key.ciphersuite=\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\" key.length=\"256\" tls.v=\"tlsv1.2\" cert.client=\"OU=Domain Control Validated,CN=*.someserver.com\" cert.clientissuer=\"C=GB,ST=Greater Manchester,L=Salford,O=COMODO CA Limited,CN=COMODO RSA Domain Validation Secure Server CA\"; dmarc=fail (p=none; dis=none) header.from=example.com",
+    "auto-submitted": "auto-generated",
+    "bcc": [],
+    "body": "Alternative\nText\n\n--- mail_boundary ---\n<html>\n<head>\n</head>\n<body>\nHTML Text\n</body>\n</html>\n",
+    "cc": [],
+    "content-type": "multipart/alternative;\n\tboundary=\"_000_0d00000000000000000d000000000000f00000s00000someserverloc_\"",
+    "date": "2019-04-30 02:09:09+00:00",
+    "filename_safe_subject": "Subject line, could be UTF8 encoded",
+    "from": {
+      "address": "sender@example.com",
+      "display_name": "Sender",
+      "domain": "example.com",
+      "local": "sender"
+    },
+    "has_defects": false,
+    "headers": {
+      "Authentication-Results": "mail516.prod.linkedin.com; iprev=pass policy.iprev=\"10.10.10.10\"; spf=neutral smtp.mailfrom=\"\" smtp.helo=\"mail02.someserver.com\"; dkim=none (message not signed) header.d=none; tls=pass (verified) key.ciphersuite=\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\" key.length=\"256\" tls.v=\"tlsv1.2\" cert.client=\"OU=Domain Control Validated,CN=*.someserver.com\" cert.clientissuer=\"C=GB,ST=Greater Manchester,L=Salford,O=COMODO CA Limited,CN=COMODO RSA Domain Validation Secure Server CA\"; dmarc=fail (p=none; dis=none) header.from=example.com",
+      "Content-Type": "multipart/alternative;\n\tboundary=\"_000_0d00000000000000000d000000000000f00000s00000someserverloc_\"",
+      "Date": "Tue, 30 Apr 2019 02:09:09 +0000",
+      "From": [["Sender", "sender@example.com"]],
+      "In-Reply-To": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+      "MIME-Version": "1.0",
+      "Message-ID": "<01010101010101010101010101010101@ABAB01MS0016.someserver.loc>",
+      "Received": [
+        "from [10.10.10.10] ([10.10.10.10:4227] helo=mail02.someserver.com)\n\tby mail516.prod.linkedin.com (envelope-from <>)\n\t(ecelerity 3.6.21.53563 r(Core:3.6.21.0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384\n\tsubject=\"/OU=Domain Control Validated/CN=*.someserver.com\")\n\tid CA/91-26019-ABCDECC5; Tue, 30 Apr 2019 02:09:00 +0000",
+        "from DENU02MS0016.someserver.loc (10.156.68.14) by\n DENU02MS0017.someserver.loc (10.10.10.9) with Microsoft SMTP Server (TLS) id\n 15.0.1367.3; Tue, 30 Apr 2019 04:09:09 +0200",
+        "from DENU02MS0016.someserver.loc ([127.0.0.1]) by\n DENU02MS0016.someserver.loc ([10.10.10.8]) with Microsoft SMTP Server id\n 15.00.1367.000; Tue, 30 Apr 2019 04:09:09 +0200"
+      ],
+      "References": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+      "Return-Path": "<>",
+      "Subject": "Subject line, could be UTF8 encoded",
+      "Thread-Index": "AQHU/abcdW8+abcdLkClF52hP4alIaZT9XGh",
+      "Thread-Topic": "Thread Topic line, could be UTF8 encoded",
+      "To": [["LinkedIn", "recipient@linkedin.com"]],
+      "X-Auto-Response-Suppress": "All",
+      "X-Linkedin-fe": "false",
+      "X-MS-Exchange-Inbox-Rules-Loop": "sender@example.com",
+      "X-MS-Has-Attach": "",
+      "X-MS-TNEF-Correlator": "",
+      "X-OnPremExternalIP": "10.10.10.10",
+      "auto-submitted": "auto-generated",
+      "x-exclaimer-md-config": "11111111-1111-1111-1111-111111111111",
+      "x-ms-exchange-generated-message-source": "Mailbox Rules Agent",
+      "x-ms-exchange-parent-message-id": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+      "x-ms-exchange-transport-fromentityheader": "Hosted"
+    },
+    "in-reply-to": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+    "message-id": "<01010101010101010101010101010101@ABAB01MS0016.someserver.loc>",
+    "mime-version": "1.0",
+    "received": [
+      {
+        "by": "DENU02MS0016.someserver.loc ([10.10.10.8])",
+        "date": "Tue, 30 Apr 2019 04:09:09 +0200",
+        "date_utc": "2019-04-30 02:09:09+00:00",
+        "delay": 0,
+        "from": "DENU02MS0016.someserver.loc ([127.0.0.1])",
+        "hop": 1,
+        "id": "15.00.1367.000",
+        "with": "Microsoft SMTP Server"
+      },
+      {
+        "by": "DENU02MS0017.someserver.loc (10.10.10.9)",
+        "date": "Tue, 30 Apr 2019 04:09:09 +0200",
+        "date_utc": "2019-04-30 02:09:09+00:00",
+        "delay": 0.0,
+        "from": "DENU02MS0016.someserver.loc (10.156.68.14)",
+        "hop": 2,
+        "id": "15.0.1367.3",
+        "with": "Microsoft SMTP Server (TLS)"
+      },
+      {
+        "by": "mail516.prod.linkedin.com (envelope-from <>) (ecelerity 3.6.21.53563 r(Core:3.6.21.0))",
+        "date": "Tue, 30 Apr 2019 02:09:00 +0000",
+        "date_utc": "2019-04-30 02:09:00+00:00",
+        "delay": -9.0,
+        "from": "[10.10.10.10] ([10.10.10.10:4227] helo=mail02.someserver.com)",
+        "hop": 3,
+        "id": "CA/91-26019-ABCDECC5",
+        "with": "ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384 subject=\"/OU=Domain Control Validated/CN=*.someserver.com\")"
+      }
+    ],
+    "references": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+    "reply_to": [],
+    "return-path": "<>",
+    "subject": "Subject line, could be UTF8 encoded",
+    "thread-index": "AQHU/abcdW8+abcdLkClF52hP4alIaZT9XGh",
+    "thread-topic": "Thread Topic line, could be UTF8 encoded",
+    "timezone": "+0.0",
+    "to": [
+      {
+        "address": "recipient@linkedin.com",
+        "display_name": "LinkedIn",
+        "domain": "linkedin.com",
+        "local": "recipient"
+      }
+    ],
+    "to_domains": ["linkedin.com"],
+    "x-auto-response-suppress": "All",
+    "x-exclaimer-md-config": "11111111-1111-1111-1111-111111111111",
+    "x-linkedin-fe": "false",
+    "x-ms-exchange-generated-message-source": "Mailbox Rules Agent",
+    "x-ms-exchange-inbox-rules-loop": "sender@example.com",
+    "x-ms-exchange-parent-message-id": "<1111111111.1111111.1111111111111.JavaMail.app@lor1-app3586.prod.linkedin.com>",
+    "x-ms-exchange-transport-fromentityheader": "Hosted",
+    "x-onpremexternalip": "10.10.10.10"
+  }
+}

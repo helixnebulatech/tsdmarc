@@ -1,0 +1,58 @@
+{
+  "name": "@tsdmarc/ipinfo-lite",
+  "version": "0.0.0",
+  "description": "IPinfo Lite IP-to-country/ASN database (MMDB), bundled so tsdmarc can enrich DMARC reports with GeoIP data offline.",
+  "license": "CC-BY-SA-4.0",
+  "author": "HelixNebula (https://helixnebula.tech)",
+  "homepage": "https://github.com/helixnebulatech/tsdmarc/tree/main/packages/ipinfo-lite#readme",
+  "bugs": {
+    "url": "https://github.com/helixnebulatech/tsdmarc/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "data/ipinfo_lite.mmdb",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "publint": "publint",
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helixnebulatech/tsdmarc.git",
+    "directory": "packages/ipinfo-lite"
+  },
+  "keywords": [
+    "dmarc",
+    "tsdmarc",
+    "ipinfo",
+    "geoip",
+    "mmdb",
+    "asn",
+    "ip-geolocation"
+  ]
+}

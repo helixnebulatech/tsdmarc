@@ -1,0 +1,39 @@
+{
+  "input": "cases/no-boundary.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "just text\n",
+    "cc": [],
+    "content-type": "multipart/mixed",
+    "date": null,
+    "defects": [
+      {
+        "multipart/mixed": [
+          "NoBoundaryInMultipartDefect: A message claimed to be a multipart but had no boundary parameter.",
+          "MultipartInvariantViolationDefect: A message claimed to be a multipart but no subparts were found."
+        ]
+      }
+    ],
+    "defects_categories": [
+      "MultipartInvariantViolationDefect",
+      "NoBoundaryInMultipartDefect"
+    ],
+    "filename_safe_subject": "multipart without boundary",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Content-Type": "multipart/mixed",
+      "From": [["", "a@example.com"]],
+      "Subject": "multipart without boundary"
+    },
+    "reply_to": [],
+    "subject": "multipart without boundary",
+    "to": []
+  }
+}

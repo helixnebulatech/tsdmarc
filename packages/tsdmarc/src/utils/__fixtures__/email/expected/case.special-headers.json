@@ -1,0 +1,45 @@
+{
+  "input": "cases/special-headers.eml",
+  "result": {
+    "__proto__": "polluted",
+    "attachments": [],
+    "bcc": [],
+    "body": "body\n",
+    "cc": [],
+    "constructor": "x",
+    "date": null,
+    "filename_safe_subject": "special names",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": false,
+    "headers": {
+      "Body": "header named body",
+      "Constructor": "x",
+      "Defects": "header named defects",
+      "From": [["", "a@example.com"]],
+      "Reply_To": "underscore header",
+      "Subject": "special names",
+      "To": [["", "b@example.com"]],
+      "X-Repeated": ["one", "two", "three"],
+      "__proto__": "polluted",
+      "toString": "y"
+    },
+    "reply_to": [],
+    "subject": "special names",
+    "to": [
+      {
+        "address": "b@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "b"
+      }
+    ],
+    "to_domains": ["example.com"],
+    "tostring": "y",
+    "x-repeated": ["one", "two", "three"]
+  }
+}

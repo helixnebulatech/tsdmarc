@@ -1,0 +1,51 @@
+{
+  "input": "cases/charsets.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "Café crème brûlée soft break\n--- mail_boundary ---\n“Smart” quotes – €\n--- mail_boundary ---\nПривет мир\n--- mail_boundary ---\n日本語のテキスト\n--- mail_boundary ---\n中文文本\n--- mail_boundary ---\nbad ascii � here\n--- mail_boundary ---\nunknown é charset\n--- mail_boundary ---\n8bit body with é raw\n--- mail_boundary ---\n<b>Hello</b>\n--- mail_boundary ---\n<bold>enriched</bold>",
+    "cc": [],
+    "content-type": "multipart/mixed; boundary=\"XX\"",
+    "date": null,
+    "defects": [
+      {
+        "text/plain": [
+          "CharsetDecodeDefect: part 6, charset 'us-ascii' failed; decoded with utf-8 replacement characters. Original bytes remain in the MIME part."
+        ]
+      },
+      {
+        "text/plain": [
+          "CharsetDecodeDefect: part 7, charset 'x-no-such-charset' failed; decoded with utf-8. Original bytes remain in the MIME part."
+        ]
+      }
+    ],
+    "defects_categories": ["CharsetDecodeDefect"],
+    "filename_safe_subject": "charsets",
+    "from": {
+      "address": "a@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "a"
+    },
+    "has_defects": true,
+    "headers": {
+      "Content-Type": "multipart/mixed; boundary=\"XX\"",
+      "From": [["", "a@example.com"]],
+      "MIME-Version": "1.0",
+      "Subject": "charsets",
+      "To": [["", "b@example.com"]]
+    },
+    "mime-version": "1.0",
+    "reply_to": [],
+    "subject": "charsets",
+    "to": [
+      {
+        "address": "b@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "b"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

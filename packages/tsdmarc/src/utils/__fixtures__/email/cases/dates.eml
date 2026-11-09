@@ -1,0 +1,7 @@
+From: a@example.com
+Subject: dates
+Date: Mon, 30 Apr 2019 04:09:09 -0430
+Resent-Date: garbage date
+Resent-Date: 1 Jan 49 00:00 PST
+
+body

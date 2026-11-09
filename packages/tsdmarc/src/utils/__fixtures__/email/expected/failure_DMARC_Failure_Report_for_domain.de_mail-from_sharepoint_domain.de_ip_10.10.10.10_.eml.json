@@ -1,0 +1,99 @@
+{
+  "input": "samples/failure/DMARC Failure Report for domain.de (mail-from=sharepoint@domain.de, ip=10.10.10.10).eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "This is an email abuse report for an email message received from IP 10.10.10.10 on Mon, 01 Oct 2018 11:20:27 +0200.\nThe message below did not meet the sending domain's DMARC policy.\nFor more information about this format please see http://tools.ietf.org/html/rfc6591 .\n\n--- mail_boundary ---\n<html><head><base href='\nwettbewerb' /></head><body><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2//EN\"><HTML><HEAD><META NAME=\"Generator\" CONTENT=\"MS Exchange Server version 08.01.0240.003\"></html>\n",
+    "cc": [],
+    "content-type": "multipart/report; report-type=feedback-report;\n    boundary=\"_----jqB1YyrX3TKBNru++5PX3w===_48/E7-30937-BD6E1BB5\"",
+    "date": "2018-10-01 09:20:27+00:00",
+    "filename_safe_subject": "DMARC Failure Report for domain.de (mail-from=sharepoint@domain.de, ip=10.10.10.10)",
+    "from": {
+      "address": "dmarc-report@domain.de",
+      "display_name": null,
+      "domain": "domain.de",
+      "local": "dmarc-report"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Type": "multipart/report; report-type=feedback-report;\n    boundary=\"_----jqB1YyrX3TKBNru++5PX3w===_48/E7-30937-BD6E1BB5\"",
+      "Date": "Mon, 1 Oct 2018 11:20:27 +0200",
+      "From": [["", "dmarc-report@domain.de"]],
+      "MIME-Version": "1.0",
+      "Message-ID": "<OF587285BA.CB01D107-ONC1258319.00334FCF@LocalDomain>",
+      "Received": [
+        "from  mailrelay.de ([234.234.234.234])\n          by Servername.domain.local (IBM Domino Release 9.0.1FP10 HF197)\n          with ESMTP id 2018100111202767-369529 ;\n          Mon, 1 Oct 2018 11:20:27 +0200",
+        "from [127.0.0.1] ([local])\n\tby  mailrelay.de (envelope-from <dmarc-report@domain.de>)\n\t(ecelerity 4.2.39.63080 r(Core:4.2.39.2)) with UNKNOWN\n\tid 48/E7-30937-BD6E1BB5; Mon, 01 Oct 2018 11:20:27 +0200"
+      ],
+      "Return-Path": "<dmarc-report@domain.de>",
+      "Subject": "DMARC Failure Report for domain.de (mail-from=sharepoint@domain.de, ip=10.10.10.10)",
+      "To": [["", "dmarc-report@domain.de"]],
+      "X-MIMETrack": "Itemize by SMTP Server on Servername/DOMAIN(Release 9.0.1FP10 HF197|April\n 16, 2018) at 01.10.2018 11:20:27,\n\tSerialize by Notes Client on Peter Pan/DOMAIN(Release 9.0.1|October\n 14, 2013) at 05.10.2018 23:38:45",
+      "X-Notes-Item": [
+        "Memo;\n name=Form",
+        "CN=Servername/O=DOMAIN;\n type=501; flags=44; name=$UpdatedBy",
+        "CN=Servername/O=DOMAIN,\n\tCN=DE9899SL4/O=DOMAIN;\n type=501; flags=0; name=RouteServers",
+        "01-Oct-2018 11:20:27 CEDT/01-Oct-2018 11:20:27 CEDT, 01-Oct-2018 11:20:27 CEDT/01-Oct-2018 11:20:27 CEDT; type=401; flags=0; name=RouteTimes",
+        "587285BA:CB01D107-C1258319:00334FCF;\n type=4; name=$Orig",
+        ";\n type=501; name=Categories",
+        ";\n type=401; name=$Revisions",
+        "Mon, 1 Oct 2018 11:20:27 +0200;\n type=400; name=DeliveredDate",
+        "This is an email abuse report for an email message received from IP 10.2.30.102 on Mon, 01 Oct 2018; flags=6; name=$Abstract",
+        "587285BA:CB01D107-C1258319:00334FCF;\n type=4; name=$TUA",
+        "1;\n name=$NoteHasNativeMIME"
+      ]
+    },
+    "message-id": "<OF587285BA.CB01D107-ONC1258319.00334FCF@LocalDomain>",
+    "mime-version": "1.0",
+    "received": [
+      {
+        "by": "mailrelay.de (envelope-from <dmarc-report@domain.de>) (ecelerity 4.2.39.63080 r(Core:4.2.39.2))",
+        "date": "Mon, 01 Oct 2018 11:20:27 +0200",
+        "date_utc": "2018-10-01 09:20:27+00:00",
+        "delay": 0,
+        "envelope_from": "dmarc-report@domain.de",
+        "from": "[127.0.0.1] ([local])",
+        "hop": 1,
+        "id": "48/E7-30937-BD6E1BB5",
+        "with": "UNKNOWN"
+      },
+      {
+        "by": "Servername.domain.local (IBM Domino Release 9.0.1FP10 HF197)",
+        "date": "Mon, 1 Oct 2018 11:20:27 +0200",
+        "date_utc": "2018-10-01 09:20:27+00:00",
+        "delay": 0.0,
+        "from": "mailrelay.de ([234.234.234.234])",
+        "hop": 2,
+        "id": "2018100111202767-369529",
+        "with": "ESMTP"
+      }
+    ],
+    "reply_to": [],
+    "return-path": "<dmarc-report@domain.de>",
+    "subject": "DMARC Failure Report for domain.de (mail-from=sharepoint@domain.de, ip=10.10.10.10)",
+    "timezone": "+2.0",
+    "to": [
+      {
+        "address": "dmarc-report@domain.de",
+        "display_name": null,
+        "domain": "domain.de",
+        "local": "dmarc-report"
+      }
+    ],
+    "to_domains": ["domain.de"],
+    "x-mimetrack": "Itemize by SMTP Server on Servername/DOMAIN(Release 9.0.1FP10 HF197|April\n 16, 2018) at 01.10.2018 11:20:27,\n\tSerialize by Notes Client on Peter Pan/DOMAIN(Release 9.0.1|October\n 14, 2013) at 05.10.2018 23:38:45",
+    "x-notes-item": [
+      "Memo;\n name=Form",
+      "CN=Servername/O=DOMAIN;\n type=501; flags=44; name=$UpdatedBy",
+      "CN=Servername/O=DOMAIN,\n\tCN=DE9899SL4/O=DOMAIN;\n type=501; flags=0; name=RouteServers",
+      "01-Oct-2018 11:20:27 CEDT/01-Oct-2018 11:20:27 CEDT, 01-Oct-2018 11:20:27 CEDT/01-Oct-2018 11:20:27 CEDT; type=401; flags=0; name=RouteTimes",
+      "587285BA:CB01D107-C1258319:00334FCF;\n type=4; name=$Orig",
+      ";\n type=501; name=Categories",
+      ";\n type=401; name=$Revisions",
+      "Mon, 1 Oct 2018 11:20:27 +0200;\n type=400; name=DeliveredDate",
+      "This is an email abuse report for an email message received from IP 10.2.30.102 on Mon, 01 Oct 2018; flags=6; name=$Abstract",
+      "587285BA:CB01D107-C1258319:00334FCF;\n type=4; name=$TUA",
+      "1;\n name=$NoteHasNativeMIME"
+    ]
+  }
+}

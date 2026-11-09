@@ -1,0 +1,89 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,acme.com,noreply-dmarc-support@acme.com,http://acme.com/dmarc/support,9391651994964116463,2012-04-28 00:00:00,2012-04-28 23:59:59,False,,example.com,r,r,none,none,,100,,,,72.150.241.94,US,,,Amazon,Technology,16509,\"Amazon.com, Inc.\",amazon.com,2,True,False,True,none,,,example.com,example.com,,example.com,none,fail,example.com,mfrom,pass\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "example.com",
+        "fo": null,
+        "np": null,
+        "p": "none",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "fail",
+                "selector": "none"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "example.com",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 2,
+          "identifiers": {
+            "envelope_from": "example.com",
+            "envelope_to": null,
+            "header_from": "example.com"
+          },
+          "interval_begin": "2012-04-28 00:00:00",
+          "interval_end": "2012-04-28 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "amazon.com",
+            "as_name": "Amazon.com, Inc.",
+            "asn": 16509,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "72.150.241.94",
+            "name": "Amazon",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2012-04-28 00:00:00",
+        "end_date": "2012-04-28 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "noreply-dmarc-support@acme.com",
+        "org_extra_contact_info": "http://acme.com/dmarc/support",
+        "org_name": "acme.com",
+        "original_timespan_seconds": 86399,
+        "report_id": "9391651994964116463",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/old_draft_from_wiki.xml"
+}

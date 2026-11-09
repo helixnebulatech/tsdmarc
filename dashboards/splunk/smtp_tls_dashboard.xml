@@ -1,0 +1,92 @@
+<form version="1.1" theme="dark">
+  <label>SMTP TLS Reporting</label>
+  <search id="base_search">
+    <query>
+index=email sourcetype=smtp:tls organization_name=$organization_name$
+| spath policies{} output=policy
+| mvexpand policy
+| spath input=policy
+| search policy_domain=$policy_domain$ policy_type=$policy_type$
+| rename successful_session_count as successful_sessions
+| rename failed_session_count as failed_sessions
+| fillnull value=0 failed_sessions successful_sessions
+    </query>
+    <earliest>$time_range.earliest$</earliest>
+    <latest>$time_range.latest$</latest>
+  </search>
+  <fieldset submitButton="false" autoRun="true">
+    <input type="time" token="time_range">
+      <label></label>
+      <default>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+    <input type="text" token="organization_name" searchWhenChanged="true">
+      <label>Organization name</label>
+      <default>*</default>
+      <initialValue>*</initialValue>
+    </input>
+    <input type="text" token="policy_domain">
+      <label>Policy domain</label>
+      <default>*</default>
+      <initialValue>*</initialValue>
+    </input>
+    <input type="dropdown" token="policy_type" searchWhenChanged="true">
+      <label>Policy type</label>
+      <choice value="*">Any</choice>
+      <choice value="tlsa">tlsa</choice>
+      <choice value="sts">sts</choice>
+      <choice value="no-policy-found">no-policy-found</choice>
+      <default>*</default>
+      <initialValue>*</initialValue>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Reporting organizations</title>
+      <table>
+        <search base="base_search">
+          <query>
+| stats sum(successful_sessions) as successful_sessions sum(failed_sessions) as failed_sessions by organization_name
+| sort -successful_sessions 0</query>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+    <panel>
+      <title>Domains</title>
+      <table>
+        <search base="base_search">
+          <query>
+| stats sum(successful_sessions) as successful_sessions sum(failed_sessions) as failed_sessions by policy_domain, policy_type
+| sort -successful_sessions 0</query>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Failure details</title>
+      <table>
+        <search base="base_search">
+          <query>
+| spath input=policy path=failure_details{} output=detail
+| mvexpand detail
+| spath input=detail
+| where failed_session_count &gt; 0
+| rename result_type as failure_type
+| rename receiving_ip as receiving_mta_ip
+| fillnull value="none" failure_type sending_mta_ip receiving_mta_ip receiving_mx_hostname
+| stats sum(failed_session_count) as failed_sessions by organization_name, policy_domain, policy_type, failure_type, sending_mta_ip, receiving_mta_ip, receiving_mx_hostname
+         </query>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+</form>

@@ -1,0 +1,8 @@
+ continuation first
+From: a@example.com
+Subject: malformed
+X-Empty:
+not a header line
+To: b@example.com
+
+body

@@ -1,0 +1,38 @@
+{
+  "input": "cases/delivery-status.eml",
+  "result": {
+    "attachments": [],
+    "bcc": [],
+    "body": "Delivery failed.\n--- mail_boundary ---\nFrom: a@example.com\nSubject: original",
+    "cc": [],
+    "content-type": "multipart/report; report-type=delivery-status; boundary=\"R\"",
+    "date": null,
+    "filename_safe_subject": "Undelivered",
+    "from": {
+      "address": "MAILER-DAEMON@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "mailer-daemon"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Type": "multipart/report; report-type=delivery-status; boundary=\"R\"",
+      "From": [["", "MAILER-DAEMON@example.com"]],
+      "MIME-Version": "1.0",
+      "Subject": "Undelivered",
+      "To": [["", "a@example.com"]]
+    },
+    "mime-version": "1.0",
+    "reply_to": [],
+    "subject": "Undelivered",
+    "to": [
+      {
+        "address": "a@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "a"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

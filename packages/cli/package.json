@@ -1,0 +1,90 @@
+{
+  "name": "@tsdmarc/cli",
+  "version": "0.0.0",
+  "description": "DMARC report parser CLI: the tsdmarc command reads DMARC and SMTP TLS reports from files or mailboxes and saves them to JSON/CSV, Elasticsearch, OpenSearch, Splunk and more. Port of the parsedmarc CLI, compatible with its config files.",
+  "license": "Apache-2.0",
+  "author": "HelixNebula (https://helixnebula.tech)",
+  "homepage": "https://github.com/helixnebulatech/tsdmarc/tree/main/packages/cli#readme",
+  "bugs": {
+    "url": "https://github.com/helixnebulatech/tsdmarc/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepack": "node ../../tools/license-files.mjs",
+    "publint": "publint && attw --pack . --profile esm-only --ignore-rules cjs-resolves-to-esm",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@azure/logger": "^1.4.0",
+    "@tsdmarc/elasticsearch": "workspace:*",
+    "@tsdmarc/gmail": "workspace:*",
+    "@tsdmarc/imap": "workspace:*",
+    "@tsdmarc/ipinfo-lite": "workspace:*",
+    "@tsdmarc/kafka": "workspace:*",
+    "@tsdmarc/loganalytics": "workspace:*",
+    "@tsdmarc/msgraph": "workspace:*",
+    "@tsdmarc/opensearch": "workspace:*",
+    "@tsdmarc/postgres": "workspace:*",
+    "@tsdmarc/s3": "workspace:*",
+    "@tsdmarc/smtp": "workspace:*",
+    "commander": "^15.0.0",
+    "tsdmarc": "workspace:*",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@tsdmarc/tsdown-config": "workspace:*",
+    "@types/node": "26.6.5",
+    "tsdown": "0.23.2",
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helixnebulatech/tsdmarc.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "dmarc",
+    "tsdmarc",
+    "cli",
+    "dmarc-parser",
+    "dmarc-reports",
+    "smtp-tls",
+    "tls-rpt",
+    "email-security",
+    "parsedmarc"
+  ],
+  "bin": {
+    "tsdmarc": "./dist/bin.js"
+  }
+}

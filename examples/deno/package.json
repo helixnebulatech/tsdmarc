@@ -1,0 +1,19 @@
+{
+  "name": "@tsdmarc/example-deno",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "tsdmarc example for Deno",
+  "scripts": {
+    "parse-file": "deno run --allow-read --allow-env --node-modules-dir=manual src/parse-file.ts",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@tsdmarc/ipinfo-lite": "workspace:*",
+    "tsdmarc": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@types/node": "26.6.5"
+  }
+}

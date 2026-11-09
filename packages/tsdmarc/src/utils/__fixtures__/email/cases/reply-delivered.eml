@@ -1,0 +1,10 @@
+From: Sender <sender@example.com>
+Reply-To: Real One <real@phish.example>, Second <two@phish.example>
+Delivered-To: box@example.org
+Delivered-To: second@example.org
+To: victim@example.org, VICTIM2@Example.ORG
+Cc: c@d.com, "C, Two" <c2@d.com>
+Bcc: e@f.com
+Subject: Hi
+
+Body

@@ -1,0 +1,14 @@
+From: =?utf-8?q?J=C3=BCrgen_M=C3=BCller?= <juergen@example.de>
+To: "Doe, John" <john@example.com>, =?iso-8859-1?q?Andr=E9?= <andre@example.fr>
+Subject: =?utf-8?b?w4lsw6hudmUgZMOpasOgIHZ1?= =?utf-8?q?_et_encore?=
+ =?UTF-8?B?IOKCrCAxMDA=?= tail
+Message-ID: <abc@example.com>
+Date: Tue, 30 Apr 2019 04:09:09 +0200
+X-Mixed: Café =?utf-8?q?caf=C3=A9?= 日本
+X-Unknown-Charset: =?x-unknown?q?caf=E9?=
+X-Bad-B64: =?utf-8?b?A===?=
+X-Lang: =?utf-8*en?q?hello?=
+X-Latin1: =?iso-8859-1?b?Y2Fm6Q==?=
+Thread-Topic: =?windows-1252?q?=93quoted=94_text?=
+
+body

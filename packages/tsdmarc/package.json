@@ -1,0 +1,96 @@
+{
+  "name": "tsdmarc",
+  "version": "0.0.0",
+  "description": "DMARC report parser: parse DMARC aggregate (RUA), failure (RUF) and SMTP TLS (TLS-RPT) reports into JSON and CSV. TypeScript port of parsedmarc.",
+  "license": "Apache-2.0",
+  "author": "HelixNebula (https://helixnebula.tech)",
+  "homepage": "https://github.com/helixnebulatech/tsdmarc#readme",
+  "bugs": {
+    "url": "https://github.com/helixnebulatech/tsdmarc/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "resources/**/*",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepack": "node ../../tools/license-files.mjs",
+    "publint": "publint && attw --pack . --profile esm-only --ignore-rules cjs-resolves-to-esm",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "dns-packet": "^5.6.1",
+    "fflate": "^0.8.3",
+    "maxmind": "^5.0.7",
+    "tldts": "^7.4.19"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@tsdmarc/ipinfo-lite": "workspace:*",
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@tsdmarc/tsdown-config": "workspace:*",
+    "@types/dns-packet": "^5.6.5",
+    "@types/node": "26.6.5",
+    "tsdown": "0.23.2",
+    "vitest": "5.0.5"
+  },
+  "peerDependencies": {
+    "@tsdmarc/ipinfo-lite": "*"
+  },
+  "peerDependenciesMeta": {
+    "@tsdmarc/ipinfo-lite": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helixnebulatech/tsdmarc.git",
+    "directory": "packages/tsdmarc"
+  },
+  "keywords": [
+    "dmarc",
+    "dmarc-parser",
+    "dmarc-report",
+    "dmarc-reports",
+    "rua",
+    "ruf",
+    "aggregate-report",
+    "forensic-report",
+    "failure-report",
+    "smtp-tls",
+    "tls-rpt",
+    "mta-sts",
+    "spf",
+    "dkim",
+    "email-security",
+    "email-authentication",
+    "parsedmarc",
+    "typescript"
+  ]
+}

@@ -1,0 +1,8 @@
+From: "Last, First" (comment) <first.last@example.com>
+To: <angle-only@example.com>, plain@example.com (Plain Name), "Quoted \"Name\"" <q@example.com>
+Cc: =?utf-8?b?w4lsw6hu?= <e@example.com>, undisclosed-recipients:;
+Bcc: a@[192.0.2.1], "weird"@example.com, x@y@z.com
+Reply-To: Name <one@example.com> <two@example.com>
+Subject: addresses
+
+body

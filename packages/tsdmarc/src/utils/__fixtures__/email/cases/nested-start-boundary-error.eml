@@ -1,0 +1,8 @@
+From: a@example.com
+Subject: nested start boundary missing, no close boundary
+Content-Type: multipart/mixed; boundary="OUT"
+
+--OUT
+Content-Type: multipart/alternative; boundary="IN"
+
+inner part has no boundary lines

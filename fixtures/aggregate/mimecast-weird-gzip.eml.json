@@ -1,0 +1,89 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,Mimecast,no-reply@au-1.mimecastreport.com,https://community.mimecast.com/s/knowledge,157a5fe30ec76f4bc0d8bccfc96c118a167a1280fee7c7465af5115e73082e5e,2023-08-30 00:00:00,2023-08-30 23:59:59,False,,ab.id.au,r,r,reject,none,,100,,,,40.93.199.22,US,,,Microsoft,Technology,8075,Microsoft Corporation,microsoft.com,1,True,True,True,none,,,ab.id.au,ab.id.au,,ab.id.au,selector1,pass,ab.id.au,mfrom,pass\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "ab.id.au",
+        "fo": null,
+        "np": null,
+        "p": "reject",
+        "pct": "100",
+        "sp": "none",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": true,
+            "dmarc": true,
+            "spf": true
+          },
+          "auth_results": {
+            "dkim": [
+              {
+                "domain": "ab.id.au",
+                "human_result": null,
+                "result": "pass",
+                "selector": "selector1"
+              }
+            ],
+            "spf": [
+              {
+                "domain": "ab.id.au",
+                "human_result": null,
+                "result": "pass",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "ab.id.au",
+            "envelope_to": null,
+            "header_from": "ab.id.au"
+          },
+          "interval_begin": "2023-08-30 00:00:00",
+          "interval_end": "2023-08-30 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "none",
+            "dkim": "pass",
+            "policy_override_reasons": [],
+            "spf": "pass"
+          },
+          "source": {
+            "as_domain": "microsoft.com",
+            "as_name": "Microsoft Corporation",
+            "asn": 8075,
+            "base_domain": null,
+            "country": "US",
+            "ip_address": "40.93.199.22",
+            "name": "Microsoft",
+            "reverse_dns": null,
+            "type": "Technology"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2023-08-30 00:00:00",
+        "end_date": "2023-08-30 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "no-reply@au-1.mimecastreport.com",
+        "org_extra_contact_info": "https://community.mimecast.com/s/knowledge",
+        "org_name": "Mimecast",
+        "original_timespan_seconds": 86399,
+        "report_id": "157a5fe30ec76f4bc0d8bccfc96c118a167a1280fee7c7465af5115e73082e5e",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/mimecast-weird-gzip.eml"
+}

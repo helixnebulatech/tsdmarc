@@ -1,0 +1,82 @@
+{
+  "csv": "xml_schema,org_name,org_email,org_extra_contact_info,report_id,begin_date,end_date,normalized_timespan,errors,domain,adkim,aspf,p,sp,np,pct,fo,testing,discovery_method,source_ip_address,source_country,source_reverse_dns,source_base_domain,source_name,source_type,source_asn,source_as_name,source_as_domain,count,spf_aligned,dkim_aligned,dmarc_aligned,disposition,policy_override_reasons,policy_override_comments,envelope_from,header_from,envelope_to,dkim_domains,dkim_selectors,dkim_results,spf_domains,spf_scopes,spf_results\r\ndraft,google.com,noreply-dmarc-support@google.com,https://support.google.com/a/answer/2466580,949348866075514174,2019-02-12 00:00:00,2019-02-12 23:59:59,False,,borschow.com,r,r,reject,reject,,100,,,,92.53.116.102,RU,,,Timeweb,Web Host,9123,JSC TIMEWEB,timeweb.ru,1,False,False,False,reject,,,borschow.com,borschow.com,,,,,borschow.com,mfrom,fail\r\n",
+  "parsedmarc": "11.2.1",
+  "result": {
+    "report": {
+      "policy_published": {
+        "adkim": "r",
+        "aspf": "r",
+        "discovery_method": null,
+        "domain": "borschow.com",
+        "fo": null,
+        "np": null,
+        "p": "reject",
+        "pct": "100",
+        "sp": "reject",
+        "testing": null
+      },
+      "records": [
+        {
+          "alignment": {
+            "dkim": false,
+            "dmarc": false,
+            "spf": false
+          },
+          "auth_results": {
+            "dkim": [],
+            "spf": [
+              {
+                "domain": "borschow.com",
+                "human_result": null,
+                "result": "fail",
+                "scope": "mfrom"
+              }
+            ]
+          },
+          "count": 1,
+          "identifiers": {
+            "envelope_from": "borschow.com",
+            "envelope_to": null,
+            "header_from": "borschow.com"
+          },
+          "interval_begin": "2019-02-12 00:00:00",
+          "interval_end": "2019-02-12 23:59:59",
+          "normalized_timespan": false,
+          "policy_evaluated": {
+            "disposition": "reject",
+            "dkim": "fail",
+            "policy_override_reasons": [],
+            "spf": "fail"
+          },
+          "source": {
+            "as_domain": "timeweb.ru",
+            "as_name": "JSC TIMEWEB",
+            "asn": 9123,
+            "base_domain": null,
+            "country": "RU",
+            "ip_address": "92.53.116.102",
+            "name": "Timeweb",
+            "reverse_dns": null,
+            "type": "Web Host"
+          }
+        }
+      ],
+      "report_metadata": {
+        "begin_date": "2019-02-12 00:00:00",
+        "end_date": "2019-02-12 23:59:59",
+        "errors": [],
+        "generator": null,
+        "org_email": "noreply-dmarc-support@google.com",
+        "org_extra_contact_info": "https://support.google.com/a/answer/2466580",
+        "org_name": "google.com",
+        "original_timespan_seconds": 86399,
+        "report_id": "949348866075514174",
+        "timespan_requires_normalization": false
+      },
+      "xml_namespace": null,
+      "xml_schema": "draft"
+    },
+    "report_type": "aggregate"
+  },
+  "sample": "aggregate/Report domain- borschow.com Submitter- google.com Report-ID- 949348866075514174.eml"
+}

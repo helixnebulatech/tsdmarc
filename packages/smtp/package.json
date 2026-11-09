@@ -1,0 +1,74 @@
+{
+  "name": "@tsdmarc/smtp",
+  "version": "0.0.0",
+  "description": "SMTP sender for tsdmarc: email DMARC report results as a zip attachment (port of mailsuite.smtp).",
+  "license": "Apache-2.0",
+  "author": "HelixNebula (https://helixnebula.tech)",
+  "homepage": "https://github.com/helixnebulatech/tsdmarc/tree/main/packages/smtp#readme",
+  "bugs": {
+    "url": "https://github.com/helixnebulatech/tsdmarc/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf dist *.tsbuildinfo",
+    "prepack": "node ../../tools/license-files.mjs",
+    "publint": "publint && attw --pack . --profile esm-only --ignore-rules cjs-resolves-to-esm",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "type-check": "tsrs --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "nodemailer": "^10.2.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@tsdmarc/tsconfig": "workspace:*",
+    "@tsdmarc/tsdown-config": "workspace:*",
+    "@types/node": "26.6.5",
+    "tsdmarc": "workspace:*",
+    "tsdown": "0.23.2",
+    "vitest": "5.0.5"
+  },
+  "peerDependencies": {
+    "tsdmarc": "workspace:^"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helixnebulatech/tsdmarc.git",
+    "directory": "packages/smtp"
+  },
+  "keywords": [
+    "dmarc",
+    "tsdmarc",
+    "smtp",
+    "email",
+    "nodemailer",
+    "dmarc-reports"
+  ]
+}

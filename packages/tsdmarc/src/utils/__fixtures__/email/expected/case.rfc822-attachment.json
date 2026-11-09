@@ -1,0 +1,51 @@
+{
+  "input": "cases/rfc822-attachment.eml",
+  "result": {
+    "attachments": [
+      {
+        "binary": false,
+        "charset": null,
+        "content-disposition": "attachment; filename=\"fwd.eml\"",
+        "content-id": "",
+        "content_transfer_encoding": "",
+        "filename": "fwd.eml",
+        "mail_content_type": "message/rfc822",
+        "payload": "From: =?utf-8?b?SsO8cmdlbiA8aW5uZXJAZXhhbXBsZS5jb20+?=\nTo: rcpt@example.com\nSubject: =?utf-8?q?Inner_subject_with_=C3=BCn=C3=AFcode?=\nContent-Type: multipart/alternative; boundary=\"IN\"\n\n--IN\nContent-Type: text/plain\n\ninner text\n--IN\nContent-Type: text/html\n\n<p>inner</p>\n--IN--\n",
+        "safe_filename": "fwd.eml",
+        "sha256": "70228d2fd67aaa5503d21f7eabd370d328677bfee0cd4d9650b30ed74e86dbbe"
+      }
+    ],
+    "bcc": [],
+    "body": "see attached\n--- mail_boundary ---\ninner text\n--- mail_boundary ---\ninline inner body\n--- mail_boundary ---\n<p>inner</p>",
+    "cc": [],
+    "content-type": "multipart/mixed; boundary=\"OUT\"",
+    "date": null,
+    "filename_safe_subject": "forwarded",
+    "from": {
+      "address": "outer@example.com",
+      "display_name": null,
+      "domain": "example.com",
+      "local": "outer"
+    },
+    "has_defects": false,
+    "headers": {
+      "Content-Type": "multipart/mixed; boundary=\"OUT\"",
+      "From": [["", "outer@example.com"]],
+      "MIME-Version": "1.0",
+      "Subject": "forwarded",
+      "To": [["", "rcpt@example.com"]]
+    },
+    "mime-version": "1.0",
+    "reply_to": [],
+    "subject": "forwarded",
+    "to": [
+      {
+        "address": "rcpt@example.com",
+        "display_name": null,
+        "domain": "example.com",
+        "local": "rcpt"
+      }
+    ],
+    "to_domains": ["example.com"]
+  }
+}

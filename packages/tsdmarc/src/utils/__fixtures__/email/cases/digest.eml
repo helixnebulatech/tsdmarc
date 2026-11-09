@@ -1,0 +1,18 @@
+From: a@example.com
+Subject: digest
+MIME-Version: 1.0
+Content-Type: multipart/digest; boundary="D"
+
+--D
+
+From: d1@example.com
+Subject: digest one
+
+first
+--D
+
+From: d2@example.com
+Subject: digest two
+
+second
+--D--

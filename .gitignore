@@ -1,0 +1,21 @@
+node_modules
+dist
+coverage
+*.tsbuildinfo
+*.tgz
+*.log
+.turbo
+.env
+.env*.local
+tsdmarc*.ini
+upstream/
+.venv/
+.deepsec/
+.DS_Store
+.claude/
+CLAUDE.local.md
+# Copied from the repo root by tools/license-files.mjs at pack time
+packages/*/LICENSE
+packages/*/NOTICE
+!packages/ipinfo-lite/LICENSE
+!packages/ipinfo-lite/NOTICE

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "@tsdmarc/docs#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["DOCS_SITE", "DOCS_BASE"]
+    },
+    "type-check": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "env": ["TEST_NODE_VERSION"]
+    },
+    "publint": {
+      "dependsOn": ["build"]
+    },
+    "clean": {
+      "cache": false
+    }
+  },
+  "globalEnv": ["CI"]
+}

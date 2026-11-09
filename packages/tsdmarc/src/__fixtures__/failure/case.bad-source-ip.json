@@ -1,0 +1,12 @@
+{
+  "error": {
+    "message": "Unexpected error: 'not-an-ip' does not appear to be an IPv4 or IPv6 address.",
+    "type": "InvalidFailureReport"
+  },
+  "feedback_report": "Feedback-Type: auth-failure\nUser-Agent: test/1.0\nVersion: 1\nOriginal-Mail-From: sender@example.com\nArrival-Date: Thu, 1 Jan 2024 00:00:00 +0000\nSource-IP: not-an-ip\nReported-Domain: example.com\nAuth-Failure: dmarc",
+  "input": "case bad-source-ip",
+  "logs": [],
+  "msg_date": "2024-01-01T00:00:00+00:00",
+  "options": {},
+  "sample": "From: sender@example.com\nTo: recipient@example.com\nSubject: Test\nDate: Thu, 1 Jan 2024 00:00:00 +0000\n\nTest body"
+}
