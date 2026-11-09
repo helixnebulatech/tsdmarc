@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/msgraph",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Microsoft Graph mailbox connection for tsdmarc: read DMARC and SMTP TLS reports from Microsoft 365 / Exchange Online (port of mailsuite.mailbox.graph).",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

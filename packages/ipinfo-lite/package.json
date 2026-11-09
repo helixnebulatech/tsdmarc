@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/ipinfo-lite",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "IPinfo Lite IP-to-country/ASN database (MMDB), bundled so tsdmarc can enrich DMARC reports with GeoIP data offline.",
   "license": "CC-BY-SA-4.0",
   "author": "HelixNebula (https://helixnebula.tech)",

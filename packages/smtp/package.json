@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/smtp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "SMTP sender for tsdmarc: email DMARC report results as a zip attachment (port of mailsuite.smtp).",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

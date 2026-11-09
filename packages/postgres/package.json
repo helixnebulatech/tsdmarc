@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/postgres",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "PostgreSQL output for tsdmarc: save DMARC aggregate, failure and SMTP TLS reports to PostgreSQL tables.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

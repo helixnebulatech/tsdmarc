@@ -1,0 +1,23 @@
+# @tsdmarc/cli
+
+## 1.0.0
+
+### Major Changes
+
+- a1c5fad: First release: a 1:1 TypeScript port of parsedmarc 11.2.1 and of the parts of mailsuite 2.3.4 it uses, for Node.js 24+, Bun and Deno.
+
+### Patch Changes
+
+- Updated dependencies [a1c5fad]
+  - tsdmarc@1.0.0
+  - @tsdmarc/imap@1.0.0
+  - @tsdmarc/gmail@1.0.0
+  - @tsdmarc/msgraph@1.0.0
+  - @tsdmarc/smtp@1.0.0
+  - @tsdmarc/elasticsearch@1.0.0
+  - @tsdmarc/opensearch@1.0.0
+  - @tsdmarc/postgres@1.0.0
+  - @tsdmarc/kafka@1.0.0
+  - @tsdmarc/s3@1.0.0
+  - @tsdmarc/loganalytics@1.0.0
+  - @tsdmarc/ipinfo-lite@1.0.0

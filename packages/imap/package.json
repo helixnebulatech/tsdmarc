@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/imap",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "IMAP mailbox connection for tsdmarc: read DMARC and SMTP TLS reports from an IMAP mailbox (port of mailsuite.mailbox.imap).",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/elasticsearch",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Elasticsearch output for tsdmarc: save DMARC aggregate, failure and SMTP TLS reports to Elasticsearch 8/9, compatible with parsedmarc's Kibana dashboards.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

@@ -1,6 +1,6 @@
 {
   "name": "tsdmarc",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "DMARC report parser: parse DMARC aggregate (RUA), failure (RUF) and SMTP TLS (TLS-RPT) reports into JSON and CSV. TypeScript port of parsedmarc.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",
