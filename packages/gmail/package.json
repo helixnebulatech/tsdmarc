@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@googleapis/gmail": "^22.0.2",
-    "google-auth-library": "^11.3.1"
+    "google-auth-library": "^11.3.3"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",

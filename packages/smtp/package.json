@@ -37,7 +37,7 @@
     "type-check": "tsrs --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "nodemailer": "^10.2.1"
+    "nodemailer": "^10.3.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",

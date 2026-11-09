@@ -37,7 +37,7 @@
     "type-check": "tsrs --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "imapflow": "^2.9.1"
+    "imapflow": "^2.11.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",

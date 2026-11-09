@@ -37,7 +37,7 @@
     "type-check": "tsrs --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.1157.0"
+    "@aws-sdk/client-s3": "^3.1163.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",

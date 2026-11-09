@@ -40,7 +40,7 @@
   "dependencies": {
     "dns-packet": "^5.6.1",
     "fflate": "^0.8.3",
-    "maxmind": "^5.0.7",
+    "maxmind": "^5.0.8",
     "tldts": "^7.4.19"
   },
   "devDependencies": {

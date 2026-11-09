@@ -37,7 +37,7 @@
     "type-check": "tsrs --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@platformatic/kafka": "^2.14.0"
+    "@platformatic/kafka": "^2.15.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
