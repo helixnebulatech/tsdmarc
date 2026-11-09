@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DMARC report parser CLI: the tsdmarc command reads DMARC and SMTP TLS reports from files or mailboxes and saves them to JSON/CSV, Elasticsearch, OpenSearch, Splunk and more. Port of the parsedmarc CLI, compatible with its config files.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",
