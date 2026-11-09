@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/gmail",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Gmail API mailbox connection for tsdmarc: read DMARC and SMTP TLS reports from Gmail or Google Workspace (port of mailsuite.mailbox.gmail).",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",
