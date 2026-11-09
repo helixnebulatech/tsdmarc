@@ -1,5 +1,22 @@
 # @tsdmarc/cli
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [248151a]
+  - tsdmarc@1.0.1
+  - @tsdmarc/elasticsearch@1.0.0
+  - @tsdmarc/gmail@1.0.0
+  - @tsdmarc/imap@1.0.0
+  - @tsdmarc/kafka@1.0.0
+  - @tsdmarc/loganalytics@1.0.0
+  - @tsdmarc/msgraph@1.0.0
+  - @tsdmarc/opensearch@1.0.0
+  - @tsdmarc/postgres@1.0.0
+  - @tsdmarc/s3@1.0.0
+  - @tsdmarc/smtp@1.0.0
+
 ## 1.0.0
 
 ### Major Changes
