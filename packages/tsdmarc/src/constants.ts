@@ -1,7 +1,12 @@
 // Port of parsedmarc/constants.py.
 
+// Read from package.json so that changesets' version bump is the only place
+// the version changes. The build inlines it; the import attribute is what
+// Node needs when parallel workers run this source file directly in tests.
+import packageJson from '../package.json' with { type: 'json' };
+
 /** Version of tsdmarc itself. */
-export const VERSION: string = '0.0.0';
+export const VERSION: string = packageJson.version;
 
 /** parsedmarc version this port matches feature-for-feature. */
 export const PARSEDMARC_COMPAT_VERSION: string = '11.2.1';
