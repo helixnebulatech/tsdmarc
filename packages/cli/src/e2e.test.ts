@@ -260,7 +260,14 @@ describe('tsdmarc on samples/', { timeout: E2E_TIMEOUT_MS }, () => {
     expect(runCli(['--dns-timeout', 'soon']).status).toBe(2);
     const version = runCli(['--version']);
     expect(version.status).toBe(0);
-    expect(version.stdout.trim()).toMatch(/^\d+\.\d+\.\d+/u);
+    // The core's package.json version, as released, not a hard-coded one.
+    const core = JSON.parse(
+      readFileSync(
+        path.join(repoDir, 'packages', 'tsdmarc', 'package.json'),
+        'utf8',
+      ),
+    ) as { version: string };
+    expect(version.stdout.trim()).toBe(core.version);
   });
 });
 
