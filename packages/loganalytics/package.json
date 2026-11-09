@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/loganalytics",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Azure Log Analytics output for tsdmarc: send DMARC aggregate, failure and SMTP TLS reports to Azure Monitor / Microsoft Sentinel.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

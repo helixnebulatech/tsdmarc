@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/s3",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Amazon S3 output for tsdmarc: save DMARC aggregate, failure and SMTP TLS reports as JSON objects in S3.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

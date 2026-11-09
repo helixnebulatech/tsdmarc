@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/kafka",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Kafka output for tsdmarc: send DMARC aggregate, failure and SMTP TLS reports to Kafka topics.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",

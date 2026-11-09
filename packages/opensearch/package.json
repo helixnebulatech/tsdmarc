@@ -1,6 +1,6 @@
 {
   "name": "@tsdmarc/opensearch",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "OpenSearch output for tsdmarc: save DMARC aggregate, failure and SMTP TLS reports to OpenSearch, compatible with parsedmarc's OpenSearch Dashboards.",
   "license": "Apache-2.0",
   "author": "HelixNebula (https://helixnebula.tech)",
