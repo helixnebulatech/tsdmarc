@@ -1,5 +1,7 @@
 # tsdmarc
 
+[![npm](https://img.shields.io/npm/v/tsdmarc)](https://www.npmjs.com/package/tsdmarc) [![CI](https://github.com/helixnebulatech/tsdmarc/actions/workflows/ci.yml/badge.svg)](https://github.com/helixnebulatech/tsdmarc/actions/workflows/ci.yml) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
+
 **A TypeScript library and CLI for parsing DMARC aggregate, DMARC failure and SMTP TLS reports. A 1:1 port of [parsedmarc](https://github.com/domainaware/parsedmarc).**
 
 Mail receivers (Google, Microsoft, Yahoo, ...) send reports to the addresses a domain lists in its DMARC and TLS-RPT DNS records:
